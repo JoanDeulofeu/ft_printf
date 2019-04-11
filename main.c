@@ -65,79 +65,78 @@ int		main(int ac, char **av)
 	(void)av;
 	int nb = 51371;
 	int nb2 = 88888;
+
+	// test %d
+
 	ft_d();
-	// ft_printf("ft_printf1 =%d %d\n", nb, nb2);
-	//    printf("printf1    =%d %d\n\n", nb, nb2);
-	//
-	// ft_printf("ft_printf2 =%     8+.13d\n", nb);
-	//    printf("printf2    =%      8+.13d\n\n", nb);
-	//
-	// ft_printf("ft_printf3 =%+8.13d\n", nb);
-	//    printf("printf3    =%+8.13d\n\n", nb);
-	//
-	// ft_printf("ft_printf4 =%   13.8d\n", nb);
-	//    printf("printf4    =%    13.8d\n\n", nb);
-	//
-	// ft_printf("ft_printf5 =%    +13.8d\n", ft_abs(nb));
-	//    printf("printf5    =%    +13.8d\n\n", ft_abs(nb));
-	//
-	// ft_printf("ft_printf6 =%+13.8d\n", ft_abs(nb));
-	//    printf("printf6    =%+13.8d\n\n", ft_abs(nb));
-	//
-	// ft_printf("ft_printf7 =%    +13.8d\n", nb);
-	//    printf("printf7    =%    +13.8d\n\n", nb);
-	//
-	// ft_printf("ft_printf8 =%+13.8d\n", nb);
-	//    printf("printf8    =%+13.8d\n\n", nb);
-	//
-	// ft_printf("ft_printf9 =%+08.13d\n", nb);
-	//    printf("printf9    =%+08.13d\n\n", nb);
-	//
-	// ft_printf("ft_printf10=%+013.8d\n", nb);
-	//    printf("printf10   =%+013.8d\n\n", nb);
-	//
-	// ft_printf("ft_printf11=%0+08.13d\n", nb);
-	//    printf("printf11   =%0+08.13d\n\n", nb);
-	//
-	// ft_printf("ft_printf12=%0+013.8d\n", nb);
-	//    printf("printf12   =%0+013.8d\n\n", nb);
-	//
-	// ft_printf("ft_printf13=%013d\n", nb);
-	//    printf("printf13   =%013d\n\n", nb);
-	//
-	// ft_printf("ft_printf14=%013d\n", ft_abs(nb));
-	//    printf("printf14   =%013d\n\n", ft_abs(nb));
-	//
-	// ft_printf("ft_printf15=%8.13d\n", nb);
-	//    printf("printf15   =%8.13d\n\n", nb);
-	//
-	// ft_printf("ft_printf16=%-8.13d\n", nb);
-	//    printf("printf16   =%-8.13d\n\n", nb);
-	//
-	// ft_printf("ft_printf17=%-18.13d\n", nb);
-	//    printf("printf17   =%-18.13d\n\n", nb);
-	//
-	// ft_printf("ft_printf18=%-018d\n", nb);
-	//    printf("printf18   =%-018d\n\n", nb);
-	//
-	// ft_printf("ft_printf19=%-0 18d\n", nb);
-	//    printf("printf19   =%-0 18d\n\n", nb);
-	//
-	// ft_printf("ft_printf20=%+-18.13d\n", nb);
-	//    printf("printf20   =%+-18.13d\n\n", nb);
-	//
-	// ft_printf("ft_printf21=%+-018d\n", nb);
-	//    printf("printf21   =%+-018d\n\n", nb);
-	//
-	// ft_printf("ft_printf22=%+-0 18d\n", nb);
-	//    printf("printf22   =%+-0 18d\n\n", nb);
-	//
-	// ft_printf("ft_printf23=%#d\n", nb);
-	//    printf("printf23   =%#d\n\n", nb);
+	ft_printf("ft_printf1 =%d %d\n", nb, nb2);
+	   printf("printf1    =%d %d\n\n", nb, nb2);
 
+	ft_printf("ft_printf2 =%     8+.13d\n", nb);
+	   printf("printf2    =%      8+.13d\n\n", nb);
 
+	ft_printf("ft_printf3 =%+8.13d\n", nb);
+	   printf("printf3    =%+8.13d\n\n", nb);
 
+	ft_printf("ft_printf4 =%   13.8d\n", nb);
+	   printf("printf4    =%    13.8d\n\n", nb);
 
+	ft_printf("ft_printf5 =%    +13.8d\n", ft_abs(nb));
+	   printf("printf5    =%    +13.8d\n\n", ft_abs(nb));
+
+	ft_printf("ft_printf6 =%+13.8d\n", ft_abs(nb));
+	   printf("printf6    =%+13.8d\n\n", ft_abs(nb));
+
+	ft_printf("ft_printf7 =%    +13.8d\n", nb);
+	   printf("printf7    =%    +13.8d\n\n", nb);
+
+	ft_printf("ft_printf8 =%+13.8d\n", nb);
+	   printf("printf8    =%+13.8d\n\n", nb);
+
+	ft_printf("ft_printf9 =%+08.13d\n", nb);
+	   printf("printf9    =%+08.13d\n\n", nb);
+
+	ft_printf("ft_printf10=%+013.8d\n", nb);
+	   printf("printf10   =%+013.8d\n\n", nb);
+
+	ft_printf("ft_printf11=%0+08.13d\n", nb);
+	   printf("printf11   =%0+08.13d\n\n", nb);
+
+	ft_printf("ft_printf12=%0+013.8d\n", nb);
+	   printf("printf12   =%0+013.8d\n\n", nb);
+
+	ft_printf("ft_printf13=%013d\n", nb);
+	   printf("printf13   =%013d\n\n", nb);
+
+	ft_printf("ft_printf14=%013d\n", ft_abs(nb));
+	   printf("printf14   =%013d\n\n", ft_abs(nb));
+
+	ft_printf("ft_printf15=%8.13d\n", nb);
+	   printf("printf15   =%8.13d\n\n", nb);
+
+	ft_printf("ft_printf16=%-8.13d\n", nb);
+	   printf("printf16   =%-8.13d\n\n", nb);
+
+	ft_printf("ft_printf17=%-18.13d\n", nb);
+	   printf("printf17   =%-18.13d\n\n", nb);
+
+	ft_printf("ft_printf18=%-018d\n", nb);
+	   printf("printf18   =%-018d\n\n", nb);
+
+	ft_printf("ft_printf19=%-0 18d\n", nb);
+	   printf("printf19   =%-0 18d\n\n", nb);
+
+	ft_printf("ft_printf20=%+-18.13d\n", nb);
+	   printf("printf20   =%+-18.13d\n\n", nb);
+
+	ft_printf("ft_printf21=%+-018d\n", nb);
+	   printf("printf21   =%+-018d\n\n", nb);
+
+	ft_printf("ft_printf22=%+-0 18d\n", nb);
+	   printf("printf22   =%+-0 18d\n\n", nb);
+
+	ft_printf("ft_printf23=%#d\n", nb);
+	   printf("printf23   =%#d\n\n", nb);
 
 	// printf("\n\n%.3d\n", nb);
 	// printf("%.8d\n", nb);
@@ -151,6 +150,31 @@ int		main(int ac, char **av)
 	// printf("08) %+d\n", nb);
 	// printf("09) %3d\n", nb);
 	// printf("10) %        .8d\n", nb);
-	// // printf("10) %        8    d\n", nb);
+	// printf("10) %        8    d\n", nb);
+
+	//test %o
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	return 0;
 }

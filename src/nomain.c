@@ -100,6 +100,8 @@ int		ft_find_conv(t_s *s, int i)
 	if (s->str[i] == 'd')
 	{
 		// ft_putstr("worst conv\n");
+		if (s->pres > 0 || s->f->moins == TRUE)
+			s->f->zero = FALSE;
 		ft_pf_d(s);
 		return (1);
 	}
