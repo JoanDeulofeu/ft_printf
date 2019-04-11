@@ -3,7 +3,7 @@
 void	ft_print_param(t_s *s)
 {
 	printf("STR -- %s\n", s->str);
-	printf("hash %d\nzero %d\nmoins %d\nplus %d\nel %d\nl_l %d\nach %d\nh_h %d\nspace %d\n", s->f->hash, s->f->zero, s->f->moins, s->f->plus, s->f->el, s->f->l_l, s->f->ach, s->f->h_h, s->f->space);
+	printf("hash %d\nzero %d\npoint %d\nmoins %d\nplus %d\nel %d\nl_l %d\nach %d\nh_h %d\nspace %d\n", s->f->hash, s->f->zero, s->f->point, s->f->moins, s->f->plus, s->f->el, s->f->l_l, s->f->ach, s->f->h_h, s->f->space);
 	printf("pres %d\nchamp %d\n", s->pres, s->champ);
 }
 
@@ -13,12 +13,15 @@ void	ft_reset_flags(t_s *s)
 	s->f->zero = FALSE;
 	s->f->moins = FALSE;
 	s->f->plus = FALSE;
+	s->f->point = FALSE;
 	s->f->el = FALSE;
 	s->f->l_l = FALSE;
 	s->f->ach = FALSE;
 	s->f->h_h = FALSE;
 	s->f->space = FALSE;
 	s->f->neg = FALSE;
+	s->pres = 0;
+	s->champ = 0;
 }
 
 int	ft_which_flags(t_s *s, int i)
@@ -62,6 +65,10 @@ int		ft_nbrlen(int nb)
 	int res;
 
 	res = 1;
+	if (nb == -2147483648)
+		return (10);
+	if (nb == 0)
+		return (1);
 	while (nb > 9)
 	{
 		nb /= 10;
@@ -99,14 +106,15 @@ int		ft_find_conv(t_s *s, int i)
 	return (0);
 }
 
-void	ft_loop(t_s *s)
+int		ft_loop(t_s *s)
 {
 	int i = -1;
 
 	while (s->str[++i] != '\0')
 	{
 		if (s->str[i] != '%')
-			ft_putchar(s->str[i]);
+			printf("%c", s->str[i]);
+			// ft_putchar(s->str[i]);
 		else
 		{
 			ft_reset_flags(s);
@@ -121,6 +129,8 @@ void	ft_loop(t_s *s)
 				|| s->str[i] == '+' ||  s->str[i] == 'l' || s->str[i] == ' ' || s->str[i] == 'h')
 					i = ft_which_flags(s, i);
 
+				if (s->str[i] == '.')
+					s->f->point = TRUE;
 				if (s->str[i] == '.' && (s->str[i + 1] >= '1' && s->str[i + 1] <= '9'))
 					i = ft_precision(s, i);
 				else if (s->str[i] >= '1' && s->str[i] <= '9')
@@ -131,17 +141,19 @@ void	ft_loop(t_s *s)
 			}
 			// ft_putchar(s->str[i]);
 			// ft_putstr("   <-str[i]-\n");
-			if (!ft_find_conv(s, i))
+			if (!(ft_find_conv(s, i)))
 				ft_putstr("wrong conv\n");
 		}
 	}
+	return (i);
 }
 
-void	ft_printf(char *str, ...)
+int	ft_printf(char *str, ...)
 {
 	t_s		s;
 	t_flags	f;
 	t_conv	c;
+	int i;
 
 	va_start(s.params, str);
 	s.str = str;
@@ -149,6 +161,7 @@ void	ft_printf(char *str, ...)
 	s.c = &c;
 	s.pres = 0;
 	s.champ = 0;
-	ft_loop(&s);
+	i = ft_loop(&s);
 	// ft_print_param(&s);
+	return (i);
 }

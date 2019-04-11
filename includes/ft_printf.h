@@ -20,6 +20,7 @@ typedef struct			s_flags
 	char				zero;
 	char				moins;
 	char				plus;
+	char				point;
 	char				el;
 	char				l_l;
 	char				ach;
@@ -52,8 +53,8 @@ typedef struct			s_s
 	t_flags				*f;
 	t_conv				*c;
 	char				*str;
-	unsigned int		pres;
-	unsigned int		champ;
+	int					pres;
+	int					champ;
 	va_list				params;
 }						t_s;
 
@@ -61,8 +62,9 @@ typedef struct			s_s
 ****	Fonction ft_printf
 */
 
-void					ft_printf(char *str, ...);
+int						ft_printf(char *str, ...);
 int						ft_nbrlen(int nb);
 void					ft_pf_d(t_s *s);
+void					ft_print_param(t_s *s);
 
 #endif

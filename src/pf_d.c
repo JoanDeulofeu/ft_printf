@@ -17,6 +17,12 @@ char	*pf_itoa(char *res, int i, int nb, int lgnb)
 	int u;
 
 	u = -1;
+	if (nb == -2147483648)
+	{
+		res[i++] = '2';
+		nb = 147483648;
+		lgnb = ft_nbrlen(nb);
+	}
 	while (++u < lgnb - 1)
 	{
 		// ft_putnbr((nb / ft_pow(10, lgnb - u - 2) % 10));
@@ -37,42 +43,126 @@ void	ft_pf_d(t_s *s)
 
 	i = 0;
 	u = 0;
+	// ft_print_param(s);
 	nb = va_arg(s->params, int);
 	if (nb < 0)
 		s->f->neg = TRUE;
-	nb = ft_abs(nb);
+	if (nb != -2147483648)
+		nb = ft_abs(nb);
 	lgnb = ft_nbrlen(nb);
-	// if (s->f->zero == TRUE)	// pas terrible
-	// 	s->pres = s->champ;
-	if (s->pres >= s->champ)
+	if (s->pres > 0 || s->f->moins == TRUE)
+		s->f->zero = FALSE;
+	if (s->f->moins == FALSE)
 	{
-		if (!(res = (char *)malloc(sizeof(char) * (s->pres > lgnb ? s->pres : lgnb) + 2)))
-			exit(0);
-		ft_bzero(res, (s->pres > lgnb ? s->pres : lgnb) + 2);
-		if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-			res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
-		if (s->pres > lgnb)
-			while (u++ < s->pres - lgnb)
+		if (s->pres >= s->champ)
+		{
+			if (!(res = (char *)malloc(sizeof(char) * (s->pres > lgnb ? s->pres : lgnb) + 2)))
+				exit(0);
+			ft_bzero(res, (s->pres > lgnb ? s->pres : lgnb) + 2);
+			if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
+				res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+			if (s->pres > lgnb)
+				while (u++ < s->pres - lgnb)
+					res[i++] = '0';
+			if (s->f->point != TRUE || s->pres != 0 || nb != 0)
+				res = pf_itoa(res, i, nb, lgnb);
+			// ft_putstr(res);
+			printf("%s",res);
+		}
+		else if (s->champ > s->pres && s->f->zero == FALSE)
+		{
+			if (!(res = (char *)malloc(sizeof(char) * (s->champ > lgnb ? s->champ : lgnb) + 2)))
+				exit(0);
+			ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 2);
+			if (s->pres != 0)
+				u += s->pres - lgnb;
+			u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
+			while (u++ < (s->champ - lgnb) - (s->f->plus == TRUE ? 1 : 0))
+				res[i++] = ' ';
+			if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
+				res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+			u = 0;
+			if (s->pres > 0)
+				while (u++ < s->pres - lgnb)
+					res[i++] = '0';
+			if (s->f->point != TRUE || s->pres != 0 || nb != 0)
+				res = pf_itoa(res, i, nb, lgnb);
+			// ft_putstr(res);
+			printf("%s",res);
+		}
+		else
+		{
+			if (!(res = (char *)malloc(sizeof(char) * (s->champ > lgnb ? s->champ : lgnb) + 2)))
+				exit(0);
+			ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 2);
+			if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
+				res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+			u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
+			while (u++ < s->champ - lgnb)
 				res[i++] = '0';
-		res = pf_itoa(res, i, nb, lgnb);
-		ft_putstr(res);
+			if (s->f->point != TRUE || s->pres != 0 || nb != 0)
+				res = pf_itoa(res, i, nb, lgnb);
+			// ft_putstr(res);
+			printf("%s",res);
+		}
 	}
 	else
 	{
-		if (!(res = (char *)malloc(sizeof(char) * (s->champ > lgnb ? s->champ : lgnb) + 2)))
-			exit(0);
-		ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 2);
-		u += s->pres - lgnb;
-		u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
-		while (u++ < s->champ - lgnb)
-			res[i++] = ' ';
-		if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-			res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
-		u = 0;
-		if (s->pres > 0)
-			while (u++ < s->pres - lgnb)
-				res[i++] = '0';
-		res = pf_itoa(res, i, nb, lgnb);
-		ft_putstr(res);
+		if (s->pres >= s->champ)
+		{
+			if (!(res = (char *)malloc(sizeof(char) * (s->pres > lgnb ? s->pres : lgnb) + 2)))
+				exit(0);
+			ft_bzero(res, (s->pres > lgnb ? s->pres : lgnb) + 2);
+			if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
+				res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+			if (s->pres > lgnb)
+				while (u++ < s->pres - lgnb)
+					res[i++] = '0';
+			if (s->f->point != TRUE || s->pres != 0 || nb != 0)
+				res = pf_itoa(res, i, nb, lgnb);
+			// ft_putstr(res);
+			printf("%s",res);
+		}
+		else
+		{
+			if (!(res = (char *)malloc(sizeof(char) * (s->champ > lgnb ? s->champ : lgnb) + 2)))
+				exit(0);
+			ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 2);
+			u += s->pres - lgnb;
+			if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
+				res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+			u = 0;
+			if (s->pres > 0)
+				while (u++ < s->pres - lgnb)
+					res[i++] = '0';
+			if (s->f->point != TRUE || s->pres != 0 || nb != 0)
+				res = pf_itoa(res, i, nb, lgnb);
+			i += lgnb;
+			u = 0;
+			u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
+			while (u++ < s->champ - (s->pres > lgnb ? s->pres : lgnb))
+				res[i++] = ' ';
+			// ft_putstr(res);
+			printf("%s",res);
+		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//lol
