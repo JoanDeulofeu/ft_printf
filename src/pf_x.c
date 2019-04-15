@@ -1,39 +1,18 @@
 #include "../includes/ft_printf.h"
 
-long long	ft_pow(long long nb, int power)
-{
-	long long i;
-	long long tmp;
-
-	i = 0;
-	tmp = nb;
-	while (i++ < power)
-		nb *= tmp;
-	return (nb);
-}
-
-char		*pf_itoa(char *res, int i, long long nb, int lgnb)
+char	 	*pf_itoax(char *res, int i, t_s *s, int lgnb)
 {
 	int u;
 
-	u = -1;
-	if (nb < -9223372036854775807)
-	{
-		res[i++] = '9';
-		nb = 223372036854775808;
-		lgnb = ft_nbrlen(nb);
-	}
-	while (++u < lgnb - 1)
-	{
-		// ft_putnbr((nb / ft_pow(10, lgnb - u - 2) % 10));
-		// ft_putstr("  pow\n");
-		res[i++] = (nb / ft_pow(10, lgnb - u - 2) % 10) + 48;
-	}
-	res[i++] = (nb % 10) + 48;
+	u = 0;
+	while (s->hex[u] == '\0')
+		u++;
+	while (u > 16)
+		res[i++] = s->hex[u++];
 	return (res);
 }
 
-void		ft_part4(t_s *s, char *res, int lgnb, long long nb)
+void		ft_part4x(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
 	int i;
 	int u;
@@ -51,7 +30,7 @@ void		ft_part4(t_s *s, char *res, int lgnb, long long nb)
 		while (u++ < s->pres - lgnb)
 			res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
-		res = pf_itoa(res, i, nb, lgnb);
+		res = pf_itoax(res, i, s, lgnb);
 	i += lgnb;
 	u = 0;
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
@@ -61,7 +40,7 @@ void		ft_part4(t_s *s, char *res, int lgnb, long long nb)
 	printf("%s",res);
 }
 
-void		ft_part3(t_s *s, char *res, int lgnb, long long nb)
+void		ft_part3x(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
 	int i;
 	int u;
@@ -77,12 +56,12 @@ void		ft_part3(t_s *s, char *res, int lgnb, long long nb)
 	while (u++ < s->champ - lgnb)
 		res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
-		res = pf_itoa(res, i, nb, lgnb);
+		res = pf_itoax(res, i, s, lgnb);
 	// ft_putstr(res);
 	printf("%s",res);
 }
 
-void		ft_part2(t_s *s, char *res, int lgnb, long long nb)
+void		ft_part2x(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
 	int i;
 	int u;
@@ -104,12 +83,12 @@ void		ft_part2(t_s *s, char *res, int lgnb, long long nb)
 		while (u++ < s->pres - lgnb)
 			res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
-		res = pf_itoa(res, i, nb, lgnb);
+		res = pf_itoax(res, i, s, lgnb);
 	// ft_putstr(res);
 	printf("%s",res);
 }
 
-void		ft_part1(t_s *s, char *res, int lgnb, long long nb)
+void		ft_part1x(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
 	int i;
 	int u;
@@ -125,40 +104,34 @@ void		ft_part1(t_s *s, char *res, int lgnb, long long nb)
 		while (u++ < s->pres - lgnb)
 			res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
-		res = pf_itoa(res, i, nb, lgnb);
+		res = pf_itoax(res, i, s, lgnb);
 	// ft_putstr(res);
 	printf("%s",res);
 }
 
-void		ft_pf_d(t_s *s, long long nb)
+void		ft_pf_x(t_s *s, unsigned long long nb)
 {
 	int		lgnb;
 	char	*res;
 
-	s->f->neg = nb < 0 ? TRUE : FALSE;
-	nb = nb < -9223372036854775807 ? nb : ft_abs(nb);
-	lgnb = ft_nbrlen(nb);
+	lgnb = ft_dec_to_hex(s, nb);
 	if (s->f->moins == FALSE)
 	{
 		if (s->pres >= s->champ)
-			ft_part1(s, res, lgnb, nb);
+			ft_part1x(s, res, lgnb, nb);
 		else if (s->champ > s->pres && s->f->zero == FALSE)
-			ft_part2(s, res, lgnb, nb);
+			ft_part2x(s, res, lgnb, nb);
 		else
-			ft_part3(s, res, lgnb, nb);
+			ft_part3x(s, res, lgnb, nb);
 	}
 	else
 	{
 		if (s->pres >= s->champ)
-			ft_part1(s, res, lgnb, nb);
+			ft_part1x(s, res, lgnb, nb);
 		else
-			ft_part4(s, res, lgnb, nb);
+			ft_part4x(s, res, lgnb, nb);
 	}
 }
-
-
-
-
 
 
 

@@ -56,6 +56,7 @@ typedef struct			s_s
 	int					pres;
 	int					champ;
 	va_list				params;
+	char				hex[16];
 }						t_s;
 
 /*
@@ -63,10 +64,13 @@ typedef struct			s_s
 */
 
 int						ft_printf(char *str, ...);
-int						ft_nbrlen(int nb);
-void					ft_pf_d(t_s *s, int nb);
+int						ft_nbrlen(long long nb);
+void					ft_pf_d(t_s *s, long long nb);
+void					ft_pf_u(t_s *s, unsigned long long nb);
+void					ft_pf_x(t_s *s, unsigned long long nb);
 void					ft_print_param(t_s *s);
 int						ft_find_conv(t_s *s, int i);
-int						ft_dec_to_oct(int nb);
+long long				ft_dec_to_oct(long long nb);
+int						ft_dec_to_hex(t_s *s, unsigned long long nb);
 
 #endif

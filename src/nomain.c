@@ -22,6 +22,7 @@ void	ft_reset_flags(t_s *s)
 	s->f->neg = FALSE;
 	s->pres = 0;
 	s->champ = 0;
+	ft_bzero(s->hex, 16);
 }
 
 int	ft_which_flags(t_s *s, int i)
@@ -60,13 +61,13 @@ int	ft_which_flags(t_s *s, int i)
 	return (i);
 }
 
-int		ft_nbrlen(int nb)
+int		ft_nbrlen(long long nb)
 {
 	int res;
 
 	res = 1;
-	if (nb == -2147483648)
-		return (10);
+	if (nb > 999999999999999999)
+		return (19);
 	if (nb == 0)
 		return (1);
 	while (nb > 9)

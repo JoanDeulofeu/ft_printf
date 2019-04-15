@@ -155,17 +155,51 @@ int		main(int ac, char **av)
 	// printf("10) %        8    d\n", nb);
 
 	//test %o
-	ft_printf("ft_printf1=%o\n", nb);
-	   printf("printf1   =%o\n\n", nb);
+	// ft_printf("ft_printf1=%o\n", nb);
+	//    printf("printf1   =%o\n\n", nb);
+	//
+	// ft_printf("ft_printf2=%+0 18o\n", nb);
+	//    printf("printf2   =%+0 18o\n\n", nb);
+	//
+	// ft_printf("ft_printf3=%+-0 18o\n", nb);
+	//    printf("printf3   =%+-0 18o\n\n", nb);
+	//
+	// ft_printf("ft_printf4=%.10 18o\n", nb);
+	//    printf("printf4   =%.10 18o\n\n", nb);
 
-	ft_printf("ft_printf2=%+0 18o\n", nb);
-	   printf("printf2   =%+0 18o\n\n", nb);
+	// IMPOSSIBLE a gerer en cas de nbr negatif en ENTREE
 
-	ft_printf("ft_printf3=%+-0 18o\n", nb);
-	   printf("printf3   =%+-0 18o\n\n", nb);
+	//test %u
+	// ft_printf("ft_printf1=%u\n", nb);
+	//    printf("printf1   =%u\n\n", nb);
+	//
+	// ft_printf("ft_printf2=%+0 18u\n", nb);
+	//    printf("printf2   =%+0 18u\n\n", nb);
+	//
+	// ft_printf("ft_printf3=%+-018u\n", nb);
+	//    printf("printf3   =%+-018u\n\n", nb);
+	//
+	// ft_printf("ft_printf4=%18.0u\n", nb);
+	//    printf("printf4   =%18.0u\n\n", nb);
+	//
+	// ft_printf("ft_printf5=%-18.0 u\n", nb);
+	//    printf("printf5   =%-18.0 u\n\n", nb);
 
-	ft_printf("ft_printf4=%.10 18o\n", nb);
-	   printf("printf4   =%.10 18o\n\n", nb);
+	//test %x et X
+	ft_printf("ft_printf1=%x\n", nb);
+	   printf("printf1   =%#x\n\n", nb);
+
+	ft_printf("ft_printf2=%+0 18x\n", nb);
+	   printf("printf2   =%+0 18x\n\n", nb);
+
+	ft_printf("ft_printf3=%+-018x\n", nb);
+	   printf("printf3   =%+-018x\n\n", nb);
+
+	ft_printf("ft_printf4=%18.0x\n", nb);
+	   printf("printf4   =%18.0x\n\n", nb);
+
+	ft_printf("ft_printf5=%-18.7 x\n", nb);
+	   printf("printf5   =%-18.7 x\n\n", nb);
 
 
 
