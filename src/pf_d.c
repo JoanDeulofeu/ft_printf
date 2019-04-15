@@ -130,13 +130,11 @@ void	ft_part1(t_s *s, char *res, int lgnb,  int nb)
 	printf("%s",res);
 }
 
-void	ft_pf_d(t_s *s)
+void	ft_pf_d(t_s *s, int nb)
 {
-	int		nb;
 	int		lgnb;
 	char	*res;
 
-	nb = va_arg(s->params, int);
 	s->f->neg = nb < 0 ? TRUE : FALSE;
 	nb = nb == -2147483648 ? nb : ft_abs(nb);
 	lgnb = ft_nbrlen(nb);

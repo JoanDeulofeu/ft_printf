@@ -95,19 +95,6 @@ int		ft_champ_size(t_s *s, int i)
 	return (i - 1);
 }
 
-int		ft_find_conv(t_s *s, int i)
-{
-	if (s->str[i] == 'd')
-	{
-		// ft_putstr("worst conv\n");
-		if (s->pres > 0 || s->f->moins == TRUE)
-			s->f->zero = FALSE;
-		ft_pf_d(s);
-		return (1);
-	}
-	return (0);
-}
-
 int		ft_loop(t_s *s)
 {
 	int i = -1;
@@ -133,7 +120,7 @@ int		ft_loop(t_s *s)
 
 				if (s->str[i] == '.')
 					s->f->point = TRUE;
-				if (s->str[i] == '.' && (s->str[i + 1] >= '1' && s->str[i + 1] <= '9'))
+				if (s->str[i] == '.' && (s->str[i + 1] >= '0' && s->str[i + 1] <= '9'))
 					i = ft_precision(s, i);
 				else if (s->str[i] >= '1' && s->str[i] <= '9')
 					i = ft_champ_size(s, i);
