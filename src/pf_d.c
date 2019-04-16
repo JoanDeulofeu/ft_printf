@@ -135,9 +135,12 @@ void		ft_pf_d(t_s *s, long long nb)
 	int		lgnb;
 	char	*res;
 
-	s->f->neg = nb < 0 ? TRUE : FALSE;
+	printf("\nnb = %d  et  s->f->neg = %d\n", nb, s->f->neg);
+	res = NULL;
+	s->f->neg = nb < 0 ? TRUE : FALSE; //I NEED HELP
 	nb = nb < -9223372036854775807 ? nb : ft_abs(nb);
 	lgnb = ft_nbrlen(nb);
+	printf("\n-nb = %d  et  s->f->neg = %d\n", nb, s->f->neg);
 	if (s->f->moins == FALSE)
 	{
 		if (s->pres >= s->champ)

@@ -1,51 +1,55 @@
-CC = gcc
-
 NAME = libftprintf.a
 
-FLAGS = -Wall -Wextra -Werror
+SRC_PATH = src
 
-LIBFT = libft
+SRC_NAME =  nomain.c conv.c pf_d.c pf_u.c pf_x.c
 
-DIR_S = src
+CPPFLAGS = -I libft/includes/ -MMD
 
-DIR_O = obj
+CC = gcc
 
-HEADER = includes
+CFLAGS = -Werror -Wall -Wextra
 
-SOURCES = nomain.c
+OBJ_NAME = $(SRC_NAME:.c=.o)
 
-SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
+OBJ_PATH = obj
 
-OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.c=.o))
+HEADER_PATH = includes/
+
+HEADER_NAME = ft_printf.h
+
+OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
+
+SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
+
+HEADER = $(addprefix $(HEADER_PATH)/,$(HEADER_NAME))
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@make -C $(LIBFT)
-	@cp libft/libft.a ./$(NAME)
-	@ar rc $(NAME) $(OBJS)
-	@ranlib $(NAME)
+$(NAME): $(OBJ)
+	$(MAKE) -C libft/
+	cp libft/libft.a ./$(NAME)
+	ar rcs $@ $^
+	ranlib $@
 
-$(DIR_O)/%.o: $(DIR_S)/%.c $(HEADER)/ft_printf.h
-	@mkdir -p obj
-	@$(CC) $(FLAGS) -I $(HEADER) -o $@ -c $<
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
+	$(CC) $(CFLAGS) $(CPPFLAGS) -I $(HEADER_PATH) -o $@ -c $<
 
-norme:
-	norminette ./libft/
-	@echo
-	norminette ./$(HEADER)/
-	@echo
-	norminette ./$(DIR_S)/
+$(OBJ_PATH):
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
 
 clean:
-	@rm -f $(OBJS)
-	@rm -rf $(DIR_O)
-	@make clean -C $(LIBFT)
+	make clean -C libft/
+	rm -f $(OBJ) $(OBJ:.o=.d)
+	@rmdir $(OBJ_PATH) 2> /dev/null || true
 
 fclean: clean
-	@rm -f $(NAME)
-	@make fclean -C $(LIBFT)
+	make fclean -C libft/
+	rm -f $(NAME)
 
-re: fclean all
+re: fclean
+	$(MAKE) all
 
-.PHONY: fclean re norme all clean
+.PHONY: make clean fclean re
+
+-include $(OBJ:.o=.d)

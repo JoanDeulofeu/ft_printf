@@ -65,14 +65,14 @@ int		main(int ac, char **av)
 {
 	(void)ac;
 	(void)av;
-	int nb = 51371;
+	int nb = -1753719200;
 	int nb2 = 88888;
 
 	// test %d
 
 	// ft_d();
-	// ft_printf("ft_printf1 =%d %d\n", nb, nb2);
-	//    printf("printf1    =%d %d\n\n", nb, nb2);
+	ft_printf("ft_printf1 =%d %d\n", nb, nb2);
+	   printf("printf1    =%d %d\n\n", nb, nb2);
 	//
 	// ft_printf("ft_printf2 =%     8+.13d\n", nb);
 	//    printf("printf2    =%      8+.13d\n\n", nb);
@@ -134,8 +134,8 @@ int		main(int ac, char **av)
 	// ft_printf("ft_printf21=%+-018d\n", nb);
 	//    printf("printf21   =%+-018d\n\n", nb);
 	//
-	// ft_printf("ft_printf22=%+-0 18d\n", nb);
-	//    printf("printf22   =%+-0 18d\n\n", nb);
+	// ft_printf("ft_printf22=%0 18d\n", nb);
+	//    printf("printf22   =%0 18d\n\n", nb);
 	//
 	// ft_printf("ft_printf23=%#d\n", nb);
 	//    printf("printf23   =%#d\n\n", nb);
@@ -186,24 +186,62 @@ int		main(int ac, char **av)
 	//    printf("printf5   =%-18.0 u\n\n", nb);
 
 	//test %x et X
-	ft_printf("ft_printf1=%x\n", nb);
-	   printf("printf1   =%#x\n\n", nb);
-
-	ft_printf("ft_printf2=%+0 18x\n", nb);
-	   printf("printf2   =%+0 18x\n\n", nb);
-
-	ft_printf("ft_printf3=%+-018x\n", nb);
-	   printf("printf3   =%+-018x\n\n", nb);
-
-	ft_printf("ft_printf4=%18.0x\n", nb);
-	   printf("printf4   =%18.0x\n\n", nb);
-
-	ft_printf("ft_printf5=%-18.7 x\n", nb);
-	   printf("printf5   =%-18.7 x\n\n", nb);
-
-
-
-
+	// ft_printf("ft_printf1=%#x\n", nb);
+	//    printf("printf1   =%#x\n\n", nb);
+	//
+	// ft_printf("ft_printf2=%+0 18x\n", nb);
+	//    printf("printf2   =%+0 18x\n\n", nb);
+	//
+	// ft_printf("ft_printf3=%+-018x\n", nb);
+	//    printf("printf3   =%+-018x\n\n", nb);
+	//
+	// ft_printf("ft_printf4=%18.0x\n", nb);
+	//    printf("printf4   =%18.0x\n\n", nb);
+	//
+	// ft_printf("ft_printf5=%#-18.7 x\n", nb);
+	//    printf("printf5   =%#-18.7 x\n\n", nb);
+	//
+	// ft_printf("ft_printf6=%#+0 18x\n", nb);
+	//    printf("printf6   =%#+0 18x\n\n", nb);
+	//
+	// ft_printf("ft_printf7=%#+-018x\n", nb);
+	//    printf("printf7   =%#+-018x\n\n", nb);
+	//
+	// ft_printf("ft_printf8=%#18.0x\n", nb);
+	//    printf("printf8   =%#18.0x\n\n", nb);
+	//
+	// ft_printf("ft_printf9=%#-18.7 x\n", nb);
+	//    printf("printf9   =%#-18.7 x\n\n", nb);
+	//
+	// ft_printf("ft_printf10=%#18.7 x\n", nb);
+	//    printf("printf10   =%#18.7 x\n\n", nb);
+	//
+	// ft_printf("ft_printf11=%#.7 x\n", nb);
+	//    printf("printf11   =%#.7 x\n\n", nb);
+	//
+	// ft_printf("ft_printf12=%# -20.7 x\n", nb);
+	//    printf("printf12   =%# -20.7 x\n\n", nb);
+	//
+	// ft_printf("ft_printf13=%#.7 X\n", nb);
+	//    printf("printf13   =%#.7 X\n\n", nb);
+	//
+	// ft_printf("ft_printf14=%# -20.7 X\n", nb);
+	//    printf("printf14   =%# -20.7 X\n\n", nb);
+	//
+	// ft_printf("ft_printf15=%#X\n", nb);
+   	//    printf("printf15   =%#X\n\n", nb);
+	//
+   	// ft_printf("ft_printf16=%+0 18X\n", nb);
+   	//    printf("printf16   =%+0 18X\n\n", nb);
+	//
+   	// ft_printf("ft_printf17=%+-018X\n", nb);
+   	//    printf("printf17   =%+-018X\n\n", nb);
+	//
+   	// ft_printf("ft_printf18=%18.0X\n", nb);
+   	//    printf("printf18   =%18.0X\n\n", nb);
+	//
+   	// ft_printf("ft_printf19=%#-18.7 X\n", nb);
+   	//    printf("printf19   =%#-18.7 X\n\n", nb);
 
 
 

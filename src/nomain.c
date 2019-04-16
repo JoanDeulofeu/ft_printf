@@ -10,6 +10,7 @@ void	ft_print_param(t_s *s)
 void	ft_reset_flags(t_s *s)
 {
 	s->f->hash = FALSE;
+	s->f->xmaj = FALSE;
 	s->f->zero = FALSE;
 	s->f->moins = FALSE;
 	s->f->plus = FALSE;

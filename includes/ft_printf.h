@@ -17,6 +17,7 @@
 typedef struct			s_flags
 {
 	char				hash;
+	char				xmaj;
 	char				zero;
 	char				moins;
 	char				plus;
@@ -72,5 +73,6 @@ void					ft_print_param(t_s *s);
 int						ft_find_conv(t_s *s, int i);
 long long				ft_dec_to_oct(long long nb);
 int						ft_dec_to_hex(t_s *s, unsigned long long nb);
+char					*ft_xmaj(char *res);
 
 #endif

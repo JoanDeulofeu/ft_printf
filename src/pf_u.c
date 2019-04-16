@@ -1,6 +1,6 @@
 #include "../includes/ft_printf.h"
 
-unsigned long long	ft_powu(unsigned long long nb, int power)
+unsigned long long	ft_powu(unsigned long long nb, unsigned long long power)
 {
 	unsigned long long i;
 	unsigned long long tmp;
@@ -129,6 +129,7 @@ void		ft_pf_u(t_s *s, unsigned long long nb)
 	int		lgnb;
 	char	*res;
 
+	res = NULL;
 	lgnb = ft_nbrlen(nb);
 	if (s->f->moins == FALSE)
 	{
