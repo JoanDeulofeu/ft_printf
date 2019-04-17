@@ -33,7 +33,7 @@ char		*pf_itoa(char *res, int i, long long nb, int lgnb)
 	return (res);
 }
 
-void		ft_part4(t_s *s, char *res, int lgnb, long long nb)
+char		*ft_part4(t_s *s, char *res, int lgnb, long long nb)
 {
 	int i;
 	int u;
@@ -57,11 +57,10 @@ void		ft_part4(t_s *s, char *res, int lgnb, long long nb)
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
 	while (u++ < s->champ - (s->pres > lgnb ? s->pres : lgnb))
 		res[i++] = ' ';
-	// ft_putstr(res);
-	printf("%s",res);
+	return (res);
 }
 
-void		ft_part3(t_s *s, char *res, int lgnb, long long nb)
+char		*ft_part3(t_s *s, char *res, int lgnb, long long nb)
 {
 	int i;
 	int u;
@@ -78,11 +77,10 @@ void		ft_part3(t_s *s, char *res, int lgnb, long long nb)
 		res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
 		res = pf_itoa(res, i, nb, lgnb);
-	// ft_putstr(res);
-	printf("%s",res);
+	return (res);
 }
 
-void		ft_part2(t_s *s, char *res, int lgnb, long long nb)
+char		*ft_part2(t_s *s, char *res, int lgnb, long long nb)
 {
 	int i;
 	int u;
@@ -92,7 +90,7 @@ void		ft_part2(t_s *s, char *res, int lgnb, long long nb)
 	if (!(res = (char *)malloc(sizeof(char) * (s->champ > lgnb ? s->champ : lgnb) + 2)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 2);
-	if (s->pres != 0)
+	if (s->pres != 0 && s->pres > lgnb)
 		u += s->pres - lgnb;
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
 	while (u++ < (s->champ - lgnb))
@@ -105,11 +103,10 @@ void		ft_part2(t_s *s, char *res, int lgnb, long long nb)
 			res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
 		res = pf_itoa(res, i, nb, lgnb);
-	// ft_putstr(res);
-	printf("%s",res);
+	return (res);
 }
 
-void		ft_part1(t_s *s, char *res, int lgnb, long long nb)
+char		*ft_part1(t_s *s, char *res, int lgnb, long long nb)
 {
 	int i;
 	int u;
@@ -126,37 +123,36 @@ void		ft_part1(t_s *s, char *res, int lgnb, long long nb)
 			res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
 		res = pf_itoa(res, i, nb, lgnb);
-	// ft_putstr(res);
-	printf("%s",res);
+	return (res);
 }
 
-void		ft_pf_d(t_s *s, long long nb)
+int			ft_pf_d(t_s *s, long long nb)
 {
 	int		lgnb;
 	char	*res;
 
-	printf("\nnb = %d  et  s->f->neg = %d\n", nb, s->f->neg);
 	res = NULL;
-	s->f->neg = nb < 0 ? TRUE : FALSE; //I NEED HELP
-	nb = nb < -9223372036854775807 ? nb : ft_abs(nb);
+	s->f->neg = nb < 0 ? TRUE : FALSE;
+	nb = nb < -9223372036854775807 ? nb : ft_absll(nb);
 	lgnb = ft_nbrlen(nb);
-	printf("\n-nb = %d  et  s->f->neg = %d\n", nb, s->f->neg);
 	if (s->f->moins == FALSE)
 	{
 		if (s->pres >= s->champ)
-			ft_part1(s, res, lgnb, nb);
+			res = ft_part1(s, res, lgnb, nb);
 		else if (s->champ > s->pres && s->f->zero == FALSE)
-			ft_part2(s, res, lgnb, nb);
+			res = ft_part2(s, res, lgnb, nb);
 		else
-			ft_part3(s, res, lgnb, nb);
+			res = ft_part3(s, res, lgnb, nb);
 	}
 	else
 	{
 		if (s->pres >= s->champ)
-			ft_part1(s, res, lgnb, nb);
+			res = ft_part1(s, res, lgnb, nb);
 		else
-			ft_part4(s, res, lgnb, nb);
+			res = ft_part4(s, res, lgnb, nb);
 	}
+	printf("%s", res);
+	return (ft_strlen(res));
 }
 
 

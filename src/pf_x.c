@@ -82,7 +82,7 @@ char		*ft_part2x(t_s *s, char *res, int lgnb, unsigned long long nb)
 	if (!(res = (char *)malloc(sizeof(char) * (s->champ > lgnb ? s->champ : lgnb) + 4)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 4);
-	if (s->pres != 0)
+	if (s->pres != 0 && s->pres > lgnb)
 		u += s->pres - lgnb;
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
 	u = s->f->hash == TRUE ? u + 2 : u;
@@ -129,7 +129,7 @@ char		*ft_part1x(t_s *s, char *res, int lgnb, unsigned long long nb)
 	return (res);
 }
 
-void		ft_pf_x(t_s *s, unsigned long long nb)
+int			ft_pf_x(t_s *s, unsigned long long nb)
 {
 	int		lgnb;
 	char	*res;
@@ -155,6 +155,7 @@ void		ft_pf_x(t_s *s, unsigned long long nb)
 	if (s->f->xmaj == TRUE)
 		res = ft_xmaj(res);
 	printf("%s",res);
+	return (ft_strlen(res));
 }
 
 

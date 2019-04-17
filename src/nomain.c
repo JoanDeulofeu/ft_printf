@@ -100,16 +100,21 @@ int		ft_champ_size(t_s *s, int i)
 int		ft_loop(t_s *s)
 {
 	int i = -1;
+	int res = 0;
+	int tmp = 0;
 
 	while (s->str[++i] != '\0')
 	{
 		if (s->str[i] != '%')
+		{
 			printf("%c", s->str[i]);
-			// ft_putchar(s->str[i]);
+			res++;
+		}
 		else
 		{
 			ft_reset_flags(s);
 			i++;
+			tmp = 0;
 			while (s->str[i] == '#' || s->str[i] == '-' || s->str[i] == '+'
 			||  s->str[i] == 'l' || s->str[i] == 'h' || s->str[i] == '.'
 			|| s->str[i] == ' ' || (s->str[i] >= '0' && s->str[i] <= '9'))
@@ -132,11 +137,15 @@ int		ft_loop(t_s *s)
 			}
 			// ft_putchar(s->str[i]);
 			// ft_putstr("   <-str[i]-\n");
-			if (!(ft_find_conv(s, i)))
-				ft_putstr("wrong conv\n");
+			if (!(tmp = ft_find_conv(s, i)) && s->str[i] != '\0')
+			{
+				printf("%c", s->str[i]);
+				res++;
+			}
+			res += tmp;
 		}
 	}
-	return (i);
+	return (res);
 }
 
 int	ft_printf(char *str, ...)

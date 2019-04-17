@@ -66,13 +66,16 @@ typedef struct			s_s
 
 int						ft_printf(char *str, ...);
 int						ft_nbrlen(long long nb);
-void					ft_pf_d(t_s *s, long long nb);
-void					ft_pf_u(t_s *s, unsigned long long nb);
-void					ft_pf_x(t_s *s, unsigned long long nb);
+int						ft_pf_d(t_s *s, long long nb);
+int						ft_pf_u(t_s *s, unsigned long long nb);
+int						ft_pf_x(t_s *s, unsigned long long nb);
+int						ft_pf_c(t_s *s, unsigned char chr);
+int						ft_pf_s(t_s *s, char *str);
 void					ft_print_param(t_s *s);
 int						ft_find_conv(t_s *s, int i);
 long long				ft_dec_to_oct(long long nb);
 int						ft_dec_to_hex(t_s *s, unsigned long long nb);
 char					*ft_xmaj(char *res);
+long long				ft_absll(long long c);
 
 #endif

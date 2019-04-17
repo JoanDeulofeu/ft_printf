@@ -65,14 +65,19 @@ int		main(int ac, char **av)
 {
 	(void)ac;
 	(void)av;
-	int nb = -1753719200;
-	int nb2 = 88888;
+	int fpf = 0;
+	int pf = 0;
+	char chr = 97;
+	char *str = "Bonjour les amis!";
+	int nb = 19246576;
+	long long llnb = -419246576;
+	// int nb2 = 88888;
 
-	// test %d
-
-	// ft_d();
-	ft_printf("ft_printf1 =%d %d\n", nb, nb2);
-	   printf("printf1    =%d %d\n\n", nb, nb2);
+	// printf("=-=-=-=-=-=  TEST DU #D =-=-=-=-=-=\n\n");
+	//
+	//// ft_d();
+	// ft_printf("ft_printf1 =%d \n", nb );
+	//    printf("printf1    =%d \n\n", nb);
 	//
 	// ft_printf("ft_printf2 =%     8+.13d\n", nb);
 	//    printf("printf2    =%      8+.13d\n\n", nb);
@@ -95,8 +100,10 @@ int		main(int ac, char **av)
 	// ft_printf("ft_printf8 =%+13.8d\n", nb);
 	//    printf("printf8    =%+13.8d\n\n", nb);
 	//
-	// ft_printf("ft_printf9 =%+08.13d\n", nb);
-	//    printf("printf9    =%+08.13d\n\n", nb);
+	// fpf = ft_printf("ft_printf9 =%+08.13d\n", nb);
+	// 	pf = printf("printf9    =%+08.13d\n\n", nb);
+	// printf("ft_printf %d\n", fpf + 1);
+	// printf("printf    %d\n", pf);
 	//
 	// ft_printf("ft_printf10=%+013.8d\n", nb);
 	//    printf("printf10   =%+013.8d\n\n", nb);
@@ -139,37 +146,46 @@ int		main(int ac, char **av)
 	//
 	// ft_printf("ft_printf23=%#d\n", nb);
 	//    printf("printf23   =%#d\n\n", nb);
+	//
+	// ft_printf("ft_printf24=% 10.14jd\n", nb);
+	//    printf("printf24   =jd\n\n", nb);
 
-	// printf("\n\n%.3d\n", nb);
-	// printf("%.8d\n", nb);
-	// // printf("01) %13.8d\n", nb);
-	// printf("02) %13.13d\n", nb);
-	// // printf("03) %13. 8d\n", nb);
-	// // printf("04) %13 8d\n", nb);
-	// // printf("05) %13 14 15 89 8d\n", nb);
-	// // printf("06) %8.d\n", nb);
-	// printf("07) %+.8d\n", nb);
-	// printf("08) %+d\n", nb);
-	// printf("09) %3d\n", nb);
-	// printf("10) %        .8d\n", nb);
-	// printf("10) %        8    d\n", nb);
+	// ft_printf("ft_printf25=% 10.14hd\n", nb);
+	//    printf("printf25   =% 10.14hd\n\n", nb);
+	//
+	// ft_printf("ft_printf26=%+-.2lld\n", nb);
+	//    printf("printf26   =%+-.2lld\n\n", nb);
+	//
+    // ft_printf("ft_printf27=% 10.14hhd\n", chr);
+	//    printf("printf27   =% 10.14hhd\n\n", chr);
+	//
+    // fpf = ft_printf("ft_printf28=% 10.14hhd\n", nb);
+	// 	pf = printf("printf27   =% 10.14hhd\n\n", nb);
+	// printf("ft_printf %d\n", fpf + 1);
+	// printf("printf    %d\n", pf);
 
-	//test %o
+
+
+
+	// printf("=-=-=-=-=-=  TEST DU #O =-=-=-=-=-=\n\n");
 	// ft_printf("ft_printf1=%o\n", nb);
 	//    printf("printf1   =%o\n\n", nb);
 	//
 	// ft_printf("ft_printf2=%+0 18o\n", nb);
 	//    printf("printf2   =%+0 18o\n\n", nb);
 	//
-	// ft_printf("ft_printf3=%+-0 18o\n", nb);
-	//    printf("printf3   =%+-0 18o\n\n", nb);
+	// fpf = ft_printf("ft_printf3=%+-0 18o\n", nb);
+	// 	pf = printf("printf3   =%+-0 18o\n\n", nb);
+	// printf("ft_printf %d\n", fpf + 1);
+	// printf("printf    %d\n", pf);
 	//
 	// ft_printf("ft_printf4=%.10 18o\n", nb);
 	//    printf("printf4   =%.10 18o\n\n", nb);
-
-	// IMPOSSIBLE a gerer en cas de nbr negatif en ENTREE
-
-	//test %u
+	//
+	// // IMPOSSIBLE a gerer en cas de nbr negatif en ENTREE
+	//
+	//
+	// printf("=-=-=-=-=-=  TEST DU #U =-=-=-=-=-=\n\n");
 	// ft_printf("ft_printf1=%u\n", nb);
 	//    printf("printf1   =%u\n\n", nb);
 	//
@@ -179,13 +195,17 @@ int		main(int ac, char **av)
 	// ft_printf("ft_printf3=%+-018u\n", nb);
 	//    printf("printf3   =%+-018u\n\n", nb);
 	//
-	// ft_printf("ft_printf4=%18.0u\n", nb);
-	//    printf("printf4   =%18.0u\n\n", nb);
+	// fpf = ft_printf("ft_printf4=%18.0u\n", nb);
+	// 	pf = printf("printf4   =%18.0u\n\n", nb);
+	// printf("ft_printf %d\n", fpf + 1);
+	// printf("printf    %d\n", pf);
 	//
 	// ft_printf("ft_printf5=%-18.0 u\n", nb);
 	//    printf("printf5   =%-18.0 u\n\n", nb);
-
-	//test %x et X
+	//
+	//
+	//
+	// printf("=-=-=-=-=-=  TEST DU #X =-=-=-=-=-=\n\n");
 	// ft_printf("ft_printf1=%#x\n", nb);
 	//    printf("printf1   =%#x\n\n", nb);
 	//
@@ -243,6 +263,27 @@ int		main(int ac, char **av)
    	// ft_printf("ft_printf19=%#-18.7 X\n", nb);
    	//    printf("printf19   =%#-18.7 X\n\n", nb);
 
+
+
+	printf("=-=-=-=-=-=  TEST DU #C =-=-=-=-=-=\n\n");
+	ft_printf("ft_printf1=%c\n", chr);
+	   printf("printf1   =%c\n\n", chr);
+	//
+	// ft_printf("ft_printf2=%c %c %c %c\n", chr, 'a', 'r', 47);
+	//    printf("printf2   =%c %c %c %c\n\n", chr, 'a', 'r', 47);
+	//
+	// ft_printf("ft_printf3=%-c %+c %#c % c\n", chr, 'a', 'r', 47);
+	//    printf("printf3   =%-c %+c %#c % c\n\n", chr, 'a', 'r', 47);
+	ft_printf("ft_printf4=%12c\n", chr);
+	   printf("printf4   =%12c\n\n", chr);
+
+
+
+	// printf("=-=-=-=-=-=  TEST DU #S =-=-=-=-=-=\n\n");
+	// fpf = ft_printf("ft_printf1=%s\n", str);
+	// 	pf = printf("printf1   =%s\n\n", str);
+	// printf("ft_printf %d\n", fpf);
+	// printf("printf    %d\n", pf);
 
 
 
