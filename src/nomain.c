@@ -3,7 +3,7 @@
 void	ft_print_param(t_s *s)
 {
 	printf("STR -- %s\n", s->str);
-	printf("hash %d\nzero %d\npoint %d\nmoins %d\nplus %d\nel %d\nl_l %d\nach %d\nh_h %d\nspace %d\n", s->f->hash, s->f->zero, s->f->point, s->f->moins, s->f->plus, s->f->el, s->f->l_l, s->f->ach, s->f->h_h, s->f->space);
+	printf("neg %d\nhash %d\nzero %d\npoint %d\nmoins %d\nplus %d\nel %d\nl_l %d\nach %d\nh_h %d\nspace %d\n", s->f->neg, s->f->hash, s->f->zero, s->f->point, s->f->moins, s->f->plus, s->f->el, s->f->l_l, s->f->ach, s->f->h_h, s->f->space);
 	printf("pres %d\nchamp %d\n", s->pres, s->champ);
 }
 
@@ -139,8 +139,11 @@ int		ft_loop(t_s *s)
 			// ft_putstr("   <-str[i]-\n");
 			if (!(tmp = ft_find_conv(s, i)) && s->str[i] != '\0')
 			{
-				printf("%c", s->str[i]);
-				res++;
+				if ((s->str[i] != 'x' || s->c->ulglg != 0) && s->str[i] != 's')
+				{
+					printf("%c", s->str[i]);
+					res++;
+				}
 			}
 			res += tmp;
 		}

@@ -86,7 +86,7 @@ char		*ft_part2x(t_s *s, char *res, int lgnb, unsigned long long nb)
 		u += s->pres - lgnb;
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
 	u = s->f->hash == TRUE ? u + 2 : u;
-	while (u++ < (s->champ - lgnb))
+	while (u++ < (nb != 0 ? s->champ - lgnb : s->champ))
 		res[i++] = ' ';
 	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
 		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
@@ -135,7 +135,8 @@ int			ft_pf_x(t_s *s, unsigned long long nb)
 	char	*res;
 
 	res = NULL;
-	lgnb = ft_dec_to_hex(s, nb); // chelou 15 - i mais bon...
+	lgnb = ft_dec_to_hex(s, nb);
+	s->c->ulglg = nb;
 	if (s->f->moins == FALSE)
 	{
 		if (s->pres >= s->champ)

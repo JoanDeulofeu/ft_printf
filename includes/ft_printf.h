@@ -69,7 +69,6 @@ int						ft_nbrlen(long long nb);
 int						ft_pf_d(t_s *s, long long nb);
 int						ft_pf_u(t_s *s, unsigned long long nb);
 int						ft_pf_x(t_s *s, unsigned long long nb);
-int						ft_pf_c(t_s *s, unsigned char chr);
 int						ft_pf_s(t_s *s, char *str);
 void					ft_print_param(t_s *s);
 int						ft_find_conv(t_s *s, int i);

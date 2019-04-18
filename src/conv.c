@@ -139,6 +139,8 @@ int			ft_find_conv(t_s *s, int i)
 		s->f->space = FALSE;
 		if (s->str[i] == 'X')
 			s->f->xmaj = TRUE;
+		if (unb == 0)
+			s->f->hash = FALSE;
 		return (ft_pf_x(s, unb));
 	}
 	else if (s->str[i] == 'd' || s->str[i] == 'o')
@@ -149,7 +151,14 @@ int			ft_find_conv(t_s *s, int i)
 		return (ft_pf_d(s, nb));
 	}
 	else if (s->str[i] == 'c')
-		return (ft_pf_c(s, chr));
+	{
+		if (!(str = (char *)malloc(sizeof(char) * 1 + 1)))
+			exit(0);
+		str[0] = (char)chr;
+		str[1] = '\0';
+		return (ft_pf_s(s, str));
+		ft_memdel((void **)&str);
+	}
 	else if (s->str[i] == 's')
 		return (ft_pf_s(s, str));
 	return (0);
