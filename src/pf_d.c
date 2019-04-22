@@ -126,7 +126,7 @@ char		*ft_part1(t_s *s, char *res, int lgnb, long long nb)
 	return (res);
 }
 
-int			ft_pf_d(t_s *s, long long nb)
+char		*ft_pf_d(t_s *s, long long nb)
 {
 	int		lgnb;
 	char	*res;
@@ -151,8 +151,7 @@ int			ft_pf_d(t_s *s, long long nb)
 		else
 			res = ft_part4(s, res, lgnb, nb);
 	}
-	printf("%s", res);
-	return (ft_strlen(res));
+	return (res);
 }
 
 

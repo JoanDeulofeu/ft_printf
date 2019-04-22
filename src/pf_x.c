@@ -129,7 +129,7 @@ char		*ft_part1x(t_s *s, char *res, int lgnb, unsigned long long nb)
 	return (res);
 }
 
-int			ft_pf_x(t_s *s, unsigned long long nb)
+char		*ft_pf_x(t_s *s, unsigned long long nb)
 {
 	int		lgnb;
 	char	*res;
@@ -155,8 +155,7 @@ int			ft_pf_x(t_s *s, unsigned long long nb)
 	}
 	if (s->f->xmaj == TRUE)
 		res = ft_xmaj(res);
-	printf("%s",res);
-	return (ft_strlen(res));
+	return (res);
 }
 
 

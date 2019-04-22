@@ -1,12 +1,40 @@
 #include "../includes/ft_printf.h"
 
-long long		ft_absll(long long c)
+long long	ft_absll(long long c)
 {
 	c = (c >= 0) ? c : (c * -1);
 	return (c);
 }
 
-char	*ft_xmaj(char *res)
+char		*ft_hashzero(char *res)
+{
+	char	*tmp;
+	int i = 0;
+
+	if (!(tmp = (char *)malloc(sizeof(char) * ft_strlen(res) + 2)))
+		exit(0);
+	while (res[i] == ' ' || res[i] == '0')
+		i++;
+	if (i > 0)
+		res[i - 1] = '0';
+	else
+	{
+		tmp[i++] = '0';
+		while (res[i - 1] != '\0')
+		{
+			tmp[i] = res[i - 1];
+			i++;
+		}
+		if (res[ft_strlen(res) - 1] == ' ')
+			i--;
+		tmp[i] = '\0';
+		ft_memdel((void **)&res);
+		res = tmp;
+	}
+	return (res);
+}
+
+char		*ft_xmaj(char *res)
 {
 	int i;
 
@@ -99,10 +127,11 @@ unsigned long long	ft_modif_unsign(t_s *s, unsigned long long nb)
 	return (nb);
 }
 
-int			ft_find_conv(t_s *s, int i)
+char		*ft_find_conv(t_s *s, int i)
 {
 	unsigned char		chr;
 	char				*str;
+	char				*res;
 	long long			nb;
 	unsigned long long	unb;
 
@@ -110,6 +139,7 @@ int			ft_find_conv(t_s *s, int i)
 	chr = '\0';
 	str = NULL;
 	nb = 0;
+	res = NULL;
 	unb = 0;
 
 	if (s->str[i] == 'c')
@@ -123,15 +153,18 @@ int			ft_find_conv(t_s *s, int i)
 
 	if (s->str[i] == 'o')
 	{
+		if (nb == 0)
+			s->champ++;
 		nb = ft_dec_to_oct(nb);
 		s->f->plus = FALSE;
 		s->f->space = FALSE;
 	}
+
 	if (s->str[i] == 'u')
 	{
 		s->f->plus = FALSE;
 		s->f->space = FALSE;
-		return (ft_pf_u(s, unb));
+		res = ft_pf_u(s, unb);
 	}
 	else if (s->str[i] == 'x' || s->str[i] == 'X')
 	{
@@ -141,25 +174,39 @@ int			ft_find_conv(t_s *s, int i)
 			s->f->xmaj = TRUE;
 		if (unb == 0)
 			s->f->hash = FALSE;
-		return (ft_pf_x(s, unb));
+		res = ft_pf_x(s, unb);
 	}
 	else if (s->str[i] == 'd' || s->str[i] == 'o')
 	{
+		// if (nb == 0)
+		// 	s->champ++;
 		// ft_putstr("worst conv\n");
 		if (s->pres > 0 || s->f->moins == TRUE)
 			s->f->zero = FALSE;
-		return (ft_pf_d(s, nb));
+		res = ft_pf_d(s, nb);
+		if (s->f->hash == TRUE)
+			res = ft_hashzero(res);
 	}
-	else if (s->str[i] == 'c')
+	else if (s->str[i] == 'c' || s->str[i] == '%')
 	{
 		if (!(str = (char *)malloc(sizeof(char) * 1 + 1)))
 			exit(0);
+		if (s->str[i] == '%')
+			chr = '%';
 		str[0] = (char)chr;
 		str[1] = '\0';
-		return (ft_pf_s(s, str));
+		if (str[0] == '\0')
+			s->f->pctc = TRUE;
+		res = ft_pf_s(s, str);
 		ft_memdel((void **)&str);
 	}
 	else if (s->str[i] == 's')
-		return (ft_pf_s(s, str));
-	return (0);
+		res = ft_pf_s(s, str);
+	else
+	{
+		if (!(res = (char *)malloc(sizeof(char) * 1)))
+			exit(0);
+		res[0] = '\0';
+	}
+	return (res);
 }

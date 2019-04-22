@@ -3,7 +3,7 @@
 void	ft_print_param(t_s *s)
 {
 	printf("STR -- %s\n", s->str);
-	printf("neg %d\nhash %d\nzero %d\npoint %d\nmoins %d\nplus %d\nel %d\nl_l %d\nach %d\nh_h %d\nspace %d\n", s->f->neg, s->f->hash, s->f->zero, s->f->point, s->f->moins, s->f->plus, s->f->el, s->f->l_l, s->f->ach, s->f->h_h, s->f->space);
+	printf("neg %d\nhash %d\nzero %d\npoint %d\nmoins %d\nplus %d\nel %d\nl_l %d\nach %d\nh_h %d\nspace %d\npctc %d", s->f->neg, s->f->hash, s->f->zero, s->f->point, s->f->moins, s->f->plus, s->f->el, s->f->l_l, s->f->ach, s->f->h_h, s->f->space, s->f->pctc);
 	printf("pres %d\nchamp %d\n", s->pres, s->champ);
 }
 
@@ -21,6 +21,7 @@ void	ft_reset_flags(t_s *s)
 	s->f->h_h = FALSE;
 	s->f->space = FALSE;
 	s->f->neg = FALSE;
+	s->f->pctc = FALSE;
 	s->pres = 0;
 	s->champ = 0;
 	ft_bzero(s->hex, 16);
@@ -99,15 +100,20 @@ int		ft_champ_size(t_s *s, int i)
 
 int		ft_loop(t_s *s)
 {
-	int i = -1;
-	int res = 0;
-	int tmp = 0;
+	int		i = -1;
+	int		res = 0;
+	int		tmp = 0;
+	int		bf = 0;
+	char	buff[64];
+	char	*str;
 
 	while (s->str[++i] != '\0')
 	{
 		if (s->str[i] != '%')
 		{
-			printf("%c", s->str[i]);
+			buff[bf++] = s->str[i];
+			if (bf == 65)
+				bf = ft_emptybuff(s, buff);
 			res++;
 		}
 		else
@@ -137,17 +143,26 @@ int		ft_loop(t_s *s)
 			}
 			// ft_putchar(s->str[i]);
 			// ft_putstr("   <-str[i]-\n");
-			if (!(tmp = ft_find_conv(s, i)) && s->str[i] != '\0')
+			str = ft_find_conv(s, i);
+			tmp = ft_strlen(str);
+			if (!(tmp) && s->str[i] != '\0' && s->f->pctc == FALSE)
 			{
-				if ((s->str[i] != 'x' || s->c->ulglg != 0) && s->str[i] != 's')
+				if ((s->str[i] != 'x' || s->c->ulglg != 0) && s->str[i] != 's'
+				&& s->str[i] != 'o' && s->str[i] != 'd')
 				{
-					printf("%c", s->str[i]);
+					buff[bf++] = s->str[i];
+					if (bf == 65)
+						bf = ft_emptybuff(s, buff);
 					res++;
 				}
 			}
+			else
+				bf = ft_buffering(s, buff, bf, str);
+			res = (s->f->pctc == TRUE && !tmp) ? res + 1 : res;
 			res += tmp;
 		}
 	}
+	ft_display(s, buff, bf);
 	return (res);
 }
 
@@ -162,6 +177,8 @@ int	ft_printf(char *str, ...)
 	s.str = str;
 	s.f = &f;
 	s.c = &c;
+	s.res = NULL;
+	s.mllc = 1;
 	s.pres = 0;
 	s.champ = 0;
 	i = ft_loop(&s);

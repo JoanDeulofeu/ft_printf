@@ -82,16 +82,22 @@ char	*ft_strvide(t_s *s, char *res)
 	return (res);
 }
 
-int		ft_pf_s(t_s *s, char *str)
+char	*ft_pf_s(t_s *s, char *str)
 {
-	(void)s;
 	int lgstr;
 	char *res;
 
 	res = NULL;
+	// if (s->f->pctc == TRUE)
+	// {
+	// 	if (!(res = (char *)malloc(sizeof(char) * 1 + 1)))
+	// 		exit(0);
+	// 	res = str;
+	// 	return (res);
+	// }
 	if (str == NULL)
 		str = "(null)";
-	lgstr = ft_strlen(str);
+	lgstr = s->f->pctc == TRUE ? 1 : ft_strlen(str);
 	if (ft_strcmp(str, "") == 0 && s->champ != 0)
 		res = ft_strvide(s, res);
 	else if (s->pres >= s->champ && s->f->moins == FALSE)
@@ -100,6 +106,5 @@ int		ft_pf_s(t_s *s, char *str)
 		res = ft_part2s(s, res, lgstr, str);
 	else
 		res = ft_part3s(s, res, lgstr, str);
-	printf("%s", res);
-	return (ft_strlen(res));
+	return (res);
 }

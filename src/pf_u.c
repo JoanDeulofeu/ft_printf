@@ -120,7 +120,7 @@ char		*ft_part1u(t_s *s, char *res, int lgnb, unsigned long long nb)
 	return(res);
 }
 
-int			ft_pf_u(t_s *s, unsigned long long nb)
+char		*ft_pf_u(t_s *s, unsigned long long nb)
 {
 	int		lgnb;
 	char	*res;
@@ -143,6 +143,5 @@ int			ft_pf_u(t_s *s, unsigned long long nb)
 		else
 			res = ft_part4u(s, res, lgnb, nb);
 	}
-	printf("%s", res);
-	return (ft_strlen(res));
+	return (res);
 }
