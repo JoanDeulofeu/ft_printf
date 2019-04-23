@@ -17,6 +17,9 @@ char		*pf_itoau(char *res, int i, unsigned long long nb, int lgnb)
 	int u;
 
 	u = -1;
+	// ft_putstr("lgnb = ");
+	// ft_putnbr(lgnb);
+	// ft_putstr("\n");
 	while (++u < lgnb - 1)
 	{
 		// ft_putnbr((nb / ft_pow(10, lgnb - u - 2) % 10));
@@ -126,7 +129,7 @@ char		*ft_pf_u(t_s *s, unsigned long long nb)
 	char	*res;
 
 	res = NULL;
-	lgnb = ft_nbrlen(nb);
+	lgnb = ft_unbrlen(nb);
 	if (s->f->moins == FALSE)
 	{
 		if (s->pres >= s->champ)

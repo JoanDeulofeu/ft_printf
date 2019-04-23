@@ -405,15 +405,81 @@ int		main(int ac, char **av)
 	// ft_printf("ft_printf=%#-7o\n", 42);
 	//    printf("printf   =%#-7o\n", 42);
 
-	ft_printf("@moulitest: %5.o %5.0o\n", 0, 0);
-	   printf("@moulitest: %5.o %5.0o\n", 0, 0);
+	// ft_printf("1moulitest: %5.o %5.0o\n", 0, 0);
+	//    printf("1moi----->: %5.o %5.0o\n", 0, 0);
+	//
+	// ft_printf("2moulitest: %5.d %5.0d\n", 0, 0);
+	//    printf("2moi----->: %5.d %5.0d\n", 0, 0);
+	//
+	// ft_printf("3moulitest: %5.o %5.0o\n", 1, 1);
+	//    printf("3moi----->: %5.o %5.0o\n", 1, 1);
+	//
+	// ft_printf("4moulitest: %5.d %5.0d\n", 1, 1);
+	//    printf("4moi----->: %5.d %5.0d\n", 1, 1);
+	// unsigned int ptdr = 4147483647;
+	//
+	// ft_printf("%u\n", ptdr);
+	//    printf("%u\n", ptdr);
+
+	// /*------------------------------------------------*/
+	// char *jik;
+	// if (!(jik = (char *)malloc(sizeof(char) * 24)))
+	// 	exit(0);
+	//
+	// jik = "lolptdrmdrxd\n";
+	// ft_putstr("jik = ");
+	// ft_putstr(jik);
+	// ft_putstr("ptr = ");
+	// ft_putnbr(jik);
+	// ft_putstr("\n\n");
+	//
+	// char *jok = "lo44518mdrxd\n";
+	// ft_putstr("jok = ");
+	// ft_putstr(jok);
+	// ft_putstr("ptr = ");
+	// ft_putnbr(&jok);
+	// ft_putstr("\n\n");
+	//
+	// printf("\npf jik = %p\npf jok = %p\n", jik, jok);
+	//
+	// t_s		s;
+	// t_flags	f;
+	// t_conv	c;
+	// int i = 0;
+	// unsigned long long joffrey = (unsigned long long)jik;
+	//
+	// s.str = str;
+	// s.f = &f;
+	// s.c = &c;
+	// s.res = NULL;
+	// s.mllc = 1;
+	// s.pres = 0;
+	// s.champ = 0;
+	// ft_dec_to_hex(&s, joffrey);
+	// write(1, s.hex, 16);
+	// /*------------------------------------------------*/
 
 
-
-
-
-
-
+	// printf("=-=-=-=-=-=  TEST DU #P =-=-=-=-=-=\n\n");
+	//
+	// char *golum = "goluuuuuuuum\n";
+	// ft_printf("    moi: %p|\n", golum);
+	//    printf("pas moi: %p|\n", golum);
+	//
+	// int *galum;
+	// int troplol = -1499;
+	// galum = troplol;
+	// ft_printf("    moi: %p|\n", galum);
+	//    printf("pas moi: %p|\n", galum);
+	//
+	// long  *gilum;
+	// long tropmdr = 2147483649;
+	// gilum = tropmdr;
+	// ft_printf("    moi: %p|\n", gilum);
+	//    printf("pas moi: %p|\n", gilum);
+	//
+	// ft_printf("    moi: %p|\n", malloc);
+	//    printf("pas moi: %p|\n", malloc);
 
 
 

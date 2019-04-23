@@ -47,7 +47,7 @@ char		*ft_xmaj(char *res)
 	return (res);
 }
 
-int		ft_dec_to_hex(t_s *s, unsigned long long nb)
+unsigned int		ft_dec_to_hex(t_s *s, unsigned long long nb)
 {
 	unsigned long long div;
 	unsigned long long mod;
@@ -146,6 +146,8 @@ char		*ft_find_conv(t_s *s, int i)
 		chr = (unsigned char)va_arg(s->params, int);
 	else if (s->str[i] == 's')
 		str = va_arg(s->params, char *);
+	else if (s->str[i] == 'p')
+		unb = va_arg(s->params, unsigned long long);
 	else if (s->str[i] == 'd' || s->str[i] == 'o')
 		nb = ft_modif(s, nb);
 	else if (s->str[i] == 'u' || s->str[i] == 'x' || s->str[i] == 'X')
@@ -178,9 +180,8 @@ char		*ft_find_conv(t_s *s, int i)
 	}
 	else if (s->str[i] == 'd' || s->str[i] == 'o')
 	{
-		// if (nb == 0)
-		// 	s->champ++;
-		// ft_putstr("worst conv\n");
+		if (nb == 0 && s->str[i] == 'd' && s->pres == 0)
+			s->champ++;
 		if (s->pres > 0 || s->f->moins == TRUE)
 			s->f->zero = FALSE;
 		res = ft_pf_d(s, nb);
@@ -202,6 +203,8 @@ char		*ft_find_conv(t_s *s, int i)
 	}
 	else if (s->str[i] == 's')
 		res = ft_pf_s(s, str);
+	else if (s->str[i] == 'p')
+		res = ft_pf_p(s, unb);
 	else
 	{
 		if (!(res = (char *)malloc(sizeof(char) * 1)))

@@ -80,6 +80,21 @@ int		ft_nbrlen(long long nb)
 	return (res);
 }
 
+int		ft_unbrlen(unsigned long long nb)
+{
+	int res;
+
+	res = 1;
+	if (nb == 0)
+		return (1);
+	while (nb > 9)
+	{
+		nb /= 10;
+		res++;
+	}
+	return (res);
+}
+
 int		ft_precision(t_s *s, int i)
 {
 	s->pres = ft_atoi(&s->str[i+1]);
@@ -145,16 +160,14 @@ int		ft_loop(t_s *s)
 			// ft_putstr("   <-str[i]-\n");
 			str = ft_find_conv(s, i);
 			tmp = ft_strlen(str);
-			if (!(tmp) && s->str[i] != '\0' && s->f->pctc == FALSE)
+			if (!(tmp) && s->str[i] != '\0' && s->f->pctc == FALSE && (s->str[i]
+			!= 'x' || s->c->ulglg != 0) && s->str[i] != 's' && s->str[i] != 'o'
+			&& s->str[i] != 'd')
 			{
-				if ((s->str[i] != 'x' || s->c->ulglg != 0) && s->str[i] != 's'
-				&& s->str[i] != 'o' && s->str[i] != 'd')
-				{
-					buff[bf++] = s->str[i];
-					if (bf == 65)
-						bf = ft_emptybuff(s, buff);
-					res++;
-				}
+				buff[bf++] = s->str[i];
+				if (bf == 65)
+					bf = ft_emptybuff(s, buff);
+				res++;
 			}
 			else
 				bf = ft_buffering(s, buff, bf, str);
@@ -171,7 +184,7 @@ int	ft_printf(char *str, ...)
 	t_s		s;
 	t_flags	f;
 	t_conv	c;
-	int i;
+	int i = 0;
 
 	va_start(s.params, str);
 	s.str = str;
