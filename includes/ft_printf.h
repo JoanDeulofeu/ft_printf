@@ -23,6 +23,7 @@ typedef struct			s_flags
 	char				plus;
 	char				point;
 	char				el;
+	char				big_l;
 	char				l_l;
 	char				ach;
 	char				h_h;
@@ -61,6 +62,7 @@ typedef struct			s_s
 	int					champ;
 	va_list				params;
 	char				hex[16];
+
 }						t_s;
 
 /*
@@ -70,10 +72,12 @@ typedef struct			s_s
 int						ft_printf(char *str, ...);
 int						ft_nbrlen(long long nb);
 int						ft_unbrlen(unsigned long long nb);
+int						ft_ldblen(long double db);
 char					*ft_pf_d(t_s *s, long long nb);
 char					*ft_pf_u(t_s *s, unsigned long long nb);
 char					*ft_pf_p(t_s *s, unsigned long long unb);
 char					*ft_pf_x(t_s *s, unsigned long long nb);
+char					*ft_pf_f(t_s *s, long double db);
 char					*ft_pf_s(t_s *s, char *str);
 void					ft_print_param(t_s *s);
 char					*ft_find_conv(t_s *s, int i);
@@ -84,5 +88,6 @@ long long				ft_absll(long long c);
 void					ft_display(t_s *s, char *buff, int bf);
 int						ft_buffering(t_s *s, char *buff, int bf, char *str);
 int						ft_emptybuff(t_s *s, char *buff);
+char					*pf_ftoa(char *res, int i, long double db, t_s *s); //pas neccesaire
 
 #endif

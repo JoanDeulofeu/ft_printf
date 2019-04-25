@@ -134,6 +134,8 @@ char		*ft_find_conv(t_s *s, int i)
 	char				*res;
 	long long			nb;
 	unsigned long long	unb;
+	long double			ldb;
+
 
 	ft_bzero(s->hex, 16);
 	chr = '\0';
@@ -141,11 +143,14 @@ char		*ft_find_conv(t_s *s, int i)
 	nb = 0;
 	res = NULL;
 	unb = 0;
+	ldb = 0;
 
 	if (s->str[i] == 'c')
 		chr = (unsigned char)va_arg(s->params, int);
 	else if (s->str[i] == 's')
 		str = va_arg(s->params, char *);
+	else if (s->str[i] == 'f')
+		ldb = va_arg(s->params, long double);
 	else if (s->str[i] == 'p')
 		unb = va_arg(s->params, unsigned long long);
 	else if (s->str[i] == 'd' || s->str[i] == 'o')
@@ -184,6 +189,8 @@ char		*ft_find_conv(t_s *s, int i)
 			s->champ++;
 		if (s->pres > 0 || s->f->moins == TRUE)
 			s->f->zero = FALSE;
+		if (s->str[i] == 'd')
+			s->f->hash = FALSE;
 		res = ft_pf_d(s, nb);
 		if (s->f->hash == TRUE)
 			res = ft_hashzero(res);
@@ -203,6 +210,12 @@ char		*ft_find_conv(t_s *s, int i)
 	}
 	else if (s->str[i] == 's')
 		res = ft_pf_s(s, str);
+	else if (s->str[i] == 'f')
+	{
+		if (s->f->moins == TRUE)
+			s->f->zero = FALSE;
+		res = ft_pf_f(s, ldb);
+	}
 	else if (s->str[i] == 'p')
 		res = ft_pf_p(s, unb);
 	else

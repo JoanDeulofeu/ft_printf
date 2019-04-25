@@ -3,7 +3,7 @@
 void	ft_print_param(t_s *s)
 {
 	printf("STR -- %s\n", s->str);
-	printf("neg %d\nhash %d\nzero %d\npoint %d\nmoins %d\nplus %d\nel %d\nl_l %d\nach %d\nh_h %d\nspace %d\npctc %d", s->f->neg, s->f->hash, s->f->zero, s->f->point, s->f->moins, s->f->plus, s->f->el, s->f->l_l, s->f->ach, s->f->h_h, s->f->space, s->f->pctc);
+	printf("neg %d\nhash %d\nzero %d\npoint %d\nmoins %d\nplus %d\nel %d\nl_l %d\nach %d\nh_h %d\nbig_l %d\nspace %d\npctc %d\n", s->f->neg, s->f->hash, s->f->zero, s->f->point, s->f->moins, s->f->plus, s->f->el, s->f->l_l, s->f->ach, s->f->h_h, s->f->big_l, s->f->space, s->f->pctc);
 	printf("pres %d\nchamp %d\n", s->pres, s->champ);
 }
 
@@ -16,6 +16,7 @@ void	ft_reset_flags(t_s *s)
 	s->f->plus = FALSE;
 	s->f->point = FALSE;
 	s->f->el = FALSE;
+	s->f->big_l = FALSE;
 	s->f->l_l = FALSE;
 	s->f->ach = FALSE;
 	s->f->h_h = FALSE;
@@ -33,6 +34,8 @@ int	ft_which_flags(t_s *s, int i)
 		s->f->hash = TRUE;
 	else if (s->str[i] == '0')
 		s->f->zero = TRUE;
+	else if (s->str[i] == 'L')
+		s->f->big_l = TRUE;
 	else if (s->str[i] == '-')
 		s->f->moins = TRUE;
 	else if (s->str[i] == '+')
@@ -95,6 +98,21 @@ int		ft_unbrlen(unsigned long long nb)
 	return (res);
 }
 
+int		ft_ldblen(long double db)
+{
+	int res;
+
+	res = 1;
+	if (db == 0)
+		return (1);
+	while (db > 9)
+	{
+		db /= 10;
+		res++;
+	}
+	return (res);
+}
+
 int		ft_precision(t_s *s, int i)
 {
 	s->pres = ft_atoi(&s->str[i+1]);
@@ -138,12 +156,14 @@ int		ft_loop(t_s *s)
 			tmp = 0;
 			while (s->str[i] == '#' || s->str[i] == '-' || s->str[i] == '+'
 			||  s->str[i] == 'l' || s->str[i] == 'h' || s->str[i] == '.'
-			|| s->str[i] == ' ' || (s->str[i] >= '0' && s->str[i] <= '9'))
+			|| s->str[i] == ' ' || s->str[i] == 'L' || (s->str[i] >= '0'
+			&& s->str[i] <= '9'))
 			{
 				// ft_putnbr(i);
 				// ft_putstr("   <-ENTREE-  i\n");
 				if (s->str[i] == '#' || s->str[i] == '0' || s->str[i] == '-'
-				|| s->str[i] == '+' ||  s->str[i] == 'l' || s->str[i] == ' ' || s->str[i] == 'h')
+				|| s->str[i] == '+' ||  s->str[i] == 'l' || s->str[i] == ' '
+				|| s->str[i] == 'L' || s->str[i] == 'h')
 					i = ft_which_flags(s, i);
 
 				if (s->str[i] == '.')

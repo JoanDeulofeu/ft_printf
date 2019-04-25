@@ -1,4 +1,6 @@
 #include "includes/ft_printf.h"
+#include <limits.h>
+#include <float.h>
 
 void  ft_d(void)
 {
@@ -71,13 +73,13 @@ int		main(int ac, char **av)
 	char *str = "Bonjour les amis!";
 	char *strvide = "";
 	char *strnull = NULL;
-	int nb = 0;
+	int nb = 42;
 	long long llnb = -419246576;
 	// int nb2 = 88888;
 
 	// printf("=-=-=-=-=-=  TEST DU #D =-=-=-=-=-=\n\n");
 	//
-	//// ft_d();
+	// // ft_d();
 	// ft_printf("ft_printf1 =%d \n", nb );
 	//    printf("printf1    =%d \n\n", nb);
 	//
@@ -99,11 +101,12 @@ int		main(int ac, char **av)
 	// ft_printf("ft_printf7 =%    +13.8d\n", nb);
 	//    printf("printf7    =%    +13.8d\n\n", nb);
 	//
-	// ft_printf("ft_printf8 =%+13.8d\n", nb);
-	//    printf("printf8    =%+13.8d\n\n", nb);
+	// ft_printf("ft_printf8 =%+13.d|\n", nb);
+	//    printf("printf8    =%+13.d|\n\n", nb);
 	//
 	// fpf = ft_printf("ft_printf9 =%+08.13d\n", nb);
 	// 	pf = printf("printf9    =%+08.13d\n\n", nb);
+	//
 	// printf("ft_printf %d\n", fpf + 1);
 	// printf("printf    %d\n", pf);
 	//
@@ -151,7 +154,7 @@ int		main(int ac, char **av)
 	//
 	// ft_printf("ft_printf24=% 10.14jd\n", nb);
 	//    printf("printf24   =jd\n\n", nb);
-
+	//
 	// ft_printf("ft_printf25=% 10.14hd\n", nb);
 	//    printf("printf25   =% 10.14hd\n\n", nb);
 	//
@@ -165,10 +168,10 @@ int		main(int ac, char **av)
 	// 	pf = printf("printf27   =% 10.14hhd\n\n", nb);
 	// printf("ft_printf %d\n", fpf + 1);
 	// printf("printf    %d\n", pf);
-
-
-
-
+	//
+	//
+	//
+	//
 	// printf("=-=-=-=-=-=  TEST DU #O =-=-=-=-=-=\n\n");
 	// ft_printf("ft_printf1=%o\n", nb);
 	//    printf("printf1   =%o\n\n", nb);
@@ -183,10 +186,10 @@ int		main(int ac, char **av)
 	//
 	// ft_printf("ft_printf4=%.10 18o\n", nb);
 	//    printf("printf4   =%.10 18o\n\n", nb);
-	//
-	// // IMPOSSIBLE a gerer en cas de nbr negatif en ENTREE
-	//
-	//
+	// //
+	// // // IMPOSSIBLE a gerer en cas de nbr negatif en ENTREE
+	// //
+	// //
 	// printf("=-=-=-=-=-=  TEST DU #U =-=-=-=-=-=\n\n");
 	// ft_printf("ft_printf1=%u\n", nb);
 	//    printf("printf1   =%u\n\n", nb);
@@ -264,9 +267,14 @@ int		main(int ac, char **av)
 	//
    	// ft_printf("ft_printf19=%#-18.7 X\n", nb);
    	//    printf("printf19   =%#-18.7 X\n\n", nb);
-
-
-
+	//
+   	fpf = ft_printf("ft_printf19=%9.8X|\n", 0);
+   	pf = printf("printf19   =%9.8X|\n\n", 0);
+	printf("ft_printf %d\n", fpf + 1);
+	printf("printf    %d\n\n", pf);
+	//
+	//
+	//
 	// printf("=-=-=-=-=-=  TEST DU #C =-=-=-=-=-=\n\n");
 	// ft_printf("ft_printf1=%c\n", chr);
 	//    printf("printf1   =%c\n\n", chr);
@@ -303,15 +311,15 @@ int		main(int ac, char **av)
 	//
 	// ft_printf("ft_printf12=%-1.1c\n", chr);
 	//    printf("printf12   =%-1.1c\n\n", chr);
-
-
-
+	//
+	//
+	//
 	// printf("=-=-=-=-=-=  TEST DU #S =-=-=-=-=-=\n\n");
 	// fpf = ft_printf("ft_printf1=%s\n", str);
 	// 	pf = printf("printf1   =%s\n\n", str);
 	// printf("ft_printf %d\n", fpf + 1);
 	// printf("printf    %d\n\n", pf);
-
+	//
 	// fpf = ft_printf("ft_printf2=%.10s\n", str);
 	// 	pf = printf("printf2   =%.10s\n\n", str);
 	//
@@ -386,16 +394,16 @@ int		main(int ac, char **av)
 	//
 	// fpf = ft_printf("ft_printf25=%4.4s\n", strnull);
 	// 	pf = printf("printf25   =%4.4s\n\n", strnull);
-
-
-
-
+	//
+	//
+	//
+	//
 	// ft_printf("ft_printf=%c\n", NULL);
 	//    printf("printf   =%c\n", NULL);
 	//
 	// ft_printf("ft_printf=%5c\n", NULL);
 	//    printf("printf   =%5c\n", NULL);
-
+	//
 	// ft_printf("ft_printf=%5o\n", 42);
 	//    printf("printf   =%5o\n", 42);
 	//
@@ -404,7 +412,7 @@ int		main(int ac, char **av)
 	//
 	// ft_printf("ft_printf=%#-7o\n", 42);
 	//    printf("printf   =%#-7o\n", 42);
-
+	//
 	// ft_printf("1moulitest: %5.o %5.0o\n", 0, 0);
 	//    printf("1moi----->: %5.o %5.0o\n", 0, 0);
 	//
@@ -420,46 +428,46 @@ int		main(int ac, char **av)
 	//
 	// ft_printf("%u\n", ptdr);
 	//    printf("%u\n", ptdr);
-
-	// /*------------------------------------------------*/
-	// char *jik;
-	// if (!(jik = (char *)malloc(sizeof(char) * 24)))
-	// 	exit(0);
 	//
-	// jik = "lolptdrmdrxd\n";
-	// ft_putstr("jik = ");
-	// ft_putstr(jik);
-	// ft_putstr("ptr = ");
-	// ft_putnbr(jik);
-	// ft_putstr("\n\n");
+	// // /*------------------------------------------------*/
+	// // char *jik;
+	// // if (!(jik = (char *)malloc(sizeof(char) * 24)))
+	// // 	exit(0);
+	// //
+	// // jik = "lolptdrmdrxd\n";
+	// // ft_putstr("jik = ");
+	// // ft_putstr(jik);
+	// // ft_putstr("ptr = ");
+	// // ft_putnbr(jik);
+	// // ft_putstr("\n\n");
+	// //
+	// // char *jok = "lo44518mdrxd\n";
+	// // ft_putstr("jok = ");
+	// // ft_putstr(jok);
+	// // ft_putstr("ptr = ");
+	// // ft_putnbr(&jok);
+	// // ft_putstr("\n\n");
+	// //
+	// // printf("\npf jik = %p\npf jok = %p\n", jik, jok);
+	// //
+	// // t_s		s;
+	// // t_flags	f;
+	// // t_conv	c;
+	// // int i = 0;
+	// // unsigned long long joffrey = (unsigned long long)jik;
+	// //
+	// // s.str = str;
+	// // s.f = &f;
+	// // s.c = &c;
+	// // s.res = NULL;
+	// // s.mllc = 1;
+	// // s.pres = 0;
+	// // s.champ = 0;
+	// // ft_dec_to_hex(&s, joffrey);
+	// // write(1, s.hex, 16);
+	// // /*------------------------------------------------*/
 	//
-	// char *jok = "lo44518mdrxd\n";
-	// ft_putstr("jok = ");
-	// ft_putstr(jok);
-	// ft_putstr("ptr = ");
-	// ft_putnbr(&jok);
-	// ft_putstr("\n\n");
 	//
-	// printf("\npf jik = %p\npf jok = %p\n", jik, jok);
-	//
-	// t_s		s;
-	// t_flags	f;
-	// t_conv	c;
-	// int i = 0;
-	// unsigned long long joffrey = (unsigned long long)jik;
-	//
-	// s.str = str;
-	// s.f = &f;
-	// s.c = &c;
-	// s.res = NULL;
-	// s.mllc = 1;
-	// s.pres = 0;
-	// s.champ = 0;
-	// ft_dec_to_hex(&s, joffrey);
-	// write(1, s.hex, 16);
-	// /*------------------------------------------------*/
-
-
 	// printf("=-=-=-=-=-=  TEST DU #P =-=-=-=-=-=\n\n");
 	//
 	// char *golum = "goluuuuuuuum\n";
@@ -480,9 +488,81 @@ int		main(int ac, char **av)
 	//
 	// ft_printf("    moi: %p|\n", malloc);
 	//    printf("pas moi: %p|\n", malloc);
+	//
+	//
+	// printf("=-=-=-=-=-=  TEST DU #F =-=-=-=-=-=\n\n");
+	//
+	// long double ldb = 45999123456789012.12345678901234567890L;
+	// 	  double db =
+	// 	245245245999123456789012.12345678901234567890L;
+	// // long double ldb = LDBL_MAX;
+	// // 	  double db = LDBL_MAX;
+	//
+	// // printf("ldb max = %Lf|\n", LDBL_MAX);
+	// // printf(" db = %.10f|\n", db);
+	//
+	// ft_printf("ft_printf= %040.10Lf|\n", ldb);
+	//    printf("   printf= %040.10Lf|\n\n", ldb);
+	//
+	// ft_printf("ft_printf= %40.10Lf|\n", ldb);
+	//    printf("   printf= %40.10Lf|\n\n", ldb);
+	//
+	// ft_printf("ft_printf= % +40.10Lf|\n", ldb);
+	//    printf("   printf= % +40.10Lf|\n\n", ldb);
+	//
+	// ft_printf("ft_printf= % .10Lf|\n", ldb);
+	//    printf("   printf= % .10Lf|\n\n", ldb);
+	//
+	// ft_printf("ft_printf= %20.10Lf|\n", ldb);
+	//    printf("   printf= %20.10Lf|\n\n", ldb);
+	//
+	// ft_printf("ft_printf= %.0Lf|\n", ldb);
+	//    printf("   printf= %.0Lf|\n\n", ldb);
+	//
+	// ft_printf("ft_printf= %20Lf|\n", ldb);
+	//    printf("   printf= %20Lf|\n\n", ldb);
+	//
+	// // printf("Test du '-' :\n\n");
+	//
+	// ft_printf("ft_printf= %- .10Lf|\n", ldb);
+	//    printf("   printf= %- .10Lf|\n\n", ldb);
+	//
+	// ft_printf("ft_printf= %-20.10Lf|\n", ldb);
+	//    printf("   printf= %-20.10Lf|\n\n", ldb);
+	//
+	// ft_printf("ft_printf= %-.0Lf|\n", ldb);
+	//    printf("   printf= %-.0Lf|\n\n", ldb);
+	//
+	// ft_printf("ft_printf= %-20Lf|\n", ldb);
+	//    printf("   printf= %-20Lf|\n\n", ldb);
+	//
+	// ft_printf("ft_printf= %-040.10Lf|\n", ldb);
+   	//    printf("   printf= %-040.10Lf|\n\n", ldb);
+	//
+   	// ft_printf("ft_printf= %-40.10Lf|\n", ldb);
+   	//    printf("   printf= %-40.10Lf|\n\n", ldb);
+	//
+   	// ft_printf("ft_printf= %- +40.10Lf|\n", ldb);
+   	//    printf("   printf= %- +40.10Lf|\n\n", ldb);
 
 
 
+
+
+	// /*------------------------------------------------*/
+	// char *resi;
+	// int lgdb;
+	//
+	// lgdb = ft_ldblen(ldb);
+	// // printf("lg de ldb = %d\n", lgdb);
+	// if (!(resi = (char *)malloc(sizeof(char) * lgdb + 2)))
+	// 	exit(0);
+	// ft_bzero(resi, lgdb + 2);
+	// resi = pf_ftoa(resi, 0, ldb, lgdb);
+	// printf("resi = %s\n", resi);
+
+
+	// /*------------------------------------------------*/
 
 
 
