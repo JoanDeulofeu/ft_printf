@@ -1,9 +1,9 @@
 #include "../includes/ft_printf.h"
 
-long double	ft_fpow(long double db, int power)
+double	ft_fpow2(double db, int power)
 {
-	long double i;
-	long double tmp;
+	double i;
+	double tmp;
 
 	i = 0;
 	tmp = db;
@@ -12,7 +12,22 @@ long double	ft_fpow(long double db, int power)
 	return (db);
 }
 
-char	*ft_round_ldb(long double db, char *res, int i)
+int		ft_dblen(long double db)
+{
+	int res;
+
+	res = 1;
+	if (db == 0)
+		return (1);
+	while (db > 9)
+	{
+		db /= 10;
+		res++;
+	}
+	return (res);
+}
+
+char	*ft_round_db(double db, char *res, int i)
 {
 	int round;
 
@@ -33,22 +48,22 @@ char	*ft_round_ldb(long double db, char *res, int i)
 	return (res);
 }
 
-char		*pf_ftoa(char *res, int i, long double db, t_s *s)
+char		*pf_ftoa2(char *res, int i, double db, t_s *s)
 {
 	int u;
-	int lgdb = ft_ldblen(db);
+	int lgdb = ft_dblen(db);
 	long long tmp = 0;
-	long double save = db;
+	double save = db;
 	int pres;
 
 	u = -1;
 	pres = (s->pres == 0 ? 6 : s->pres);
 	while (++u < lgdb - 1)
 	{
-		tmp = db / ft_fpow(10, lgdb - u - 2);
+		tmp = db / ft_fpow2(10, lgdb - u - 2);
 		res[i++] = tmp + 48;
-		db -= tmp * ft_fpow(10, lgdb - u - 2);
-		// printf("\nTEST(%d) \ntmp= %lld   res[i]= %d   db= %Lf\n", u, tmp, res[i - 1], db);
+		db -= tmp * ft_fpow2(10, lgdb - u - 2);
+		// printf("\nTEST(%d) \ntmp= %lld   res[i]= %d   db= %f\n", u, tmp, res[i - 1], db);
 	}
 	res[i++] = db + 48;
 	if (s->f->point == TRUE && s->pres == 0)
@@ -56,30 +71,24 @@ char		*pf_ftoa(char *res, int i, long double db, t_s *s)
 	res[i++] = '.';
 	tmp = db;
 	db -= tmp;
-	// printf("test ------->   %Lf\n", db);
-	db *= ft_fpow(10, pres - 1);
-	// printf("test ------->   %Lf\n", db);
+	// printf("test ------->   %f\n", db);
+	db *= ft_fpow2(10, pres - 1);
+	// printf("test ------->   %f\n", db);
 	u = -1;
 	while (++u < pres)
 	{
-		tmp = db / ((pres - u - 2) > -1 ? ft_fpow(10, pres - u - 2) : 1);
+		tmp = db / ((pres - u - 2) > -1 ? ft_fpow2(10, pres - u - 2) : 1);
 		res[i++] = tmp + 48;
-		db -= tmp * ((pres - u - 2) > -1 ? ft_fpow(10, pres - u - 2) : 1);
-		// printf("\nTEST(%d) \ntmp= %lld   res[i]= %c   db= %Lf   calcul=%d\n", u, tmp, res[i - 1], db, pres - u - 2);
+		db -= tmp * ((pres - u - 2) > -1 ? ft_fpow2(10, pres - u - 2) : 1);
+		// printf("\nTEST(%d) \ntmp= %lld   res[i]= %d   db= %f\n", u, tmp, res[i - 1], db);
 	}
-	res = ft_round_ldb(db, res, i - 1);
+	res = ft_round_db(db, res, i - 1);
 	return (res);
 }
 
-int		ft_truelg(t_s *s, int lgdb)
+char	*ft_part1f2(t_s *s, char *res, int lgdb, double db)
 {
-	if (s->f->point == TRUE && s->pres == 0)
-		return (lgdb);
-	return (lgdb + 1 + (s->pres == 0 ? 6 : s->pres));
-}
-
-char	*ft_part1f(t_s *s, char *res, int lgdb, long double db)
-{
+	printf("PART1\n");
 	int i;
 	int u;
 	int truelg;
@@ -90,17 +99,19 @@ char	*ft_part1f(t_s *s, char *res, int lgdb, long double db)
 	if (!(res = (char *)malloc(sizeof(char) * (s->champ > truelg ? s->champ : truelg) + 6 + 2)))
 		exit(0);
 	ft_bzero(res, (s->champ > truelg ? s->champ : truelg) + 6 + 2);
+	// ft_printf("CHAMP=%d\nPRES=%d\nLGDB=%d\nTRUELG=%d\n", s->champ, s->pres, lgdb, truelg);
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
 	while (u++ < (s->champ - truelg))
 		res[i++] = ' ';
 	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
 		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
-	res = pf_ftoa(res, i, db, s);
+	res = pf_ftoa2(res, i, db, s);
 	return (res);
 }
 
-char	*ft_part2f(t_s *s, char *res, int lgdb, long double db)
+char	*ft_part2f2(t_s *s, char *res, int lgdb, double db)
 {
+	printf("PART2\n");
 	int i;
 	int u;
 	int truelg;
@@ -116,12 +127,13 @@ char	*ft_part2f(t_s *s, char *res, int lgdb, long double db)
 		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
 	while (u++ < (s->champ - truelg))
 		res[i++] = '0';
-	res = pf_ftoa(res, i, db, s);
+	res = pf_ftoa2(res, i, db, s);
 	return (res);
 }
 
-char	*ft_part3f(t_s *s, char *res, int lgdb, long double db)
+char	*ft_part3f2(t_s *s, char *res, int lgdb, double db)
 {
+	printf("PART3\n");
 	int i;
 	int u;
 	int truelg;
@@ -135,14 +147,14 @@ char	*ft_part3f(t_s *s, char *res, int lgdb, long double db)
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
 	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
 		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
-	res = pf_ftoa(res, i, db, s);
+	res = pf_ftoa2(res, i, db, s);
 	i += truelg;
 	while (u++ < (s->champ - truelg))
 		res[i++] = ' ';
 	return (res);
 }
 
-char		*ft_pf_f(t_s *s, long double db)
+char		*ft_pf_f2(t_s *s, double db)
 {
 	int		lgdb;
 	char	*res;
@@ -150,32 +162,15 @@ char		*ft_pf_f(t_s *s, long double db)
 	res = NULL;
 	s->f->neg = db < 0 ? TRUE : FALSE;
 	db = db < 0 ? db * -1 : db;
-	lgdb = ft_ldblen(db);
+	lgdb = ft_dblen(db);
 	if (s->f->moins == FALSE)
 	{
 		if (s->f->zero == FALSE)
-			res = ft_part1f(s, res, lgdb, db);
+			res = ft_part1f2(s, res, lgdb, db);
 		else
-			res = ft_part2f(s, res, lgdb, db);
+			res = ft_part2f2(s, res, lgdb, db);
 	}
 	else
-		res = ft_part3f(s, res, lgdb, db);
+		res = ft_part3f2(s, res, lgdb, db);
 	return (res);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//lol

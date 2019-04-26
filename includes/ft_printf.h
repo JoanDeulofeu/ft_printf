@@ -79,6 +79,7 @@ char					*ft_pf_p(t_s *s, unsigned long long unb);
 char					*ft_pf_x(t_s *s, unsigned long long nb);
 char					*ft_pf_f(t_s *s, long double db);
 char					*ft_pf_s(t_s *s, char *str);
+char					*ft_pf_f2(t_s *s, double db);
 void					ft_print_param(t_s *s);
 char					*ft_find_conv(t_s *s, int i);
 long long				ft_dec_to_oct(long long nb);
@@ -89,5 +90,6 @@ void					ft_display(t_s *s, char *buff, int bf);
 int						ft_buffering(t_s *s, char *buff, int bf, char *str);
 int						ft_emptybuff(t_s *s, char *buff);
 char					*pf_ftoa(char *res, int i, long double db, t_s *s); //pas neccesaire
+int						ft_truelg(t_s *s, int lgdb);
 
 #endif

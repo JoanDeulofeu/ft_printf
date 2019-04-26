@@ -135,6 +135,7 @@ char		*ft_find_conv(t_s *s, int i)
 	long long			nb;
 	unsigned long long	unb;
 	long double			ldb;
+	double				db;
 
 
 	ft_bzero(s->hex, 16);
@@ -149,8 +150,10 @@ char		*ft_find_conv(t_s *s, int i)
 		chr = (unsigned char)va_arg(s->params, int);
 	else if (s->str[i] == 's')
 		str = va_arg(s->params, char *);
-	else if (s->str[i] == 'f')
+	else if (s->str[i] == 'f' && s->f->big_l == TRUE)
 		ldb = va_arg(s->params, long double);
+	else if (s->str[i] == 'f' && s->f->big_l == FALSE)
+		db = va_arg(s->params, double);
 	else if (s->str[i] == 'p')
 		unb = va_arg(s->params, unsigned long long);
 	else if (s->str[i] == 'd' || s->str[i] == 'o')
@@ -214,7 +217,7 @@ char		*ft_find_conv(t_s *s, int i)
 	{
 		if (s->f->moins == TRUE)
 			s->f->zero = FALSE;
-		res = ft_pf_f(s, ldb);
+		res = s->f->big_l == TRUE ? ft_pf_f(s, ldb) : ft_pf_f2(s, db);
 	}
 	else if (s->str[i] == 'p')
 		res = ft_pf_p(s, unb);
