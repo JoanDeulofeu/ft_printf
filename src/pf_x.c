@@ -83,11 +83,14 @@ char		*ft_part2x(t_s *s, char *res, int lgnb, unsigned long long nb)
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 4);
 	if (s->pres != 0 && s->pres > lgnb)
-		u += s->pres - lgnb;
+		u += (nb == 0) ? s->pres : s->pres - lgnb;
+	// printf("\nu=%d      lgnb=%d\n", u, lgnb);
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
 	u = s->f->hash == TRUE ? u + 2 : u;
+	// printf("\nu=%d   valeur=%d\n", u, (nb != 0 ? s->champ - lgnb : s->champ));
 	while (u++ < (nb != 0 ? s->champ - lgnb : s->champ))
 		res[i++] = ' ';
+	// printf("\nu=%d\n", u);
 	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
 		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
 	u = 0;

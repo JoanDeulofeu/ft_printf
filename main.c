@@ -73,7 +73,7 @@ int		main(int ac, char **av)
 	char *str = "Bonjour les amis!";
 	char *strvide = "";
 	char *strnull = NULL;
-	int nb = 42;
+	int nb = 8598;
 	long long llnb = -419246576;
 	// int nb2 = 88888;
 
@@ -211,67 +211,71 @@ int		main(int ac, char **av)
 	//
 	//
 	// printf("=-=-=-=-=-=  TEST DU #X =-=-=-=-=-=\n\n");
-	// ft_printf("ft_printf1=%#5.0x\n", nb);
-	//    printf("printf1   =%#5.0x\n\n", nb);
-	//
-	// ft_printf("ft_printf2=%+0 18x\n", nb);
-	//    printf("printf2   =%+0 18x\n\n", nb);
-	//
-	// ft_printf("ft_printf3=%+-018x\n", nb);
-	//    printf("printf3   =%+-018x\n\n", nb);
-	//
-	// ft_printf("ft_printf4=%18.0x\n", nb);
-	//    printf("printf4   =%18.0x\n\n", nb);
-	//
-	// ft_printf("ft_printf5=%#-18.7 x\n", nb);
-	//    printf("printf5   =%#-18.7 x\n\n", nb);
-	//
-	// ft_printf("ft_printf6=%#+0 18x\n", nb);
-	//    printf("printf6   =%#+0 18x\n\n", nb);
-	//
-	// ft_printf("ft_printf7=%#+-018x\n", nb);
-	//    printf("printf7   =%#+-018x\n\n", nb);
-	//
-	// ft_printf("ft_printf8=%#18.0x\n", nb);
-	//    printf("printf8   =%#18.0x\n\n", nb);
-	//
-	// ft_printf("ft_printf9=%#-18.7 x\n", nb);
-	//    printf("printf9   =%#-18.7 x\n\n", nb);
-	//
-	// ft_printf("ft_printf10=%#18.7 x\n", nb);
-	//    printf("printf10   =%#18.7 x\n\n", nb);
-	//
-	// ft_printf("ft_printf11=%#.7 x\n", nb);
-	//    printf("printf11   =%#.7 x\n\n", nb);
-	//
-	// ft_printf("ft_printf12=%# -20.7 x\n", nb);
-	//    printf("printf12   =%# -20.7 x\n\n", nb);
-	//
-	// ft_printf("ft_printf13=%#.7 X\n", nb);
-	//    printf("printf13   =%#.7 X\n\n", nb);
-	//
-	// ft_printf("ft_printf14=%# -20.7 X\n", nb);
-	//    printf("printf14   =%# -20.7 X\n\n", nb);
-	//
-	// ft_printf("ft_printf15=%#X\n", nb);
-   	//    printf("printf15   =%#X\n\n", nb);
-	//
-   	// ft_printf("ft_printf16=%+0 18X\n", nb);
-   	//    printf("printf16   =%+0 18X\n\n", nb);
-	//
-   	// ft_printf("ft_printf17=%+-018X\n", nb);
-   	//    printf("printf17   =%+-018X\n\n", nb);
-	//
-   	// ft_printf("ft_printf18=%18.0X\n", nb);
-   	//    printf("printf18   =%18.0X\n\n", nb);
-	//
-   	// ft_printf("ft_printf19=%#-18.7 X\n", nb);
-   	//    printf("printf19   =%#-18.7 X\n\n", nb);
-	//
+	ft_printf("ft_printf1=%#5.0x|\n", nb);
+	   printf("printf1   =%#5.0x|\n\n", nb);
+
+	ft_printf("ft_printf2=%+0 18x|\n", nb);
+	   printf("printf2   =%+0 18x|\n\n", nb);
+
+	ft_printf("ft_printf3=%+-018x|\n", nb);
+	   printf("printf3   =%+-018x|\n\n", nb);
+
+	ft_printf("ft_printf4=%18.0x|\n", nb);
+	   printf("printf4   =%18.0x|\n\n", nb);
+
+	ft_printf("ft_printf5=%#-18.7 x|\n", nb);
+	   printf("printf5   =%#-18.7 x|\n\n", nb);
+
+	ft_printf("ft_printf6=%#+0 18x|\n", nb);
+	   printf("printf6   =%#+0 18x|\n\n", nb);
+
+	ft_printf("ft_printf7=%#+-018x|\n", nb);
+	   printf("printf7   =%#+-018x|\n\n", nb);
+
+	ft_printf("ft_printf8=%#18.0x|\n", nb);
+	   printf("printf8   =%#18.0x|\n\n", nb);
+
+	ft_printf("ft_printf9=%#-18.7 x|\n", nb);
+	   printf("printf9   =%#-18.7 x|\n\n", nb);
+
+	ft_printf("ft_printf10=%#18.7 x|\n", nb);
+	   printf("printf10   =%#18.7 x|\n\n", nb);
+
+	ft_printf("ft_printf11=%#.7 x|\n", nb);
+	   printf("printf11   =%#.7 x|\n\n", nb);
+
+	ft_printf("ft_printf12=%# -20.7 x|\n", nb);
+	   printf("printf12   =%# -20.7 x|\n\n", nb);
+
+	ft_printf("ft_printf13=%#.7 X|\n", nb);
+	   printf("printf13   =%#.7 X|\n\n", nb);
+
+	ft_printf("ft_printf14=%# -20.7 X|\n", nb);
+	   printf("printf14   =%# -20.7 X|\n\n", nb);
+
+	ft_printf("ft_printf15=%#X|\n", nb);
+   	   printf("printf15   =%#X|\n\n", nb);
+
+   	ft_printf("ft_printf16=%+0 18X|\n", nb);
+   	   printf("printf16   =%+0 18X|\n\n", nb);
+
+   	ft_printf("ft_printf17=%+-018X|\n", nb);
+   	   printf("printf17   =%+-018X|\n\n", nb);
+
+   	ft_printf("ft_printf18=%18.0X|\n", nb);
+   	   printf("printf18   =%18.0X|\n\n", nb);
+
+   	ft_printf("ft_printf19=%#-18.7 X|\n", nb);
+   	   printf("printf19   =%#-18.7 X|\n\n", nb);
+
    	fpf = ft_printf("ft_printf19=%9.8X|\n", 0);
-   	pf = printf("printf19   =%9.8X|\n\n", 0);
-	printf("ft_printf %d\n", fpf + 1);
-	printf("printf    %d\n\n", pf);
+   	pf = printf("printf19   =%9.8X|\n", 0);
+	// printf("ft_printf %d\n", fpf);
+	// printf("printf    %d\n\n", pf);
+   	// fpf = ft_printf("ft_printf19=%#9.8X|\n", 0);
+   	// pf = printf("printf19   =%#9.8X|\n", 0);
+	// printf("ft_printf %d\n", fpf);
+	// printf("printf    %d\n\n", pf);
 	//
 	//
 	//
