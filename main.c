@@ -499,13 +499,17 @@ int		main(int ac, char **av)
 	// long double ldb = 45999123456789012.12345678901234567890L;
 	// 	  double db =
 	// 	245245245999123456789012.12345678901234567890L;
-	long double ldb = -372.606256066978456;
-	double db = -372.606256066978456;
+	long double ldb = -372.906256066978456;
+	// double db = -372.906256066978456;
+	double db = -900.906256066978456;
+	// double db = -372.9996999999999679;
 	// // long double ldb = LDBL_MAX;
 	// // 	  double db = LDBL_MAX;
 	//
 	// printf("ldb max = %Lf|\n", LDBL_MAX);
 	// printf(" db = %.10f|\n", db);
+
+
 
 	ft_printf("ft_printf= %040.10Lf|\n", ldb);
 	   printf("   printf= %040.10Lf|\n\n", ldb);
@@ -576,9 +580,9 @@ int		main(int ac, char **av)
 
 	ft_printf("ft_printf= %20f|\n", db);
 	   printf("   printf= %20f|\n\n", db);
-	//
-	// // printf("Test du '-' :\n\n");
-	//
+
+	// printf("Test du '-' :\n\n");
+
 	ft_printf("ft_printf= %- .10f|\n", db);
 	   printf("   printf= %- .10f|\n\n", db);
 
@@ -600,24 +604,44 @@ int		main(int ac, char **av)
    	ft_printf("ft_printf= %- +40.10f|\n", db);
    	   printf("   printf= %- +40.10f|\n\n", db);
 
+   	ft_printf("ft_printf= %#-17.0Lf|\n", ldb);
+   	   printf("   printf= %#-17.0Lf|\n\n", ldb);
+
+   	ft_printf("ft_printf= %#17.0Lf|\n", ldb);
+   	   printf("   printf= %#17.0Lf|\n\n", ldb);
+
+   	ft_printf("ft_printf= %0#17.0Lf|\n", ldb);
+   	   printf("   printf= %0#17.0Lf|\n\n", ldb);
+
+   	ft_printf("ft_printf= %#-17.0f|\n", db);
+   	   printf("   printf= %#-17.0f|\n\n", db);
+
+   	ft_printf("ft_printf= %#17.0f|\n", db);
+   	   printf("   printf= %#17.0f|\n\n", db);
+
+   	ft_printf("ft_printf= %0#17.0f|\n", db);
+   	   printf("   printf= %0#17.0f|\n\n", db);
+
+   	ft_printf("ft_printf= %0#27.16Lf|\n", ldb);
+   	   printf("   printf= %0#27.16Lf|\n\n", ldb);
+
+   	ft_printf("ft_printf= %0#27.16f|\n", db);
+   	   printf("   printf= %0#27.16f|\n\n", db);
+
+   	ft_printf("ft_printf= %-+9.Lf|\n", db);
+   	   printf("   printf= %-+9.Lf|\n\n", db);
 
 
 
 
-	// /*------------------------------------------------*/
-	// char *resi;
-	// int lgdb;
-	//
-	// lgdb = ft_ldblen(ldb);
-	// // printf("lg de ldb = %d\n", lgdb);
-	// if (!(resi = (char *)malloc(sizeof(char) * lgdb + 2)))
-	// 	exit(0);
-	// ft_bzero(resi, lgdb + 2);
-	// resi = pf_ftoa(resi, 0, ldb, lgdb);
-	// printf("resi = %s\n", resi);
 
 
-	// /*------------------------------------------------*/
+
+
+
+
+ // tester avec -999.999
+
 
 
 
