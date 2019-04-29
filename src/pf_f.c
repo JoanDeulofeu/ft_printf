@@ -12,23 +12,53 @@ long double	ft_fpow(long double db, int power)
 	return (db);
 }
 
-char	*ft_round_ldb(long double db, char *res, int i)
+char	*ft_round_ldb(t_s *s, long double db, char *res, int i)
 {
 	int round;
+	int decal;
 
+	decal = 0;
+	// printf("db = %Lf\n", db);
 	round = db * 10;
-	// printf("\nround = %d\n", round);
+	// printf("round = %d\n", round);
 	if (round > 4)
 	{
+		// printf("res[%d] = %c\n", i, res[i]);
 		res[i] += res[i] == 57 ? -9 : 1;
 		while (res[i] == '0')
 		{
+			// printf("res[%d] = %c\n", i, res[i]);
 			i--;
 			if (res[i] == '.')
 				i--;
-			res[i] += res[i] == 57 ? -9 : 1;
+			// printf("--res[%d] = %c\n", i, res[i]);
+			if (i >= 0 && (res[i] >= '0' && res[i] <= '9'))
+				res[i] += (res[i] == 57) ? -9 : 1;
+			else if (res[i] != ' ')
+			{
+				if (i < 1)
+				{
+					decal = 1;
+					// printf("else res[%d] =%s\n", i, &res[i]);
+					// printf("i     = %d\ndecal = %d \n", i, decal);
+					// printf("else res[%d] = %c\n", 1, res[1]);
+					ft_memmove(&res[i + decal + 2], &res[i + decal + 1], ft_strlen(&res[i + decal]));
+					res[i + decal] = '1';
+				}
+				else
+				{
+					// printf("else res[%d] =%c\n", i, res[i]);
+					res[i - 1] = res[i];
+					res[i] = '1';
+				}
+				s->f->round++;
+			}
+			else
+			{
+				s->f->round++;
+				res[i] = '1';
+			}
 		}
-
 	}
 	return (res);
 }
@@ -52,15 +82,16 @@ char		*pf_ftoa(char *res, int i, long double db, t_s *s)
 		// printf("\nTEST(%d) \ntmp= %lld   res[i]= %d   db= %Lf\n", u, tmp, res[i - 1], db);
 	}
 	res[i++] = db + 48;
+	tmp = db;
+	db -= tmp;
 	if (s->f->point == TRUE && s->pres == 0)
 	{
 		if (s->f->hash == TRUE)
 			res[i] = '.';
-		return (ft_round_ldb(db, res, i - 1));
+		// printf("test=%s\n", res);
+		return (ft_round_ldb(s, db, res, i - 1));
 	}
 	res[i++] = '.';
-	tmp = db;
-	db -= tmp;
 	// printf("test ------->   %Lf\n", db);
 	db *= ft_fpow(10, pres - 1);
 	// printf("test ------->   %Lf\n", db);
@@ -72,7 +103,7 @@ char		*pf_ftoa(char *res, int i, long double db, t_s *s)
 		db -= tmp * ((pres - u - 2) > -1 ? ft_fpow(10, pres - u - 2) : 1);
 		// printf("\nTEST(%d) \ntmp= %lld   res[i]= %c   db= %Lf   calcul=%d\n", u, tmp, res[i - 1], db, pres - u - 2);
 	}
-	res = ft_round_ldb(db, res, i - 1);
+	res = ft_round_ldb(s, db, res, i - 1);
 	return (res);
 }
 
@@ -144,8 +175,8 @@ char	*ft_part3f(t_s *s, char *res, int lgdb, long double db)
 		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
 	res = pf_ftoa(res, i, db, s);
 	i += truelg;
-	i = (s->f->hash == TRUE) ? i + 1 : i;
-	u = (s->f->hash == TRUE) ? u + 1 : u;
+	i = ((s->f->hash == TRUE) ? i + 1 : i) + s->f->round;
+	u = ((s->f->hash == TRUE) ? u + 1 : u) + s->f->round; //  *g=e7=s7 // probleme here
 	while (u++ < (s->champ - truelg))
 		res[i++] = ' ';
 	return (res);
@@ -160,6 +191,7 @@ char		*ft_pf_f(t_s *s, long double db)
 	s->f->neg = db < 0 ? TRUE : FALSE;
 	db = db < 0 ? db * -1 : db;
 	lgdb = ft_ldblen(db);
+	// printf("len -------------- %d\n", lgdb);
 	if (s->f->moins == FALSE)
 	{
 		if (s->f->zero == FALSE)

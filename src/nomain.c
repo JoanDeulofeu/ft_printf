@@ -23,6 +23,7 @@ void	ft_reset_flags(t_s *s)
 	s->f->space = FALSE;
 	s->f->neg = FALSE;
 	s->f->pctc = FALSE;
+	s->f->round = 0;
 	s->pres = 0;
 	s->champ = 0;
 	ft_bzero(s->hex, 16);
@@ -102,10 +103,10 @@ int		ft_ldblen(long double db)
 {
 	int res;
 
-	res = 1;
+	res = 0;
 	if (db == 0)
 		return (1);
-	while (db > 9)
+	while (db >= 1)
 	{
 		db /= 10;
 		res++;

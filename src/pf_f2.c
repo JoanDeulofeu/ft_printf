@@ -19,7 +19,7 @@ int		ft_dblen(double db)
 	res = 0;
 	if (db == 0)
 		return (1);
-	while (db > 9)
+	while (db >= 1)
 	{
 		// printf("ENTREE db = %f\n", db);
 		db /= 10;
@@ -32,22 +32,49 @@ int		ft_dblen(double db)
 char	*ft_round_db(double db, char *res, int i)
 {
 	int round;
+	int decal;
 
+	decal = 0;
+	// printf("db = %Lf\n", db);
 	round = db * 10;
-	// printf("\nround = %d\n", round);
+	// printf("round = %d\n", round);
 	if (round > 4)
 	{
-		// printf("\nres[i] = %c\n", res[i]);
+		// printf("res[%d] = %c\n", i, res[i]);
 		res[i] += res[i] == 57 ? -9 : 1;
 		while (res[i] == '0')
 		{
+			// printf("res[%d] = %c\n", i, res[i]);
 			i--;
 			if (res[i] == '.')
 				i--;
-			res[i] += res[i] == 57 ? -9 : 1;
+			// printf("--res[%d] = %c\n", i, res[i]);
+			if (i >= 0 && (res[i] >= '0' && res[i] <= '9'))
+				res[i] += (res[i] == 57) ? -9 : 1;
+			else if (res[i] != ' ')
+			{
+				if (i < 1)
+				{
+					decal = 1;
+					// printf("else res[%d] =%s\n", i, &res[i+1]);
+					// printf("i     = %d\ndecal = %d \n", i, decal);
+					// printf("else res[%d] = %c\n", 1, res[1]);
+					ft_memmove(&res[i + decal + 2], &res[i + decal + 1], ft_strlen(&res[i + decal]));
+					res[i + decal] = '1';
+					// printf("else res[%d] =%s\n", i, &res[i+1]);
+				}
+				else
+				{
+					// printf("else res[%d] =%c\n", i, res[i]);
+					res[i - 1] = res[i];
+					res[i] = '1';
+				}
+			}
+			else
+				res[i] = '1';
 		}
-
 	}
+	// printf("TEST = %s\n", res);
 	return (res);
 }
 
@@ -75,8 +102,10 @@ char		*pf_ftoa2(char *res, int i, double db, t_s *s)
 	// printf("test ------->   %f\n", db);
 	if (s->f->point == TRUE && s->pres == 0)
 	{
+		// printf("TEEEEEEEESSSSSST\n");
 		if (s->f->hash == TRUE)
 			res[i] = '.';
+			printf("res = %s|\n", res);
 		return (ft_round_db(db, res, i - 1));
 	}
 	res[i++] = '.';
@@ -99,7 +128,7 @@ char		*pf_ftoa2(char *res, int i, double db, t_s *s)
 
 char	*ft_part1f2(t_s *s, char *res, int lgdb, double db)
 {
-	printf("PART1\n");
+	// printf("PART1\n");
 	int i;
 	int u;
 	int truelg;
@@ -123,7 +152,7 @@ char	*ft_part1f2(t_s *s, char *res, int lgdb, double db)
 
 char	*ft_part2f2(t_s *s, char *res, int lgdb, double db)
 {
-	printf("PART2\n");
+	// printf("PART2\n");
 	int i;
 	int u;
 	int truelg;
@@ -146,7 +175,7 @@ char	*ft_part2f2(t_s *s, char *res, int lgdb, double db)
 
 char	*ft_part3f2(t_s *s, char *res, int lgdb, double db)
 {
-	printf("PART3\n");
+	// printf("PART3\n");
 	int i;
 	int u;
 	int truelg;

@@ -30,6 +30,7 @@ typedef struct			s_flags
 	char				space;
 	char				neg;
 	char				pctc;
+	int					round;
 }						t_flags;
 
 typedef struct			s_conv
