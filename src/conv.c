@@ -188,8 +188,8 @@ char		*ft_find_conv(t_s *s, int i)
 	}
 	else if (s->str[i] == 'd' || s->str[i] == 'o')
 	{
-		if (nb == 0 && s->str[i] == 'd' && s->pres == 0)
-			s->champ++;
+		if (nb == 0 && s->str[i] == 'd' && s->pres == 0 && s->f->point == TRUE)
+			s->champ += 1;
 		if (s->pres > 0 || s->f->moins == TRUE)
 			s->f->zero = FALSE;
 		if (s->str[i] == 'd')

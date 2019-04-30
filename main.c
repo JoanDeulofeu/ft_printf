@@ -73,99 +73,118 @@ int		main(int ac, char **av)
 	char *str = "Bonjour les amis!";
 	char *strvide = "";
 	char *strnull = NULL;
-	int nb = 8598;
+	// int nb = 8598;
+	int nb = 0;
 	long long llnb = -419246576;
 	// int nb2 = 88888;
 
 	// printf("=-=-=-=-=-=  TEST DU #D =-=-=-=-=-=\n\n");
 	//
 	// // ft_d();
-	// ft_printf("ft_printf1 =%d \n", nb );
-	//    printf("printf1    =%d \n\n", nb);
+	// ft_printf("ft_printf1 =%d| \n", nb );
+	//    printf("printf1    =%d| \n\n", nb);
 	//
-	// ft_printf("ft_printf2 =%     8+.13d\n", nb);
-	//    printf("printf2    =%      8+.13d\n\n", nb);
+	// ft_printf("ft_printf1 =% 03d| \n", 0);
+	//    printf("printf1    =% 03d| \n\n", 0);
 	//
-	// ft_printf("ft_printf3 =%+8.13d\n", nb);
-	//    printf("printf3    =%+8.13d\n\n", nb);
+	// ft_printf("ft_printf1 =% 03d| \n", 2);
+	//    printf("printf1    =% 03d| \n\n", 2);
 	//
-	// ft_printf("ft_printf4 =%   13.8d\n", nb);
-	//    printf("printf4    =%    13.8d\n\n", nb);
+	// ft_printf("ft_printf1 =% 013.d| \n", 2);
+	//    printf("printf1    =% 013.d| \n\n", 2);
 	//
-	// ft_printf("ft_printf5 =%    +13.8d\n", ft_abs(nb));
-	//    printf("printf5    =%    +13.8d\n\n", ft_abs(nb));
+	// ft_printf("ft_printf1 =% 013.d| \n", nb);
+	//    printf("printf1    =% 013.d| \n\n", nb);
 	//
-	// ft_printf("ft_printf6 =%+13.8d\n", ft_abs(nb));
-	//    printf("printf6    =%+13.8d\n\n", ft_abs(nb));
+	// ft_printf("ft_printf1 =% 013d| \n", 2);
+	//    printf("printf1    =% 013d| \n\n", 2);
 	//
-	// ft_printf("ft_printf7 =%    +13.8d\n", nb);
-	//    printf("printf7    =%    +13.8d\n\n", nb);
+	// ft_printf("ft_printf1 =% 013d| \n", nb);
+	//    printf("printf1    =% 013d| \n\n", nb);
+	//
+	// ft_printf("ft_printf2 =%     8+.13d|\n", nb);
+	//    printf("printf2    =%      8+.13d|\n\n", nb);
+	//
+	// ft_printf("ft_printf3 =%+8.13d|\n", nb);
+	//    printf("printf3    =%+8.13d|\n\n", nb);
+	//
+	// ft_printf("ft_printf4 =%   13.8d|\n", nb);
+	//    printf("printf4    =%    13.8d|\n\n", nb);
+	//
+	// ft_printf("ft_printf5 =%    +13.8d|\n", ft_abs(nb));
+	//    printf("printf5    =%    +13.8d|\n\n", ft_abs(nb));
+	//
+	// ft_printf("ft_printf6 =%+13.8d|\n", ft_abs(nb));
+	//    printf("printf6    =%+13.8d|\n\n", ft_abs(nb));
+	//
+	// ft_printf("ft_printf7 =%    +13.8d|\n", nb);
+	//    printf("printf7    =%    +13.8d|\n\n", nb);
 	//
 	// ft_printf("ft_printf8 =%+13.d|\n", nb);
 	//    printf("printf8    =%+13.d|\n\n", nb);
 	//
-	// fpf = ft_printf("ft_printf9 =%+08.13d\n", nb);
-	// 	pf = printf("printf9    =%+08.13d\n\n", nb);
+	// fpf = ft_printf("ft_printf9 =%+08.13d|\n", nb);
+	// 	pf = printf("printf9    =%+08.13d|\n\n", nb);
 	//
 	// printf("ft_printf %d\n", fpf + 1);
 	// printf("printf    %d\n", pf);
 	//
-	// ft_printf("ft_printf10=%+013.8d\n", nb);
-	//    printf("printf10   =%+013.8d\n\n", nb);
+	// ft_printf("ft_printf10=%+013.8d|\n", nb);
+	//    printf("printf10   =%+013.8d|\n\n", nb);
 	//
-	// ft_printf("ft_printf11=%0+08.13d\n", nb);
-	//    printf("printf11   =%0+08.13d\n\n", nb);
+	// ft_printf("ft_printf11=%0+08.13d|\n", nb);
+	//    printf("printf11   =%0+08.13d|\n\n", nb);
 	//
-	// ft_printf("ft_printf12=%0+013.8d\n", nb);
-	//    printf("printf12   =%0+013.8d\n\n", nb);
+	// ft_printf("ft_printf12=%0+013.8d|\n", nb);
+	//    printf("printf12   =%0+013.8d|\n\n", nb);
 	//
-	// ft_printf("ft_printf13=%013d\n", nb);
-	//    printf("printf13   =%013d\n\n", nb);
+	// ft_printf("ft_printf13=%013d|\n", nb);
+	//    printf("printf13   =%013d|\n\n", nb);
 	//
-	// ft_printf("ft_printf14=%013d\n", ft_abs(nb));
-	//    printf("printf14   =%013d\n\n", ft_abs(nb));
+	// ft_printf("ft_printf14=%013d|\n", ft_abs(nb));
+	//    printf("printf14   =%013d|\n\n", ft_abs(nb));
 	//
-	// ft_printf("ft_printf15=%8.13d\n", nb);
-	//    printf("printf15   =%8.13d\n\n", nb);
+	// ft_printf("ft_printf15=%8.13d|\n", nb);
+	//    printf("printf15   =%8.13d|\n\n", nb);
 	//
-	// ft_printf("ft_printf16=%-8.13d\n", nb);
-	//    printf("printf16   =%-8.13d\n\n", nb);
+	// ft_printf("ft_printf16=%-8.13d|\n", nb);
+	//    printf("printf16   =%-8.13d|\n\n", nb);
 	//
-	// ft_printf("ft_printf17=%-18.13d\n", nb);
-	//    printf("printf17   =%-18.13d\n\n", nb);
+	// ft_printf("ft_printf17=%-18.13d|\n", nb);
+	//    printf("printf17   =%-18.13d|\n\n", nb);
 	//
-	// ft_printf("ft_printf18=%-018d\n", nb);
-	//    printf("printf18   =%-018d\n\n", nb);
+	// ft_printf("ft_printf18=%-018d|\n", nb);
+	//    printf("printf18   =%-018d|\n\n", nb);
 	//
-	// ft_printf("ft_printf19=%-0 18d\n", nb);
-	//    printf("printf19   =%-0 18d\n\n", nb);
+	// ft_printf("ft_printf19=%-0 18d|\n", nb);
+	//    printf("printf19   =%-0 18d|\n\n", nb);
 	//
-	// ft_printf("ft_printf20=%+-18.13d\n", nb);
-	//    printf("printf20   =%+-18.13d\n\n", nb);
+	// ft_printf("ft_printf20=%+-18.13d|\n", nb);
+	//    printf("printf20   =%+-18.13d|\n\n", nb);
 	//
-	// ft_printf("ft_printf21=%+-018d\n", nb);
-	//    printf("printf21   =%+-018d\n\n", nb);
+	// ft_printf("ft_printf21=%+-018d|\n", nb);
+	//    printf("printf21   =%+-018d|\n\n", nb);
 	//
-	// ft_printf("ft_printf22=%0 18d\n", nb);
-	//    printf("printf22   =%0 18d\n\n", nb);
+	// ft_printf("ft_printf22=%0 18d|\n", nb);
+	//    printf("printf22   =%0 18d|\n\n", nb);
 	//
-	// ft_printf("ft_printf23=%#d\n", nb);
-	//    printf("printf23   =%#d\n\n", nb);
+	// ft_printf("ft_printf23=%#d|\n", nb);
+	//    printf("printf23   =%#d|\n\n", nb);
 	//
-	// ft_printf("ft_printf24=% 10.14jd\n", nb);
-	//    printf("printf24   =jd\n\n", nb);
+	// ft_printf("ft_printf24=% 10.14jd|\n", nb);
+	//    printf("printf24   =jd|\n\n", nb);
 	//
-	// ft_printf("ft_printf25=% 10.14hd\n", nb);
-	//    printf("printf25   =% 10.14hd\n\n", nb);
+	// ft_printf("ft_printf25=% 10.14hd|\n", nb);
+	//    printf("printf25   =% 10.14hd|\n\n", nb);
 	//
-	// ft_printf("ft_printf26=%+-.2lld\n", nb);
-	//    printf("printf26   =%+-.2lld\n\n", nb);
+	// ft_printf("ft_printf26=%+-.2lld|\n", nb);
+	//    printf("printf26   =%+-.2lld|\n\n", nb);
 	//
-    // ft_printf("ft_printf27=% 10.14hhd\n", chr);
-	//    printf("printf27   =% 10.14hhd\n\n", chr);
+    // ft_printf("ft_printf27=% 10.14hhd|\n", chr);
+	//    printf("printf27   =% 10.14hhd|\n\n", chr);
 	//
-    // fpf = ft_printf("ft_printf28=% 10.14hhd\n", nb);
-	// 	pf = printf("printf27   =% 10.14hhd\n\n", nb);
+    // fpf = ft_printf("ft_printf28=% 10.14hhd|\n", nb);
+	// 	pf = printf("printf27   =% 10.14hhd|\n\n", nb);
 	// printf("ft_printf %d\n", fpf + 1);
 	// printf("printf    %d\n", pf);
 	//
@@ -503,10 +522,10 @@ int		main(int ac, char **av)
 	// double db = -372.9996999999999679;
 	// long double ldb = -900.906256066978456;
 	// double db = -900.906256066978456;
-	long double ldb = 999.9999999L;
-	double db = 999.9999999;
-	// // long double ldb = LDBL_MAX;
-	// // 	  double db = LDBL_MAX;
+	// long double ldb = 999.9999999L;
+	// double db = 999.9999999;
+	long double ldb = LDBL_MAX;
+		  double db = LDBL_MAX;
 	//
 	// printf("ldb max = %Lf|\n", LDBL_MAX);
 	// printf(" db = %.10f|\n", db);
@@ -586,7 +605,7 @@ int		main(int ac, char **av)
 	// printf("\n---   DOUBLE   ---\n\n");
 	//
 	// ft_printf("ft_printf= %040.10f|\n", db);
-	//    printf("   printf= %040.10f|\n\n", db);
+	// pf = printf("   printf= %040.10f|\n\n", db);
 	//
 	// ft_printf("ft_printf= %40.10f|\n", db);
 	//    printf("   printf= %40.10f|\n\n", db);
@@ -637,16 +656,16 @@ int		main(int ac, char **av)
 	//
    	// ft_printf("ft_printfL= %0#17.0Lf|\n", ldb);
    	//    printf("   printfL= %0#17.0Lf|\n\n", ldb);
-
-   	ft_printf("---ft_printf= %#-17.0f|\n", db);
-   	   printf("---   printf= %#-17.0f|\n\n", db);
-
-   	ft_printf("---ft_printf= %-17.0f|\n", db);
-   	   printf("---   printf= %-17.0f|\n\n", db);
-
-   	ft_printf("---ft_printfL= %#-17.0Lf|\n", ldb);
-   	   printf("---   printfL= %#-17.0Lf|\n\n", ldb);
-
+	//
+   	// ft_printf("---ft_printf= %#-17.0f|\n", db);
+   	//    printf("---   printf= %#-17.0f|\n\n", db);
+	//
+   	// ft_printf("---ft_printf= %-17.0f|\n", db);
+   	//    printf("---   printf= %-17.0f|\n\n", db);
+	//
+   	// ft_printf("---ft_printfL= %#-17.0Lf|\n", ldb);
+   	//    printf("---   printfL= %#-17.0Lf|\n\n", ldb);
+	//
    	// ft_printf("ft_printf= %#17.0f|\n", db);
    	//    printf("   printf= %#17.0f|\n\n", db);
 	//

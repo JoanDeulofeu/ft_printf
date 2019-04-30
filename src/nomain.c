@@ -110,6 +110,8 @@ int		ft_ldblen(long double db)
 	{
 		db /= 10;
 		res++;
+		if (res > 4935)
+			return (4935);
 	}
 	return (res);
 }

@@ -175,8 +175,9 @@ char	*ft_part3f(t_s *s, char *res, int lgdb, long double db)
 		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
 	res = pf_ftoa(res, i, db, s);
 	i += truelg;
+	// printf("res 2 = %s\n", res);
 	i = ((s->f->hash == TRUE) ? i + 1 : i) + s->f->round;
-	u = ((s->f->hash == TRUE) ? u + 1 : u) + s->f->round; //  *g=e7=s7 // probleme here
+	u = ((s->f->hash == TRUE) ? u + 1 : u) + s->f->round;
 	while (u++ < (s->champ - truelg))
 		res[i++] = ' ';
 	return (res);
