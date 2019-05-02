@@ -156,16 +156,16 @@ char		*ft_find_conv(t_s *s, int i)
 		db = va_arg(s->params, double);
 	else if (s->str[i] == 'p')
 		unb = va_arg(s->params, unsigned long long);
-	else if (s->str[i] == 'd' || s->str[i] == 'o')
+	else if (s->str[i] == 'd')
 		nb = ft_modif(s, nb);
-	else if (s->str[i] == 'u' || s->str[i] == 'x' || s->str[i] == 'X')
+	else if (s->str[i] == 'o' || s->str[i] == 'u' || s->str[i] == 'x' || s->str[i] == 'X')
 		unb = ft_modif_unsign(s, unb);
 
 	if (s->str[i] == 'o')
 	{
-		if (nb == 0)
-			s->champ++;
-		nb = ft_dec_to_oct(nb);
+		// if (unb == 0)
+		// 	s->champ++;
+		unb = ft_dec_to_oct(unb);
 		s->f->plus = FALSE;
 		s->f->space = FALSE;
 	}
@@ -178,6 +178,8 @@ char		*ft_find_conv(t_s *s, int i)
 	}
 	else if (s->str[i] == 'x' || s->str[i] == 'X')
 	{
+		if (s->f->point == TRUE)
+			s->f->zero = FALSE;
 		s->f->plus = FALSE;
 		s->f->space = FALSE;
 		if (s->str[i] == 'X')
@@ -190,11 +192,13 @@ char		*ft_find_conv(t_s *s, int i)
 	{
 		if (nb == 0 && s->str[i] == 'd' && s->pres == 0 && s->f->point == TRUE)
 			s->champ += 1;
+		if (unb == 0 && s->str[i] == 'o' && s->f->point == TRUE && s->pres == 0)
+			s->champ += 1;
 		if (s->pres > 0 || s->f->moins == TRUE)
 			s->f->zero = FALSE;
 		if (s->str[i] == 'd')
 			s->f->hash = FALSE;
-		res = ft_pf_d(s, nb);
+		res = s->str[i] == 'd' ? ft_pf_d(s, nb) : ft_pf_u(s, unb);
 		if (s->f->hash == TRUE)
 			res = ft_hashzero(res);
 	}

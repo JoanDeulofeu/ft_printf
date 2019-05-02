@@ -152,7 +152,7 @@ int 	main()
 	y == x ? printf(">>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>  \033[33mFAIL\033[0m  <<<<<<<<<<<<<<<\n\n");
 	ft_putchar('\n');
 
-	printf("===============  \033[31mTEST %d\033[0m  ===============\n\n", i++);
+	printf("===============  \033[31mTEST %d  =========18======\033[0m\n\n", i++);
 	y =ft_printf("Test avec %#x et aussi %c fini et puis %.d\n", 3568, 'G', 0);
 	x = printf("Test avec %#x et aussi %c fini et puis %.d\n", 3568, 'G', 0);
 	printf("retour de mon printf = \033[36m%d\033[0m\n", y);
@@ -345,14 +345,14 @@ int 	main()
 	printf("retour de printf = \033[36m%d\033[0m\n", x);
 	y == x ? printf(">>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>  \033[33mFAIL\033[0m  <<<<<<<<<<<<<<<\n\n");
 
-	printf("===============  \033[31mTEST %d\033[0m  ===============\n\n", i++);
+	printf("===============  \033[31mTEST %d\033[0m  ==45=============\n\n", i++);
 	y =ft_printf("t %#7.5X %06.2X et %lX!\n", 0xab, 0x876, 0xff11ff11ff1);
 	x = printf("t %#7.5X %06.2X et %lX!\n", 0xab, 0x876, 0xff11ff11ff1);
 	printf("retour de mon printf = \033[36m%d\033[0m\n", y);
 	printf("retour de printf = \033[36m%d\033[0m\n", x);
 	y == x ? printf(">>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>  \033[33mFAIL\033[0m  <<<<<<<<<<<<<<<\n\n");
 // 45
-	printf("===============  \033[31mTEST %d\033[0m  ===============\n\n", i++);
+	printf("===============  \033[31mTEST %d  ===============\033[0m\n\n", i++);
 	y =ft_printf("t %07.5X %006.2X et %000lX!\n", 0xab, 0x876, 0xff11ff11ff1);
 	x = printf("t %07.5X %006.2X et %000lX!\n", 0xab, 0x876, 0xff11ff11ff1);
 	printf("retour de mon printf = \033[36m%d\033[0m\n", y);

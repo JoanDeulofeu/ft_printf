@@ -73,7 +73,8 @@ int		main(int ac, char **av)
 	char *str = "Bonjour les amis!";
 	char *strvide = "";
 	char *strnull = NULL;
-	// int nb = 8598;
+	// int nb = 0x876;
+	// int nb = -8598;
 	int nb = 0;
 	long long llnb = -419246576;
 	// int nb2 = 88888;
@@ -192,19 +193,39 @@ int		main(int ac, char **av)
 	//
 	//
 	// printf("=-=-=-=-=-=  TEST DU #O =-=-=-=-=-=\n\n");
-	// ft_printf("ft_printf1=%o\n", nb);
-	//    printf("printf1   =%o\n\n", nb);
+	// ft_printf("ft_printf1=%o|\n", nb);
+	//    printf("printf1   =%o|\n\n", nb);
 	//
-	// ft_printf("ft_printf2=%+0 18o\n", nb);
-	//    printf("printf2   =%+0 18o\n\n", nb);
+	// ft_printf("ft_printf2=%+0 18o|\n", nb);
+	//    printf("printf2   =%+0 18o|\n\n", nb);
 	//
-	// fpf = ft_printf("ft_printf3=%+-0 18o\n", nb);
-	// 	pf = printf("printf3   =%+-0 18o\n\n", nb);
+	// fpf = ft_printf("ft_printf3=%+-0 18o|\n", nb);
+	// 	pf = printf("printf3   =%+-0 18o|\n\n", nb);
 	// printf("ft_printf %d\n", fpf + 1);
 	// printf("printf    %d\n", pf);
 	//
-	// ft_printf("ft_printf4=%.10 18o\n", nb);
-	//    printf("printf4   =%.10 18o\n\n", nb);
+	// ft_printf("ft_printf4=%.10 18o|\n", nb);
+	//    printf("printf4   =%.10 18o|\n\n", nb);
+	//
+	// ft_printf("ft_printf5=%04.2o|\n", nb);
+	//    printf("printf5   =%04.2o|\n\n", nb);
+	//
+	// ft_printf("ft_printf1=%0o|\n", nb);
+	//    printf("printf1   =%0o|\n\n", nb);
+	//
+	// ft_printf("ft_printf2=%+.0 12o|\n", nb);
+	//    printf("printf2   =%+.0 12o|\n\n", nb);
+	//
+	// fpf = ft_printf("ft_printf3=%+-.10 18o|\n", nb);
+	// 	pf = printf("printf3   =%+-.10 18o|\n\n", nb);
+	// printf("ft_printf %d\n", fpf + 1);
+	// printf("printf    %d\n", pf);
+	//
+	// ft_printf("ft_printf4=%- .18o|\n", nb);
+	//    printf("printf4   =%- .18o|\n\n", nb);
+	//
+	// ft_printf("ft_printf5=%-o|\n", nb);
+	//    printf("printf5   =%-o|\n\n", nb);
 	// //
 	// // // IMPOSSIBLE a gerer en cas de nbr negatif en ENTREE
 	// //
@@ -287,12 +308,25 @@ int		main(int ac, char **av)
    	// ft_printf("ft_printf19=%#-18.7 X|\n", nb);
    	//    printf("printf19   =%#-18.7 X|\n\n", nb);
 	//
+   	// ft_printf("ft_printf31=%#x|\n", nb);
+   	//    printf("printf31   =%#x|\n\n", nb);
+	//
+   	// ft_printf("ft_printf32=%06.2X|\n", nb);
+   	//    printf("printf32   =%06.2X|\n\n", nb);
+	//
+	//
+   	ft_printf("ft_printf32=%llx|\n", -9223372036854775808);
+   	   printf("printf32   =%llx|\n\n", -9223372036854775808);
+
+	ft_printf("%llx et %llX egalement %llx fini %lx|\n", 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807);
+	printf("%llx et %llX egalement %llx fini %lx|\n", 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807);
+
    	// fpf = ft_printf("ft_printf19=%9.8X|\n", 0);
    	// pf = printf("printf19   =%9.8X|\n", 0);
 	// printf("ft_printf %d\n", fpf);
 	// printf("printf    %d\n\n", pf);
-   	// fpf = ft_printf("ft_printf19=%#9.8X|\n", 0);
-   	// pf = printf("printf19   =%#9.8X|\n", 0);
+   	// fpf = ft_printf("ft_printf19=%9.X|\n", 0);
+   	// pf = printf("printf19   =%9.X|\n", 0);
 	// printf("ft_printf %d\n", fpf);
 	// printf("printf    %d\n\n", pf);
 	//
