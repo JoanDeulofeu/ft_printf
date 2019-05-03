@@ -8,6 +8,10 @@ int		ft_emptybuff(t_s *s, char *buff)
 
 	if (!(tmp = (char *)malloc(sizeof(char) * (64 * s->mllc))))
 		exit(0);
+	ft_bzero(tmp, 64 * s->mllc);
+	// write(1, "1)buff = ", 9);
+	// write(1, buff, 64);
+	// write(1, "|\n", 2);
 	// printf("\ns->res == %s\n", s->res);
 	if (s->res == NULL)
 	{
@@ -34,7 +38,7 @@ int		ft_buffering(t_s *s, char *buff, int bf, char *str)
 {
 	int i = 0;
 	int verif = 0;
-
+	// printf("str == |%s|\n", str);
 	if (s->f->pctc == TRUE)
 	{
 		while (str[i] != '\0')
@@ -55,7 +59,11 @@ int		ft_buffering(t_s *s, char *buff, int bf, char *str)
 		while (str[i] != '\0')
 		{
 			buff[bf++] = str[i++];
-			// printf("buff == %s\n", buff);
+			// buff[bf] = '\0';
+			// write(1, "1)buff = ", 9);
+			// write(1, buff, 64);
+			// write(1, "|\n", 2);
+			// printf("buff == |%c|\n", buff[bf-1]);
 			if (bf == 64)
 				bf = ft_emptybuff(s, buff);
 		}

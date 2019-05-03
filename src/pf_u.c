@@ -32,6 +32,7 @@ char		*pf_itoau(char *res, int i, unsigned long long nb, int lgnb)
 
 char		*ft_part4u(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
+	// printf("OSKOUR\n");
 	int i;
 	int u;
 
@@ -49,6 +50,8 @@ char		*ft_part4u(t_s *s, char *res, int lgnb, unsigned long long nb)
 			res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
 		res = pf_itoau(res, i, nb, lgnb);
+	else
+		i--;
 	i += lgnb;
 	u = 0;
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
@@ -146,5 +149,8 @@ char		*ft_pf_u(t_s *s, unsigned long long nb)
 		else
 			res = ft_part4u(s, res, lgnb, nb);
 	}
+	// write(1, "res = ", 6);
+	// write(1, res, (s->champ > lgnb ? s->champ : lgnb) + 2);
+	// write(1, "|\n", 2);
 	return (res);
 }

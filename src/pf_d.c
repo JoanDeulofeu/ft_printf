@@ -35,7 +35,7 @@ char		*pf_itoa(char *res, int i, long long nb, int lgnb)
 
 char		*ft_part4(t_s *s, char *res, int lgnb, long long nb)
 {
-	printf("PART4\n");
+	// printf("PART4\n");
 	int i;
 	int u;
 
@@ -53,6 +53,8 @@ char		*ft_part4(t_s *s, char *res, int lgnb, long long nb)
 			res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
 		res = pf_itoa(res, i, nb, lgnb);
+	else
+		i--;
 	i += lgnb;
 	u = 0;
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
@@ -63,7 +65,7 @@ char		*ft_part4(t_s *s, char *res, int lgnb, long long nb)
 
 char		*ft_part3(t_s *s, char *res, int lgnb, long long nb)
 {
-	printf("PART3\n");
+	// printf("PART3\n");
 	int i;
 	int u;
 
@@ -72,12 +74,16 @@ char		*ft_part3(t_s *s, char *res, int lgnb, long long nb)
 	if (!(res = (char *)malloc(sizeof(char) * (s->champ > lgnb ? s->champ : lgnb) + 2)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 2);
-	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
+	if ((s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
+	&& (s->f->point != TRUE || s->pres != 0))
 		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
 	// printf("lgnb = %d --- champ = %d --- u = %d\n", lgnb, s->champ, u);
 	while (u++ < s->champ - lgnb)
 		res[i++] = (s->f->point == TRUE && s->pres == 0) ? ' ' : '0';
+	if ((s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
+	&& (s->f->point == TRUE && s->pres == 0))
+		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
 		res = pf_itoa(res, i, nb, lgnb);
 	return (res);
@@ -85,7 +91,7 @@ char		*ft_part3(t_s *s, char *res, int lgnb, long long nb)
 
 char		*ft_part2(t_s *s, char *res, int lgnb, long long nb)
 {
-	printf("PART2\n");
+	// printf("PART2\n");
 	int i;
 	int u;
 
@@ -112,7 +118,7 @@ char		*ft_part2(t_s *s, char *res, int lgnb, long long nb)
 
 char		*ft_part1(t_s *s, char *res, int lgnb, long long nb)
 {
-	printf("PART1\n");
+	// printf("PART1\n");
 	int i;
 	int u;
 

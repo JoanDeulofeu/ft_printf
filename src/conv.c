@@ -115,9 +115,9 @@ long long	ft_modif(t_s *s, long long nb)
 unsigned long long	ft_modif_unsign(t_s *s, unsigned long long nb)
 {
 	if (s->f->h_h == TRUE)
-		nb = (char)va_arg(s->params, unsigned int);
+		nb = (unsigned char)va_arg(s->params, unsigned int);
 	else if (s->f->ach == TRUE)
-		nb = (short)va_arg(s->params, unsigned int);
+		nb = (unsigned short)va_arg(s->params, unsigned int);
 	else if (s->f->l_l == TRUE)
 		nb = va_arg(s->params, unsigned long long);
 	else if (s->f->el == TRUE)
@@ -156,7 +156,7 @@ char		*ft_find_conv(t_s *s, int i)
 		db = va_arg(s->params, double);
 	else if (s->str[i] == 'p')
 		unb = va_arg(s->params, unsigned long long);
-	else if (s->str[i] == 'd')
+	else if ((s->str[i] == 'd' || s->str[i] == 'i'))
 		nb = ft_modif(s, nb);
 	else if (s->str[i] == 'o' || s->str[i] == 'u' || s->str[i] == 'x' || s->str[i] == 'X')
 		unb = ft_modif_unsign(s, unb);
@@ -188,19 +188,23 @@ char		*ft_find_conv(t_s *s, int i)
 			s->f->hash = FALSE;
 		res = ft_pf_x(s, unb);
 	}
-	else if (s->str[i] == 'd' || s->str[i] == 'o')
+	else if ((s->str[i] == 'd' || s->str[i] == 'i') || s->str[i] == 'o')
 	{
-		if (nb == 0 && s->str[i] == 'd' && s->pres == 0 && s->f->point == TRUE)
+		if (nb == 0 && (s->str[i] == 'd' || s->str[i] == 'i') && s->pres == 0 && s->f->point == TRUE)
 			s->champ += 1;
 		if (unb == 0 && s->str[i] == 'o' && s->f->point == TRUE && s->pres == 0)
 			s->champ += 1;
 		if (s->pres > 0 || s->f->moins == TRUE)
 			s->f->zero = FALSE;
-		if (s->str[i] == 'd')
+		if ((s->str[i] == 'd' || s->str[i] == 'i'))
 			s->f->hash = FALSE;
-		res = s->str[i] == 'd' ? ft_pf_d(s, nb) : ft_pf_u(s, unb);
-		if (s->f->hash == TRUE)
+		if (s->f->point == TRUE && s->str[i] == 'o')
+			s->f->zero = FALSE;
+		res = (s->str[i] == 'd' || s->str[i] == 'i') ? ft_pf_d(s, nb) : ft_pf_u(s, unb);
+		// printf("ENTREE = |%s|\n", res);
+		if (s->f->hash == TRUE && ((s->f->point == TRUE && s->pres == 0 && unb == 0) || unb != 0))
 			res = ft_hashzero(res);
+		// printf("SORTIE = |%s|\n", res);
 	}
 	else if (s->str[i] == 'c' || s->str[i] == '%')
 	{
