@@ -147,8 +147,11 @@ int		ft_loop(t_s *s)
 	{
 		if (s->str[i] != '%')
 		{
+			// printf("s->str[i] == |%c|\n", s->str[i]);
 			buff[bf++] = s->str[i];
-			if (bf == 65)
+			// printf("buff[bf] == |%c|\n", buff[bf - 1]);
+			// printf("buff == |%s|\n", buff);
+			if (bf == 64)
 				bf = ft_emptybuff(s, buff);
 			res++;
 		}
@@ -188,7 +191,7 @@ int		ft_loop(t_s *s)
 			&& s->str[i] != 'd')
 			{
 				buff[bf++] = s->str[i];
-				if (bf == 65)
+				if (bf == 64)
 					bf = ft_emptybuff(s, buff);
 				res++;
 			}

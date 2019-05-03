@@ -315,11 +315,7 @@ int		main(int ac, char **av)
    	//    printf("printf32   =%06.2X|\n\n", nb);
 	//
 	//
-   	ft_printf("ft_printf32=%llx|\n", -9223372036854775808);
-   	   printf("printf32   =%llx|\n\n", -9223372036854775808);
 
-	ft_printf("%llx et %llX egalement %llx fini %lx|\n", 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807);
-	printf("%llx et %llX egalement %llx fini %lx|\n", 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807);
 
    	// fpf = ft_printf("ft_printf19=%9.8X|\n", 0);
    	// pf = printf("printf19   =%9.8X|\n", 0);
@@ -725,9 +721,30 @@ int		main(int ac, char **av)
 
 
 
+	// TEST STRING LONGUE
 
-	//245245245999123456789012.12345678901234567890L
-	// tester avec -999.999
+	// ft_printf("ft_printf32=%llx|\n", -9223372036854775808);
+	//    printf("printf32   =%llx|\n\n", -9223372036854775808);
+	//
+	// ft_printf("mdretifhdbjvbdbdjc hdbd cd  jddbchcnn cjbhwad wd kanbdwhba%llx et %llX egalement %llx fini %lx %llx et %llX egalement %llx fini %lx|\n", 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807, 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807);
+	// printf("mdretifhdbjvbdbdjc hdbd cd  jddbchcnn cjbhwad wd kanbdwhba%llx et %llX egalement %llx fini %lx %llx et %llX egalement %llx fini %lx|\n", 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807, 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807);
+
+	// ft_printf("123456789 abcdefghi 987654321 ihgfedcba motlettre z1x2w3v4u fromAgere\n");
+	// printf("123456789 abcdefghi 987654321 ihgfedcba motlettre z1x2w3v4u fromAgere\n\n");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

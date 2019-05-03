@@ -8,6 +8,7 @@ int		ft_emptybuff(t_s *s, char *buff)
 
 	if (!(tmp = (char *)malloc(sizeof(char) * (64 * s->mllc))))
 		exit(0);
+	// printf("\ns->res == %s\n", s->res);
 	if (s->res == NULL)
 	{
 		s->res = tmp;
@@ -23,6 +24,7 @@ int		ft_emptybuff(t_s *s, char *buff)
 		ft_memdel((void **)&s->res);
 		s->res = tmp;
 	}
+	// printf("\ns->res == |%s|\n", s->res);
 	s->mllc++;
 	ft_bzero(buff, 64);
 	return (0);
@@ -39,13 +41,13 @@ int		ft_buffering(t_s *s, char *buff, int bf, char *str)
 		{
 			verif++;
 			buff[bf++] = str[i++];
-			if (bf == 65)
+			if (bf == 64)
 				bf = ft_emptybuff(s, buff);
 		}
 		if (verif != 0)
 			bf--;
 		buff[bf++]= '\0';
-		if (bf == 65)
+		if (bf == 64)
 			bf = ft_emptybuff(s, buff);
 	}
 	else
@@ -53,7 +55,8 @@ int		ft_buffering(t_s *s, char *buff, int bf, char *str)
 		while (str[i] != '\0')
 		{
 			buff[bf++] = str[i++];
-			if (bf == 65)
+			// printf("buff == %s\n", buff);
+			if (bf == 64)
 				bf = ft_emptybuff(s, buff);
 		}
 	}
@@ -62,8 +65,11 @@ int		ft_buffering(t_s *s, char *buff, int bf, char *str)
 
 void	ft_display(t_s *s, char *buff, int bf)
 {
+	// printf("\ns->res == |%s|\n", s->res);
+	// printf("buff == |%s|\n", buff);
+	// printf("64 * s->mllc == |%d|\n", 64 * (s->mllc - 1));
 	if (s->res != NULL)
-		write(1, s->res, 64 * s->mllc);
+		write(1, s->res, 64 * (s->mllc - 1));
 	if (bf != 0)
 		write(1, buff, bf);
 }
