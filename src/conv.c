@@ -28,7 +28,7 @@ char		*ft_hashzero(char *res)
 		if (res[ft_strlen(res) - 1] == ' ')
 			i--;
 		tmp[i] = '\0';
-		ft_memdel((void **)&res);
+		ft_memdel((void **)&tmp);
 		res = tmp;
 	}
 	return (res);
@@ -172,6 +172,10 @@ char		*ft_find_conv(t_s *s, int i)
 
 	if (s->str[i] == 'u')
 	{
+		if (s->f->point == TRUE)
+			s->f->zero = FALSE;
+		if (nb == 0 && s->f->point == TRUE && s->pres == 0)
+			s->champ += 1;
 		s->f->plus = FALSE;
 		s->f->space = FALSE;
 		res = ft_pf_u(s, unb);
@@ -180,6 +184,10 @@ char		*ft_find_conv(t_s *s, int i)
 	{
 		if (s->f->point == TRUE)
 			s->f->zero = FALSE;
+		if (unb == 0 && s->f->point == FALSE && s->f->zero == FALSE && s->f->moins == FALSE)
+			s->champ -= 1;
+		// if (unb != 0 && s->f->point == FALSE && s->f->zero == FALSE && s->f->moins == FALSE)
+		// 	s->champ -= 1;
 		s->f->plus = FALSE;
 		s->f->space = FALSE;
 		if (s->str[i] == 'X')

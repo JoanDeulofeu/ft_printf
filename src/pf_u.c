@@ -32,7 +32,7 @@ char		*pf_itoau(char *res, int i, unsigned long long nb, int lgnb)
 
 char		*ft_part4u(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
-	// printf("OSKOUR\n");
+	// printf("PART4\n");
 	int i;
 	int u;
 
@@ -62,6 +62,7 @@ char		*ft_part4u(t_s *s, char *res, int lgnb, unsigned long long nb)
 
 char		*ft_part3u(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
+	// printf("PART3\n");
 	int i;
 	int u;
 
@@ -82,6 +83,7 @@ char		*ft_part3u(t_s *s, char *res, int lgnb, unsigned long long nb)
 
 char		*ft_part2u(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
+	// printf("PART2\n");
 	int i;
 	int u;
 
@@ -108,6 +110,7 @@ char		*ft_part2u(t_s *s, char *res, int lgnb, unsigned long long nb)
 
 char		*ft_part1u(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
+	// printf("PART1\n");
 	int i;
 	int u;
 

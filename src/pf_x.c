@@ -87,6 +87,7 @@ char		*ft_part2x(t_s *s, char *res, int lgnb, unsigned long long nb)
 	// printf("\nu=%d      lgnb=%d\n", u, lgnb);
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
 	u = s->f->hash == TRUE ? u + 2 : u;
+	u = (s->pres == 1 && nb == 0) ? u + 1 : u;
 	// printf("\nu=%d   valeur=%d\n", u, (nb != 0 ? s->champ - lgnb : s->champ));
 	while (u++ < (nb != 0 ? s->champ - lgnb : s->champ))
 		res[i++] = ' ';
