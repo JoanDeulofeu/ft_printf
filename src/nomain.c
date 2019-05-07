@@ -43,6 +43,10 @@ int	ft_which_flags(t_s *s, int i)
 		s->f->plus = TRUE;
 	else if (s->str[i] == ' ')
 		s->f->space = TRUE;
+	else if (s->str[i] == 'z')
+		s->f->el = TRUE;
+	else if (s->str[i] == 'j')
+		s->f->l_l = TRUE;
 	else if (s->str[i] == 'l')
 	{
 		if (s->str[i + 1] == 'l')
@@ -160,16 +164,18 @@ int		ft_loop(t_s *s)
 			ft_reset_flags(s);
 			i++;
 			tmp = 0;
-			while (s->str[i] == '#' || s->str[i] == '-' || s->str[i] == '+'
-			||  s->str[i] == 'l' || s->str[i] == 'h' || s->str[i] == '.'
-			|| s->str[i] == ' ' || s->str[i] == 'L' || (s->str[i] >= '0'
+			while (s->str[i] == '#' || s->str[i] == 'j' || s->str[i] == 'z'
+			|| s->str[i] == '-' || s->str[i] == '+' ||  s->str[i] == 'l'
+			|| s->str[i] == 'h' || s->str[i] == '.' || s->str[i] == ' '
+			|| s->str[i] == 'L' || (s->str[i] >= '0'
 			&& s->str[i] <= '9'))
 			{
 				// ft_putnbr(i);
 				// ft_putstr("   <-ENTREE-  i\n");
 				if (s->str[i] == '#' || s->str[i] == '0' || s->str[i] == '-'
 				|| s->str[i] == '+' ||  s->str[i] == 'l' || s->str[i] == ' '
-				|| s->str[i] == 'L' || s->str[i] == 'h')
+				|| s->str[i] == 'L' || s->str[i] == 'h'|| s->str[i] == 'j'
+				|| s->str[i] == 'z')
 					i = ft_which_flags(s, i);
 
 				if (s->str[i] == '.')

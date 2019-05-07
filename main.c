@@ -192,6 +192,9 @@ int		main(int ac, char **av)
 	ft_printf("ft_printf29=|%-5.d|\n", 0);
    	   printf("ft_printf29=|%-5.d|\n\n", 0);
 
+	ft_printf("ft_printf30=|42%2zx42|\n", 0);
+   	   printf("   printf30=|42%2zx42|\n\n", 0);
+
 	// ft_printf("|%-5.d|%-5.15d|%-5d|%5.15d|%15.5d|%-15.5d|%0.d|%0.0d|%.0d|\n", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
 	// printf("|%-5.d|%-5.15d|%-5d|%5.15d|%15.5d|%-15.5d|%0.d|%0.0d|%.0d|\n", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 	//
