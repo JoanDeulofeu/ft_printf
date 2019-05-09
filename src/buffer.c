@@ -3,22 +3,17 @@
 int		ft_emptybuff(t_s *s, char *buff)
 {
 	char	*tmp;
-	int		i = -1;
-	int		u = -1;
+	int		i;
+	int		u;
 
+	i = -1;
+	u = -1;
 	if (!(tmp = (char *)malloc(sizeof(char) * (64 * s->mllc))))
 		exit(0);
 	ft_bzero(tmp, 64 * s->mllc);
-	// write(1, "1)buff = ", 9);
-	// write(1, buff, 64);
-	// write(1, "|\n", 2);
-	// printf("\ns->res == %s\n", s->res);
 	if (s->res == NULL)
-	{
-		s->res = tmp;
 		while (++i < 64)
-			s->res[i] = buff[i];
-	}
+			tmp[i] = buff[i];
 	else
 	{
 		while (++i < 64 * (s->mllc - 1))
@@ -26,9 +21,8 @@ int		ft_emptybuff(t_s *s, char *buff)
 		while (++u < 64)
 			tmp[i++] = buff[u];
 		ft_memdel((void **)&s->res);
-		s->res = tmp;
 	}
-	// printf("\ns->res == |%s|\n", s->res);
+	s->res = tmp;
 	s->mllc++;
 	ft_bzero(buff, 64);
 	return (0);
@@ -36,36 +30,28 @@ int		ft_emptybuff(t_s *s, char *buff)
 
 int		ft_buffering(t_s *s, char *buff, int bf, char *str)
 {
-	int i = 0;
-	int verif = 0;
-	// printf("str == |%s|\n", str);
+	int		i;
+	int		verif;
+
+	i = 0;
+	verif = 0;
 	if (s->f->pctc == TRUE)
 	{
 		while (str[i] != '\0')
 		{
-			verif++;
 			buff[bf++] = str[i++];
-			if (bf == 64)
-				bf = ft_emptybuff(s, buff);
+			bf = (bf == 64 && ++verif > -1) ? ft_emptybuff(s, buff) : bf;
 		}
-		if (verif != 0)
-			bf--;
-		buff[bf++]= '\0';
-		if (bf == 64)
-			bf = ft_emptybuff(s, buff);
+		bf = (verif != 0 && bf != 0) ? bf - 1 : bf;
+		buff[bf++] = '\0';
+		bf = (bf == 64) ? ft_emptybuff(s, buff) : bf;
 	}
 	else
 	{
 		while (str[i] != '\0')
 		{
 			buff[bf++] = str[i++];
-			// buff[bf] = '\0';
-			// write(1, "1)buff = ", 9);
-			// write(1, buff, 64);
-			// write(1, "|\n", 2);
-			// printf("buff == |%c|\n", buff[bf-1]);
-			if (bf == 64)
-				bf = ft_emptybuff(s, buff);
+			bf = (bf == 64) ? ft_emptybuff(s, buff) : bf;
 		}
 	}
 	return (bf);
@@ -73,9 +59,6 @@ int		ft_buffering(t_s *s, char *buff, int bf, char *str)
 
 void	ft_display(t_s *s, char *buff, int bf)
 {
-	// printf("\ns->res == |%s|\n", s->res);
-	// printf("buff == |%s|\n", buff);
-	// printf("64 * s->mllc == |%d|\n", 64 * (s->mllc - 1));
 	if (s->res != NULL)
 		write(1, s->res, 64 * (s->mllc - 1));
 	if (bf != 0)

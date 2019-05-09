@@ -83,124 +83,124 @@ int		main(int ac, char **av)
 	// printf("=-=-=-=-=-=  TEST DU #D =-=-=-=-=-=\n\n");
 	//
 // 	ft_d();
-// 	ft_printf("ft_printf0 =%.d| \n", nb);
-// 	   printf("printf0    =%.d| \n\n", nb);
-//
-// 	ft_printf("ft_printf1 =%d| \n", nb );
-// 	   printf("printf1    =%d| \n\n", nb);
-// 	ft_printf("ft_printf1 =%i| \n", nb );
-// 	   printf("printf1    =%i| \n\n", nb);
-//
-// 	ft_printf("ft_printf1 =% 03d| \n", 0);
-// 	   printf("printf1    =% 03d| \n\n", 0);
-//
-// 	ft_printf("ft_printf1 =% 03d| \n", 2);
-// 	   printf("printf1    =% 03d| \n\n", 2);
-//
-// 	ft_printf("ft_printf1 =% 013.d| \n", 2);
-// 	   printf("printf1    =% 013.d| \n\n", 2);
-//
-// 	ft_printf("ft_printf1 =% 013.d| \n", nb);
-// 	   printf("printf1    =% 013.d| \n\n", nb);
-//
-// 	ft_printf("ft_printf1 =% 013d| \n", 2);
-// 	   printf("printf1    =% 013d| \n\n", 2);
-//
-// 	ft_printf("ft_printf1 =% 013d| \n", nb);
-// 	   printf("printf1    =% 013d| \n\n", nb);
-//
-// 	ft_printf("ft_printf2 =%     8+.13d|\n", nb);
-// 	   printf("printf2    =%      8+.13d|\n\n", nb);
-//
-// 	ft_printf("ft_printf3 =%+8.13d|\n", nb);
-// 	   printf("printf3    =%+8.13d|\n\n", nb);
-//
-// 	ft_printf("ft_printf4 =%   13.8d|\n", nb);
-// 	   printf("printf4    =%    13.8d|\n\n", nb);
-//
-// 	ft_printf("ft_printf5 =%    +13.8d|\n", ft_abs(nb));
-// 	   printf("printf5    =%    +13.8d|\n\n", ft_abs(nb));
-//
-// 	ft_printf("ft_printf6 =%+13.8d|\n", ft_abs(nb));
-// 	   printf("printf6    =%+13.8d|\n\n", ft_abs(nb));
-//
-// 	ft_printf("ft_printf7 =%    +13.8d|\n", nb);
-// 	   printf("printf7    =%    +13.8d|\n\n", nb);
-//
-// 	ft_printf("ft_printf8 =%+13.d|\n", nb);
-// 	   printf("printf8    =%+13.d|\n\n", nb);
-//
-// 	fpf = ft_printf("ft_printf9 =%+08.13d|\n", nb);
-// 		pf = printf("printf9    =%+08.13d|\n\n", nb);
-//
-// 	printf("ft_printf %d\n", fpf + 1);
-// 	printf("printf    %d\n", pf);
-//
-// 	ft_printf("ft_printf10=%+013.8d|\n", nb);
-// 	   printf("printf10   =%+013.8d|\n\n", nb);
-//
-// 	ft_printf("ft_printf11=%0+08.13d|\n", nb);
-// 	   printf("printf11   =%0+08.13d|\n\n", nb);
-//
-// 	ft_printf("ft_printf13=%013d|\n", nb);
-// 	   printf("printf13   =%013d|\n\n", nb);
-//
-// 	ft_printf("ft_printf14=%013d|\n", ft_abs(nb));
-// 	   printf("printf14   =%013d|\n\n", ft_abs(nb));
-//
-// 	ft_printf("ft_printf15=%8.13d|\n", nb);
-// 	   printf("printf15   =%8.13d|\n\n", nb);
-//
-// 	ft_printf("ft_printf16=%-8.13d|\n", nb);
-// 	   printf("printf16   =%-8.13d|\n\n", nb);
-//
-// 	ft_printf("ft_printf17=%-18.13d|\n", nb);
-// 	   printf("printf17   =%-18.13d|\n\n", nb);
-//
-// 	ft_printf("ft_printf18=%-018d|\n", nb);
-// 	   printf("printf18   =%-018d|\n\n", nb);
-//
-// 	ft_printf("ft_printf19=%-0 18d|\n", nb);
-// 	   printf("printf19   =%-0 18d|\n\n", nb);
-//
-// 	ft_printf("ft_printf20=%+-18.13d|\n", nb);
-// 	   printf("printf20   =%+-18.13d|\n\n", nb);
-//
-// 	ft_printf("ft_printf21=%+-018d|\n", nb);
-// 	   printf("printf21   =%+-018d|\n\n", nb);
-//
-// 	ft_printf("ft_printf23=%#d|\n", nb);
-// 	   printf("printf23   =%#d|\n\n", nb);
-//
-// 	ft_printf("ft_printf24=% 10.14jd|\n", nb);
-// 	   printf("printf24   =jd|\n\n", nb);
-//
-// 	ft_printf("ft_printf25=% 10.14hd|\n", nb);
-// 	   printf("printf25   =% 10.14hd|\n\n", nb);
-//
-// 	ft_printf("ft_printf26=%+-.2lld|\n", nb);
-// 	   printf("printf26   =%+-.2lld|\n\n", nb);
-//
-//     ft_printf("ft_printf27=% 10.14hhd|\n", chr);
-// 	   printf("printf27   =% 10.14hhd|\n\n", chr);
-//
-//    	ft_printf("ft_printf22=%0 18d|\n", nb);
-//    	   printf("printf22   =%0 18d|\n\n", nb);
-//
-//    ft_printf("ft_printf12=%0+023.8d|\n", nb);
-// 	  printf("printf12   =%0+023.8d|\n\n", nb);
-//
-// 	ft_printf("ft_printf28=|%025.d|\n", nb);
-//    	   printf("ft_printf28=|%025.d|\n\n", nb);
-//
-// 	ft_printf("ft_printf29=|%-5.d|\n", 0);
-//    	   printf("ft_printf29=|%-5.d|\n\n", 0);
-//
-// 	ft_printf("ft_printf30=|42%2zx42|\n", 0);
-//    	   printf("   printf30=|42%2zx42|\n\n", 0);
-//
-// 	ft_printf("|%-5.d|%-5.15d|%-5d|%5.15d|%15.5d|%-15.5d|%0.d|%0.0d|%.0d|\n", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
-// 	printf("|%-5.d|%-5.15d|%-5d|%5.15d|%15.5d|%-15.5d|%0.d|%0.0d|%.0d|\n", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	ft_printf("ft_printf0 =%.d| \n", nb);
+	   printf("printf0    =%.d| \n\n", nb);
+
+	ft_printf("ft_printf1 =%d| \n", nb );
+	   printf("printf1    =%d| \n\n", nb);
+	ft_printf("ft_printf1 =%i| \n", nb );
+	   printf("printf1    =%i| \n\n", nb);
+
+	ft_printf("ft_printf1 =% 03d| \n", 0);
+	   printf("printf1    =% 03d| \n\n", 0);
+
+	ft_printf("ft_printf1 =% 03d| \n", 2);
+	   printf("printf1    =% 03d| \n\n", 2);
+
+	ft_printf("ft_printf1 =% 013.d| \n", 2);
+	   printf("printf1    =% 013.d| \n\n", 2);
+
+	ft_printf("ft_printf1 =% 013.d| \n", nb);
+	   printf("printf1    =% 013.d| \n\n", nb);
+
+	ft_printf("ft_printf1 =% 013d| \n", 2);
+	   printf("printf1    =% 013d| \n\n", 2);
+
+	ft_printf("ft_printf1 =% 013d| \n", nb);
+	   printf("printf1    =% 013d| \n\n", nb);
+
+	ft_printf("ft_printf2 =%     8+.13d|\n", nb);
+	   printf("printf2    =%      8+.13d|\n\n", nb);
+
+	ft_printf("ft_printf3 =%+8.13d|\n", nb);
+	   printf("printf3    =%+8.13d|\n\n", nb);
+
+	ft_printf("ft_printf4 =%   13.8d|\n", nb);
+	   printf("printf4    =%    13.8d|\n\n", nb);
+
+	ft_printf("ft_printf5 =%    +13.8d|\n", ft_abs(nb));
+	   printf("printf5    =%    +13.8d|\n\n", ft_abs(nb));
+
+	ft_printf("ft_printf6 =%+13.8d|\n", ft_abs(nb));
+	   printf("printf6    =%+13.8d|\n\n", ft_abs(nb));
+
+	ft_printf("ft_printf7 =%    +13.8d|\n", nb);
+	   printf("printf7    =%    +13.8d|\n\n", nb);
+
+	ft_printf("ft_printf8 =%+13.d|\n", nb);
+	   printf("printf8    =%+13.d|\n\n", nb);
+
+	fpf = ft_printf("ft_printf9 =%+08.13d|\n", nb);
+		pf = printf("printf9    =%+08.13d|\n\n", nb);
+
+	printf("ft_printf %d\n", fpf + 1);
+	printf("printf    %d\n", pf);
+
+	ft_printf("ft_printf10=%+013.8d|\n", nb);
+	   printf("printf10   =%+013.8d|\n\n", nb);
+
+	ft_printf("ft_printf11=%0+08.13d|\n", nb);
+	   printf("printf11   =%0+08.13d|\n\n", nb);
+
+	ft_printf("ft_printf13=%013d|\n", nb);
+	   printf("printf13   =%013d|\n\n", nb);
+
+	ft_printf("ft_printf14=%013d|\n", ft_abs(nb));
+	   printf("printf14   =%013d|\n\n", ft_abs(nb));
+
+	ft_printf("ft_printf15=%8.13d|\n", nb);
+	   printf("printf15   =%8.13d|\n\n", nb);
+
+	ft_printf("ft_printf16=%-8.13d|\n", nb);
+	   printf("printf16   =%-8.13d|\n\n", nb);
+
+	ft_printf("ft_printf17=%-18.13d|\n", nb);
+	   printf("printf17   =%-18.13d|\n\n", nb);
+
+	ft_printf("ft_printf18=%-018d|\n", nb);
+	   printf("printf18   =%-018d|\n\n", nb);
+
+	ft_printf("ft_printf19=%-0 18d|\n", nb);
+	   printf("printf19   =%-0 18d|\n\n", nb);
+
+	ft_printf("ft_printf20=%+-18.13d|\n", nb);
+	   printf("printf20   =%+-18.13d|\n\n", nb);
+
+	ft_printf("ft_printf21=%+-018d|\n", nb);
+	   printf("printf21   =%+-018d|\n\n", nb);
+
+	ft_printf("ft_printf23=%#d|\n", nb);
+	   printf("printf23   =%#d|\n\n", nb);
+
+	ft_printf("ft_printf24=% 10.14jd|\n", nb);
+	   printf("printf24   =% 10.14jd|\n\n", nb);
+
+	ft_printf("ft_printf25=% 10.14hd|\n", nb);
+	   printf("printf25   =% 10.14hd|\n\n", nb);
+
+	ft_printf("ft_printf26=%+-.2lld|\n", nb);
+	   printf("printf26   =%+-.2lld|\n\n", nb);
+
+    ft_printf("ft_printf27=% 10.14hhd|\n", chr);
+	   printf("printf27   =% 10.14hhd|\n\n", chr);
+
+   	ft_printf("ft_printf22=%0 18d|\n", nb);
+   	   printf("printf22   =%0 18d|\n\n", nb);
+
+   ft_printf("ft_printf12=%0+023.8d|\n", nb);
+	  printf("printf12   =%0+023.8d|\n\n", nb);
+
+	ft_printf("ft_printf28=|%025.d|\n", nb);
+   	   printf("ft_printf28=|%025.d|\n\n", nb);
+
+	ft_printf("ft_printf29=|%-5.d|\n", 0);
+   	   printf("ft_printf29=|%-5.d|\n\n", 0);
+
+	ft_printf("ft_printf30=|42%2zx42|\n", 0);
+   	   printf("   printf30=|42%2zx42|\n\n", 0);
+
+	ft_printf("|%-5.d|%-5.15d|%-5d|%5.15d|%15.5d|%-15.5d|%0.d|%0.0d|%.0d|\n", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
+	printf("|%-5.d|%-5.15d|%-5d|%5.15d|%15.5d|%-15.5d|%0.d|%0.0d|%.0d|\n\n", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 //
 //     fpf = ft_printf("ft_printf28=% 10.14hhd|\n", nb);
 // 		pf = printf("printf27   =% 10.14hhd|\n\n", nb);
@@ -921,8 +921,15 @@ int		main(int ac, char **av)
 // 	ft_printf("ft_printf32=%llx|\n", -9223372036854775808);
 // 	   printf("printf32   =%llx|\n\n", -9223372036854775808);
 //
-// 	ft_printf("mdretifhdbjvbdbdjc hdbd cd  jddbchcnn cjbhwad wd kanbdwhba%llx et %llX egalement %llx fini %lx %llx et %llX egalement %llx fini %lx|\n", 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807, 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807);
-// 	printf("mdretifhdbjvbdbdjc hdbd cd  jddbchcnn cjbhwad wd kanbdwhba%llx et %llX egalement %llx fini %lx %llx et %llX egalement %llx fini %lx|\n", 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807, 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807);
+	fpf = ft_printf("mdretifhdbjvbdbdjc %%%%% hdbd cd  jddbchcnn cjbhwad wd kanbdwhba%llx et %llX egalement %llx fini %lx %llx et %llX egalement %llx fini %lx|\n", 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807, 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807);
+	pf = printf("mdretifhdbjvbdbdjc %%%%% hdbd cd  jddbchcnn cjbhwad wd kanbdwhba%llx et %llX egalement %llx fini %lx %llx et %llX egalement %llx fini %lx|\n", 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807, 18446744073709551615, 18446744073709551615, -9223372036854775808, 9223372036854775807);
+	printf("ft_printf %d\n", fpf);
+	printf("printf    %d\n\n", pf);
+
+	// fpf = ft_printf("%d|\n", 97664812);
+	// pf = printf("%d|\n", 97664812);
+	// printf("ft_printf %d\n", fpf);
+	// printf("printf    %d\n\n", pf);
 //
 // 	ft_printf("123456789 abcdefghi 987654321 ihgfedcba motlettre z1x2w3v4u fromAgere\n");
 // 	printf("123456789 abcdefghi 987654321 ihgfedcba motlettre z1x2w3v4u fromAgere\n\n");
@@ -4391,536 +4398,536 @@ int		main(int ac, char **av)
 	i = 1;
 
 
-	    printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%u|%%u|\033[0m arg: \033[36m 42, -42\033[0m \n");
-		x =     ft_printf("my  printf: |%u|%u|\n", 42, -42);
-	    y =        printf("the printf: |%u|%u|\n", 42, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%+u|%%+u|\033[0m arg: \033[36m 42, -42\033[0m \n");
-		x =     ft_printf("my  printf: |%+u|%+u|\n", 42, -42);
-	    y =        printf("the printf: |%+u|%+u|\n", 42, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%4u|%%4u|\033[0m arg: \033[36m 42, -42\033[0m \n");
-		x =     ft_printf("my  printf: |%4u|%4u|\n", 42, -42);
-	    y =        printf("the printf: |%4u|%4u|\n", 42, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%+4u|%%+4u|\033[0m arg: \033[36m 42, -42\033[0m \n");
-		x =     ft_printf("my  printf: |%+4u|%+4u|\n", 42, -42);
-	    y =        printf("the printf: |%+4u|%+4u|\n", 42, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%.4u|%%.4u|\033[0m arg: \033[36m 42, -42\033[0m \n");
-		x =     ft_printf("my  printf: |%.4u|%.4u|\n", 42, -42);
-	    y =        printf("the printf: |%.4u|%.4u|\n", 42, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%+.4u|%%+.4u|\033[0m arg: \033[36m 4242, -42\033[0m \n");
-		x =     ft_printf("my  printf: |%+.4u|%+.4u|\n", 4242, -42);
-	    y =        printf("the printf: |%+.4u|%+.4u|\n", 4242, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-	    printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%2.4u|%%2.4u|\033[0m arg: \033[36m 21, -21 \033[0m \n");
-		x =     ft_printf("my  printf: |%2.4u|%2.4u|\n", 21, -21);
-	    y =        printf("the printf: |%2.4u|%2.4u|\n", 21, -21);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%+2.4u|%%+2.4u|\033[0m arg: \033[36m 21, -21 \033[0m \n");
-		x =     ft_printf("my  printf: |%+2.4u|%+2.4u|\n", 21, -21);
-	    y =        printf("the printf: |%+2.4u|%+2.4u|\n", 21, -21);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-
-	    printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%09.2ulul|%%09.2ulul|%%09.2ulul|\033[0m arg: \033[36m 1, 150, -15\033[0m \n");
-		x =     ft_printf("my  printf: |%09.2ulul|%09.2ulul|%09.2ulul|\n", 1, 150, -15);
-	    y =        printf("the printf: |%09.2ulul|%09.2ulul|%09.2ulul|\n", 1, 150, -15);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-	    ft_putchar('\n');
-
-	    printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m %%-09.3ulul|%%-09.3u|\033[0m arg: \033[36m -15, 1512\033[0m \n");
-		x =     ft_printf("my  printf: |%-09.4ulul|%-09.3u|\n", -15, 1512);
-	    y =        printf("the printf: |%-09.4ulul|%-9.3u|\n", -15, 1512);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-	    ft_putchar('\n');
-
-	    printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%4.2u|%%-4.2u|\033[0m arg: \033[36m 32, -32\033[0m \n");
-		x =     ft_printf("my  printf: |%4.2u|%-4.2u|\n", 32, -32);
-	    y =        printf("the printf: |%4.2u|%-4.2u|\n", 32, -32);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag - : pusitive and neg,  w < p\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m %%-4.9u |%%4.9u |\033[0m arg: \033[36m -15, -15, 15124\033[0m \n");
-		x =     ft_printf("my  printf: |%-4.9u |%4.9u |%4.9u |\n", -15, -15, 15124);
-	    y =        printf("the printf: |%-4.9u |%4.9u |%4.9u |\n", -15, -15, 15124);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, nu specifier\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%u|%%#u|%%#u|%%#u|\033[0m arg: \033[36m 42, 142, 542, -42\033[0m \n");
-		x =     ft_printf("my  printf: |%u|%#u|%#u|%#u|\n", 42, 142, 542, -42);
-	    y =        printf("the printf: |%u|%#u|%#u|%#u|\n", 42, 142, 542, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, withd unly, precisiun unly\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%#u|%%#5u|%%#.5u|%%#u|%%#5u|%%#.5u|\033[0m arg: \033[36m 42, 42, 42, -42, -42, -42\033[0m \n");
-		x =     ft_printf("my  printf: %#u|%#5u|%#.5u|%#.5d|%#u|%#5u|%#.5u|\n", 42, 42, 42, 42, -42, -42, -42);
-	    y =        printf("the printf: %#u|%#5u|%#.5u|%#.5d|%#u|%#5u|%#.5u|\n", 42, 42, 42, 42, -42, -42, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, withd unly, precisiun unly, equal len\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%#5u|%%#.5u|%%#5u|%%#.5u|\033[0m arg: \033[36m 42121, 42121, -4212, -4212\033[0m \n");
-		x =     ft_printf("my  printf: %#5u|%#.5u|%#5u|%#.5u|\n", 42121, 42121, -4212, -4212);
-	    y =        printf("the printf: %#5u|%#.5u|%#5u|%#.5u|\n", 42121, 42121, -4212, -4212);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, w > p \033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%#6.3u|%%#6.3u|%%#6.3u|\033[0m arg: \033[36m 42, 4242, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |%#6.3u|%#6.3u|%#6.3u|\n", 42, 424, -42);
-	    y =        printf("the printf: |%#6.3u|%#6.3u|%#6.3u|\n", 42, 424, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, w < p\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%#3.6u|%%#3.6u|%%#3.6u|\033[0m arg: \033[36m 42, 424, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |%#3.6u|%#3.6u|%#3.6u|\n", 42, 424, -42);
-	    y =        printf("the printf: |%#3.6u|%#3.6u|%#3.6u|\n", 42, 424, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag # -: pus and neg, w < p, flag -\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%#-3.6u|%%#-3.6u|%%#-3.6u||%%-#3.6u|%%-#3.6u|%%-#3.6u|\033[0m arg: \033[36m 42, 424, -42, 42, 424, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |%#-3.6u|%#-3.6u|%#-3.6u||%-#3.6u|%-#3.6u|%-#3.6u|\n", 42, 424, -42, 42, 424, -42);
-	    y =        printf("the printf: |%#-3.6u|%#-3.6u|%#-3.6u||%-#3.6u|%-#3.6u|%-#3.6u|\n", 42, 424, -42, 42, 424, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag + # -: pus and neg, w < p, flag -\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%#+-3.6u|%%#+-3.6u|%%#+-3.6u||%%-#+3.6u|%%-#+3.6u|%%+-#3.6u|\033[0m arg: \033[36m 42, 424, -42, 42, 424, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |%#+-3.6u|%#+-3.6u|%#+-3.6u||%-#+3.6u|%-+#3.6u|%+-#3.6u|\n", 42, 424, -42, 42, 424, -42);
-	    y =        printf("the printf: |%#+-3.6u|%#+-3.6u|%#+-3.6u||%-#+3.6u|%-+#3.6u|%+-#3.6u|\n", 42, 424, -42, 42, 424, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag # -: pusitive and negative, w > p, flag - \033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%-#6.3u|%%-#6.3u|%%-#6.3u|\033[0m arg: \033[36m 42, 4242, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |%-#6.3u|%-#6.3u|%-#6.3u|%-#6.3u|\n", 42, 424, 424536, -42);
-	    y =        printf("the printf: |%-#6.3u|%-#6.3u|%-#6.3u|%-#6.3u|\n", 42, 424, 424536, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag + # - : pusitive and negative, w > p, flag - \033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%+-#6.3u|%%+-#6.3u|%%+-#6.3u|%%+-#6.3u|\033[0m arg: \033[36m 42, 424, 424536, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |%+-#6.3u|%+-#6.3u|%+-#6.3u|%+-#6.3u|\n", 42, 424, 424536, -42);
-	    y =        printf("the printf: |%+-#6.3u|%+-#6.3u|%+-#6.3u|%+-#6.3u|\n", 42, 424, 424536, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag # - : pusitive and negative, w > p && l > p \033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%-#15.10u|\033[0m arg: \033[36m 42, 424, 424536, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |%-#15.10u|\n", 42, 42, 42, 42);
-	    y =        printf("the printf: |%-#15.10u|\n", 42, 42, 42, 42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag # - : pusitive and negative, w > p && l > p \033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%-#5u|\033[0m arg: \033[36m 42, 42, \033[0m \n");
-		x =     ft_printf("my  printf: |%-#5u|\n", 42, 42, 42, 42);
-	    y =        printf("the printf: |%-#5u|\n", 42, 42, 42, 42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		// Flag ' '
-
-		    printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% u|%% u|\033[0m arg: \033[36m 42, -42\033[0m \n");
-		x =     ft_printf("my  printf: |% u|% u|\n", 42, -42);
-	    y =        printf("the printf: |% u|% u|\n", 42, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% +u|%% +u|\033[0m arg: \033[36m 42, -42\033[0m \n");
-		x =     ft_printf("my  printf: |% +u|% +u|\n", 42, -42);
-	    y =        printf("the printf: |% +u|% +u|\n", 42, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% 4u|%% 4u|\033[0m arg: \033[36m 42, -42\033[0m \n");
-		x =     ft_printf("my  printf: |% 4u|% 4u|\n", 42, -42);
-	    y =        printf("the printf: |% 4u|% 4u|\n", 42, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% +4u|%% +4u|\033[0m arg: \033[36m 42, -42\033[0m \n");
-		x =     ft_printf("my  printf: |% +4u|% +4u|\n", 42, -42);
-	    y =        printf("the printf: |% +4u|% +4u|\n", 42, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% .4u|%% .4u|\033[0m arg: \033[36m 42, -42\033[0m \n");
-		x =     ft_printf("my  printf: |% .4u|% .4u|\n", 42, -42);
-	    y =        printf("the printf: |% .4u|% .4u|\n", 42, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% +.4u|%% +.4u|\033[0m arg: \033[36m 4242, -42\033[0m \n");
-		x =     ft_printf("my  printf: |% +.4u|% +.4u|\n", 4242, -42);
-	    y =        printf("the printf: |% +.4u|% +.4u|\n", 4242, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-	    printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% 2.4u|%% 2.4u|\033[0m arg: \033[36m 21, -21 \033[0m \n");
-		x =     ft_printf("my  printf: |% 2.4u|% 2.4u|\n", 21, -21);
-	    y =        printf("the printf: |% 2.4u|% 2.4u|\n", 21, -21);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%+ 2.4u|%%+ 2.4u|\033[0m arg: \033[36m 21, -21 \033[0m \n");
-		x =     ft_printf("my  printf: |%+ 2.4u|%+ 2.4u|\n", 21, -21);
-	    y =        printf("the printf: |%+ 2.4u|%+ 2.4u|\n", 21, -21);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-
-	    printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% 09.2ulul|%% 09.2ulul|%% 09.2ulul|\033[0m arg: \033[36m 1, 150, -15\033[0m \n");
-		x =     ft_printf("my  printf: |% 09.2ulul|% 09.2ulul|% 09.2ulul|\n", 1, 150, -15);
-	    y =        printf("the printf: |% 09.2ulul|% 09.2ulul|% 09.2ulul|\n", 1, 150, -15);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-	    ft_putchar('\n');
-
-	    printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m %% -09.3ulul|%% -09.3u|\033[0m arg: \033[36m -15, 1512\033[0m \n");
-		x =     ft_printf("my  printf: |% -09.4ulul|% -09.3u|\n", -15, 1512);
-	    y =        printf("the printf: |% -09.4ulul|% -9.3u|\n", -15, 1512);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-	    ft_putchar('\n');
-
-	    printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% 4.2u|%% -4.2u|\033[0m arg: \033[36m 32, -32\033[0m \n");
-		x =     ft_printf("my  printf: |% 4.2u|% -4.2u|\n", 32, -32);
-	    y =        printf("the printf: |% 4.2u|% -4.2u|\n", 32, -32);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag - : pusitive and neg,  w < p\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m %% -4.9u |%% 4.9u |\033[0m arg: \033[36m -15, -15, 15124\033[0m \n");
-		x =     ft_printf("my  printf: |% -4.9u |% 4.9u |% 4.9u |\n", -15, -15, 15124);
-	    y =        printf("the printf: |% -4.9u |% 4.9u |% 4.9u |\n", -15, -15, 15124);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, nu specifier\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% u|%%# u|%%# u|%%# u|\033[0m arg: \033[36m 42, 142, 542, -42\033[0m \n");
-		x =     ft_printf("my  printf: |% u|%# u|%# u|%# u|\n", 42, 142, 542, -42);
-	    y =        printf("the printf: |% u|%# u|%# u|%# u|\n", 42, 142, 542, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, withd unly, precisiun unly\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%# u|%%#5 u|%%# .5u|%%# u|%%# 5u|%%# .5u|\033[0m arg: \033[36m 42, 42, 42, -42, -42, -42\033[0m \n");
-		x =     ft_printf("my  printf: %# u|%# 5u|%# .5u|%# .5d|%# u|%# 5u|%# .5u|\n", 42, 42, 42, 42, -42, -42, -42);
-	    y =        printf("the printf: %# u|%# 5u|%# .5u|%# .5d|%# u|%# 5u|%# .5u|\n", 42, 42, 42, 42, -42, -42, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, withd unly, precisiun unly, equal len\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%# 5u|%%# .5u|%%# 5u|%%# .5u|\033[0m arg: \033[36m 42121, 42121, -4212, -4212\033[0m \n");
-		x =     ft_printf("my  printf: %# 5u|%# .5u|%# 5u|%# .5u|\n", 42121, 42121, -4212, -4212);
-	    y =        printf("the printf: %# 5u|%# .5u|%# 5u|%# .5u|\n", 42121, 42121, -4212, -4212);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, w > p \033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%# 6.3u|%%# 6.3u|%%# 6.3u|\033[0m arg: \033[36m 42, 4242, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |%# 6.3u|%# 6.3u|%# 6.3u|\n", 42, 424, -42);
-	    y =        printf("the printf: |%# 6.3u|%# 6.3u|%# 6.3u|\n", 42, 424, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, w < p\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% #3.6u|%% #3.6u|%% #3.6u|\033[0m arg: \033[36m 42, 424, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |% #3.6u|% #3.6u|% #3.6u|\n", 42, 424, -42);
-	    y =        printf("the printf: |% #3.6u|% #3.6u|% #3.6u|\n", 42, 424, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag # -: pus and neg, w < p, flag -\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%# -3.6u|%%#- 3.6u|%%#- 3.6u||%%- #3.6u|%%- #3.6u|%% -#3.6u|\033[0m arg: \033[36m 42, 424, -42, 42, 424, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |% #-3.6u|% #-3.6u|% #-3.6u||% -#3.6u|% -#3.6u|% -#3.6u|\n", 42, 424, -42, 42, 424, -42);
-	    y =        printf("the printf: |% #-3.6u|% #-3.6u|% #-3.6u||% -#3.6u|% -#3.6u|% -#3.6u|\n", 42, 424, -42, 42, 424, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag + # -: pus and neg, w < p, flag -\033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%# +-3.6u|%%# +-3.6u|%%# +-3.6u||%% -#+3.6u|%% -#+3.6u|%% +-#3.6u|\033[0m arg: \033[36m 42, 424, -42, 42, 424, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |% #+-3.6u|% #+-3.6u|% #+-3.6u||% -#+3.6u|% -+#3.6u|% +-#3.6u|\n", 42, 424, -42, 42, 424, -42);
-	    y =        printf("the printf: |% #+-3.6u|% #+-3.6u|% #+-3.6u||% -#+3.6u|% -+#3.6u|% +-#3.6u|\n", 42, 424, -42, 42, 424, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag # -: pusitive and negative, w > p, flag - \033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% -#6.3u|%% -#6.3u|%% -#6.3u|\033[0m arg: \033[36m 42, 4242, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |% -#6.3u|% -#6.3u|% -#6.3u|% -#6.3u|\n", 42, 424, 424536, -42);
-	    y =        printf("the printf: |% -#6.3u|% -#6.3u|% -#6.3u|% -#6.3u|\n", 42, 424, 424536, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag + # - : pusitive and negative, w > p, flag - \033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% +-#6.3u|%% +-#6.3u|%% +-#6.3u|%% +-#6.3u|\033[0m arg: \033[36m 42, 424, 424536, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |%+ -#6.3u|%+- #6.3u|% +-#6.3u|% +-#6.3u|\n", 42, 424, 424536, -42);
-	    y =        printf("the printf: |%+ -#6.3u|%+- #6.3u|% +-#6.3u|% +-#6.3u|\n", 42, 424, 424536, -42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag # - : pusitive and negative, w > p && l > p \033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%%-# 15.10u|\033[0m arg: \033[36m 42, 424, 424536, -42 \033[0m \n");
-		x =     ft_printf("my  printf: |% -#15.10u|\n", 42, 42, 42, 42);
-	    y =        printf("the printf: |% -#15.10u|\n", 42, 42, 42, 42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		ft_putchar('\n');
-
-		printf("===============  \033[33mTEST %d | Flag # - : pusitive and negative, w > p && l > p \033[0m  ===============\n\n", i++);
-	    printf("test: \033[36m |%% -#5u|\033[0m arg: \033[36m 42, 42, \033[0m \n");
-		x =     ft_printf("my  printf: |% -#5lu|\n", (unsigned long)-42);
-	    y =        printf("the printf: |% -#5lu|\n", (unsigned long)-42);
-		printf("my  printf return = %d\n", x);
-		printf("the printf return = %d\n", y);
-		y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-		i = 1;
-
-	printf("===============  \033[33mTEST %d | HEXADECIMAL \033[0m  ===============\n\n", i++);
-    printf("test: \033[36m |%%llx|%%lX|%%llx|%%hx|%%x|\033[0m arg: \033[36m 18446744073709551615, (uns long)-42, (uns long long)-42, (uns short)-42 \033[0m \n");
-	x =     ft_printf("my  printf: \n-%#20llx|\n-%#lx|\n-%#llx|\n-%#hx|\n-%#x\n", 18446744073709551615, (unsigned long int)45, (unsigned long long int)-42, (unsigned short int)-42, -42);
-    y =        printf("the printf: \n-%#20llx|\n-%#lx|\n-%#llx|\n-%#hx|\n-%#x\n", 18446744073709551615, (unsigned long int)45, (unsigned long long int)-42, (unsigned short int)-42, -42);
-	printf("my  printf return = %d\n", x);
-	printf("the printf return = %d\n", y);
-	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-	ft_putchar('\n');
-
-	printf("===============  \033[33mTEST %d | UNSIGNED INT \033[0m  ===============\n\n", i++);
-    printf("test: \033[36m |%%u|%%llu|%%hhu|%%lu|\033[0m arg: \033[36m (unsigned int)42, (unsigned long long int)42, (unsigned char)42 \033[0m \n");
-	x =     ft_printf("my  printf: |%-15u|%-30llu|%hhu|%lu|\n", (unsigned int)-42, (unsigned long long int)-42, (unsigned char)-42, 123456789101112);
-    y =        printf("the printf: |%-15u|%-30llu|%hhu|%lu|\n", (unsigned int)-42, (unsigned long long int)-42, (unsigned char)-42, 123456789101112);
-	printf("my  printf return = %d\n", x);
-	printf("the printf return = %d\n", y);
-	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-	ft_putchar('\n');
-
-	printf("===============  \033[33mTEST %d | OCTAL \033[0m  ===============\n\n", i++);
-    printf("test: \033[36m |%%o|%%llo|%%hho|\033[0m arg: \033[36m 42, 42, \033[0m \n");
-	x =     ft_printf("my  printf: |%o|%30llo|%hho|\n", (unsigned int)-42, (unsigned long long int)-42, (unsigned char)-42);
-    y =        printf("the printf: |%o|%30llo|%hho|\n", (unsigned int)-42, (unsigned long long int)-42, (unsigned char)-42);
-	printf("my  printf return = %d\n", x);
-	printf("the printf return = %d\n", y);
-	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-	printf("===============  \033[33mTEST %d | OCTAL \033[0m  ===============\n\n", i++);
-    printf("test: \033[36m |%%d|%%lld|%%hhd|\033[0m arg: \033[36m 42, 42, \033[0m \n");
-	x =     ft_printf("my  printf: |%d|%lld|%hhd|\n", (signed int)-42, (signed long long int)-42, (signed char)-42);
-    y =        printf("the printf: |%d|%lld|%hhd|\n", (signed int)-42, (signed long long int)-42, (signed char)-42);
-	printf("my  printf return = %d\n", x);
-	printf("the printf return = %d\n", y);
-	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-
-	printf("===============  \033[33mTEST %d | OCTAL \033[0m  ===============\n\n", i++);
-    printf("test: \033[36m |%%d|%%lld|%%hhd|\033[0m arg: \033[36m 42, 42, \033[0m \n");
-	x =     ft_printf("my  printf: |%x|%#-30.20llx|%hhx|\n", (unsigned int)-42, (unsigned long long int)-42, (unsigned char)-42);
-    y =        printf("the printf: |%x|%#-30.20llx|%hhx|\n", (unsigned int)-42, (unsigned long long int)-42, (unsigned char)-42);
-	printf("my  printf return = %d\n", x);
-	printf("the printf return = %d\n", y);
-	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	//     printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%u|%%u|\033[0m arg: \033[36m 42, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |%u|%u|\n", 42, -42);
+	//     y =        printf("the printf: |%u|%u|\n", 42, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%+u|%%+u|\033[0m arg: \033[36m 42, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |%+u|%+u|\n", 42, -42);
+	//     y =        printf("the printf: |%+u|%+u|\n", 42, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%4u|%%4u|\033[0m arg: \033[36m 42, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |%4u|%4u|\n", 42, -42);
+	//     y =        printf("the printf: |%4u|%4u|\n", 42, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%+4u|%%+4u|\033[0m arg: \033[36m 42, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |%+4u|%+4u|\n", 42, -42);
+	//     y =        printf("the printf: |%+4u|%+4u|\n", 42, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%.4u|%%.4u|\033[0m arg: \033[36m 42, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |%.4u|%.4u|\n", 42, -42);
+	//     y =        printf("the printf: |%.4u|%.4u|\n", 42, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%+.4u|%%+.4u|\033[0m arg: \033[36m 4242, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |%+.4u|%+.4u|\n", 4242, -42);
+	//     y =        printf("the printf: |%+.4u|%+.4u|\n", 4242, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	//     printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%2.4u|%%2.4u|\033[0m arg: \033[36m 21, -21 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%2.4u|%2.4u|\n", 21, -21);
+	//     y =        printf("the printf: |%2.4u|%2.4u|\n", 21, -21);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%+2.4u|%%+2.4u|\033[0m arg: \033[36m 21, -21 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%+2.4u|%+2.4u|\n", 21, -21);
+	//     y =        printf("the printf: |%+2.4u|%+2.4u|\n", 21, -21);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	//
+	//     printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%09.2ulul|%%09.2ulul|%%09.2ulul|\033[0m arg: \033[36m 1, 150, -15\033[0m \n");
+	// 	x =     ft_printf("my  printf: |%09.2ulul|%09.2ulul|%09.2ulul|\n", 1, 150, -15);
+	//     y =        printf("the printf: |%09.2ulul|%09.2ulul|%09.2ulul|\n", 1, 150, -15);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	//     ft_putchar('\n');
+	//
+	//     printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m %%-09.3ulul|%%-09.3u|\033[0m arg: \033[36m -15, 1512\033[0m \n");
+	// 	x =     ft_printf("my  printf: |%-09.4ulul|%-09.3u|\n", -15, 1512);
+	//     y =        printf("the printf: |%-09.4ulul|%-9.3u|\n", -15, 1512);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	//     ft_putchar('\n');
+	//
+	//     printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%4.2u|%%-4.2u|\033[0m arg: \033[36m 32, -32\033[0m \n");
+	// 	x =     ft_printf("my  printf: |%4.2u|%-4.2u|\n", 32, -32);
+	//     y =        printf("the printf: |%4.2u|%-4.2u|\n", 32, -32);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag - : pusitive and neg,  w < p\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m %%-4.9u |%%4.9u |\033[0m arg: \033[36m -15, -15, 15124\033[0m \n");
+	// 	x =     ft_printf("my  printf: |%-4.9u |%4.9u |%4.9u |\n", -15, -15, 15124);
+	//     y =        printf("the printf: |%-4.9u |%4.9u |%4.9u |\n", -15, -15, 15124);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, nu specifier\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%u|%%#u|%%#u|%%#u|\033[0m arg: \033[36m 42, 142, 542, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |%u|%#u|%#u|%#u|\n", 42, 142, 542, -42);
+	//     y =        printf("the printf: |%u|%#u|%#u|%#u|\n", 42, 142, 542, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, withd unly, precisiun unly\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%#u|%%#5u|%%#.5u|%%#u|%%#5u|%%#.5u|\033[0m arg: \033[36m 42, 42, 42, -42, -42, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: %#u|%#5u|%#.5u|%#.5d|%#u|%#5u|%#.5u|\n", 42, 42, 42, 42, -42, -42, -42);
+	//     y =        printf("the printf: %#u|%#5u|%#.5u|%#.5d|%#u|%#5u|%#.5u|\n", 42, 42, 42, 42, -42, -42, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, withd unly, precisiun unly, equal len\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%#5u|%%#.5u|%%#5u|%%#.5u|\033[0m arg: \033[36m 42121, 42121, -4212, -4212\033[0m \n");
+	// 	x =     ft_printf("my  printf: %#5u|%#.5u|%#5u|%#.5u|\n", 42121, 42121, -4212, -4212);
+	//     y =        printf("the printf: %#5u|%#.5u|%#5u|%#.5u|\n", 42121, 42121, -4212, -4212);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, w > p \033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%#6.3u|%%#6.3u|%%#6.3u|\033[0m arg: \033[36m 42, 4242, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%#6.3u|%#6.3u|%#6.3u|\n", 42, 424, -42);
+	//     y =        printf("the printf: |%#6.3u|%#6.3u|%#6.3u|\n", 42, 424, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, w < p\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%#3.6u|%%#3.6u|%%#3.6u|\033[0m arg: \033[36m 42, 424, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%#3.6u|%#3.6u|%#3.6u|\n", 42, 424, -42);
+	//     y =        printf("the printf: |%#3.6u|%#3.6u|%#3.6u|\n", 42, 424, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag # -: pus and neg, w < p, flag -\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%#-3.6u|%%#-3.6u|%%#-3.6u||%%-#3.6u|%%-#3.6u|%%-#3.6u|\033[0m arg: \033[36m 42, 424, -42, 42, 424, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%#-3.6u|%#-3.6u|%#-3.6u||%-#3.6u|%-#3.6u|%-#3.6u|\n", 42, 424, -42, 42, 424, -42);
+	//     y =        printf("the printf: |%#-3.6u|%#-3.6u|%#-3.6u||%-#3.6u|%-#3.6u|%-#3.6u|\n", 42, 424, -42, 42, 424, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag + # -: pus and neg, w < p, flag -\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%#+-3.6u|%%#+-3.6u|%%#+-3.6u||%%-#+3.6u|%%-#+3.6u|%%+-#3.6u|\033[0m arg: \033[36m 42, 424, -42, 42, 424, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%#+-3.6u|%#+-3.6u|%#+-3.6u||%-#+3.6u|%-+#3.6u|%+-#3.6u|\n", 42, 424, -42, 42, 424, -42);
+	//     y =        printf("the printf: |%#+-3.6u|%#+-3.6u|%#+-3.6u||%-#+3.6u|%-+#3.6u|%+-#3.6u|\n", 42, 424, -42, 42, 424, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag # -: pusitive and negative, w > p, flag - \033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%-#6.3u|%%-#6.3u|%%-#6.3u|\033[0m arg: \033[36m 42, 4242, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%-#6.3u|%-#6.3u|%-#6.3u|%-#6.3u|\n", 42, 424, 424536, -42);
+	//     y =        printf("the printf: |%-#6.3u|%-#6.3u|%-#6.3u|%-#6.3u|\n", 42, 424, 424536, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag + # - : pusitive and negative, w > p, flag - \033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%+-#6.3u|%%+-#6.3u|%%+-#6.3u|%%+-#6.3u|\033[0m arg: \033[36m 42, 424, 424536, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%+-#6.3u|%+-#6.3u|%+-#6.3u|%+-#6.3u|\n", 42, 424, 424536, -42);
+	//     y =        printf("the printf: |%+-#6.3u|%+-#6.3u|%+-#6.3u|%+-#6.3u|\n", 42, 424, 424536, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag # - : pusitive and negative, w > p && l > p \033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%-#15.10u|\033[0m arg: \033[36m 42, 424, 424536, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%-#15.10u|\n", 42, 42, 42, 42);
+	//     y =        printf("the printf: |%-#15.10u|\n", 42, 42, 42, 42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag # - : pusitive and negative, w > p && l > p \033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%-#5u|\033[0m arg: \033[36m 42, 42, \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%-#5u|\n", 42, 42, 42, 42);
+	//     y =        printf("the printf: |%-#5u|\n", 42, 42, 42, 42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	// Flag ' '
+	//
+	// 	    printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% u|%% u|\033[0m arg: \033[36m 42, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |% u|% u|\n", 42, -42);
+	//     y =        printf("the printf: |% u|% u|\n", 42, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% +u|%% +u|\033[0m arg: \033[36m 42, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |% +u|% +u|\n", 42, -42);
+	//     y =        printf("the printf: |% +u|% +u|\n", 42, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% 4u|%% 4u|\033[0m arg: \033[36m 42, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |% 4u|% 4u|\n", 42, -42);
+	//     y =        printf("the printf: |% 4u|% 4u|\n", 42, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% +4u|%% +4u|\033[0m arg: \033[36m 42, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |% +4u|% +4u|\n", 42, -42);
+	//     y =        printf("the printf: |% +4u|% +4u|\n", 42, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% .4u|%% .4u|\033[0m arg: \033[36m 42, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |% .4u|% .4u|\n", 42, -42);
+	//     y =        printf("the printf: |% .4u|% .4u|\n", 42, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% +.4u|%% +.4u|\033[0m arg: \033[36m 4242, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |% +.4u|% +.4u|\n", 4242, -42);
+	//     y =        printf("the printf: |% +.4u|% +.4u|\n", 4242, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	//     printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% 2.4u|%% 2.4u|\033[0m arg: \033[36m 21, -21 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |% 2.4u|% 2.4u|\n", 21, -21);
+	//     y =        printf("the printf: |% 2.4u|% 2.4u|\n", 21, -21);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag +\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%+ 2.4u|%%+ 2.4u|\033[0m arg: \033[36m 21, -21 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%+ 2.4u|%+ 2.4u|\n", 21, -21);
+	//     y =        printf("the printf: |%+ 2.4u|%+ 2.4u|\n", 21, -21);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	//
+	//     printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% 09.2ulul|%% 09.2ulul|%% 09.2ulul|\033[0m arg: \033[36m 1, 150, -15\033[0m \n");
+	// 	x =     ft_printf("my  printf: |% 09.2ulul|% 09.2ulul|% 09.2ulul|\n", 1, 150, -15);
+	//     y =        printf("the printf: |% 09.2ulul|% 09.2ulul|% 09.2ulul|\n", 1, 150, -15);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	//     ft_putchar('\n');
+	//
+	//     printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m %% -09.3ulul|%% -09.3u|\033[0m arg: \033[36m -15, 1512\033[0m \n");
+	// 	x =     ft_printf("my  printf: |% -09.4ulul|% -09.3u|\n", -15, 1512);
+	//     y =        printf("the printf: |% -09.4ulul|% -9.3u|\n", -15, 1512);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	//     ft_putchar('\n');
+	//
+	//     printf("===============  \033[33mTEST %d\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% 4.2u|%% -4.2u|\033[0m arg: \033[36m 32, -32\033[0m \n");
+	// 	x =     ft_printf("my  printf: |% 4.2u|% -4.2u|\n", 32, -32);
+	//     y =        printf("the printf: |% 4.2u|% -4.2u|\n", 32, -32);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag - : pusitive and neg,  w < p\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m %% -4.9u |%% 4.9u |\033[0m arg: \033[36m -15, -15, 15124\033[0m \n");
+	// 	x =     ft_printf("my  printf: |% -4.9u |% 4.9u |% 4.9u |\n", -15, -15, 15124);
+	//     y =        printf("the printf: |% -4.9u |% 4.9u |% 4.9u |\n", -15, -15, 15124);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, nu specifier\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% u|%%# u|%%# u|%%# u|\033[0m arg: \033[36m 42, 142, 542, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: |% u|%# u|%# u|%# u|\n", 42, 142, 542, -42);
+	//     y =        printf("the printf: |% u|%# u|%# u|%# u|\n", 42, 142, 542, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, withd unly, precisiun unly\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%# u|%%#5 u|%%# .5u|%%# u|%%# 5u|%%# .5u|\033[0m arg: \033[36m 42, 42, 42, -42, -42, -42\033[0m \n");
+	// 	x =     ft_printf("my  printf: %# u|%# 5u|%# .5u|%# .5d|%# u|%# 5u|%# .5u|\n", 42, 42, 42, 42, -42, -42, -42);
+	//     y =        printf("the printf: %# u|%# 5u|%# .5u|%# .5d|%# u|%# 5u|%# .5u|\n", 42, 42, 42, 42, -42, -42, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, withd unly, precisiun unly, equal len\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%# 5u|%%# .5u|%%# 5u|%%# .5u|\033[0m arg: \033[36m 42121, 42121, -4212, -4212\033[0m \n");
+	// 	x =     ft_printf("my  printf: %# 5u|%# .5u|%# 5u|%# .5u|\n", 42121, 42121, -4212, -4212);
+	//     y =        printf("the printf: %# 5u|%# .5u|%# 5u|%# .5u|\n", 42121, 42121, -4212, -4212);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, w > p \033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%# 6.3u|%%# 6.3u|%%# 6.3u|\033[0m arg: \033[36m 42, 4242, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%# 6.3u|%# 6.3u|%# 6.3u|\n", 42, 424, -42);
+	//     y =        printf("the printf: |%# 6.3u|%# 6.3u|%# 6.3u|\n", 42, 424, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag #: pusitive and negative, w < p\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% #3.6u|%% #3.6u|%% #3.6u|\033[0m arg: \033[36m 42, 424, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |% #3.6u|% #3.6u|% #3.6u|\n", 42, 424, -42);
+	//     y =        printf("the printf: |% #3.6u|% #3.6u|% #3.6u|\n", 42, 424, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag # -: pus and neg, w < p, flag -\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%# -3.6u|%%#- 3.6u|%%#- 3.6u||%%- #3.6u|%%- #3.6u|%% -#3.6u|\033[0m arg: \033[36m 42, 424, -42, 42, 424, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |% #-3.6u|% #-3.6u|% #-3.6u||% -#3.6u|% -#3.6u|% -#3.6u|\n", 42, 424, -42, 42, 424, -42);
+	//     y =        printf("the printf: |% #-3.6u|% #-3.6u|% #-3.6u||% -#3.6u|% -#3.6u|% -#3.6u|\n", 42, 424, -42, 42, 424, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag + # -: pus and neg, w < p, flag -\033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%# +-3.6u|%%# +-3.6u|%%# +-3.6u||%% -#+3.6u|%% -#+3.6u|%% +-#3.6u|\033[0m arg: \033[36m 42, 424, -42, 42, 424, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |% #+-3.6u|% #+-3.6u|% #+-3.6u||% -#+3.6u|% -+#3.6u|% +-#3.6u|\n", 42, 424, -42, 42, 424, -42);
+	//     y =        printf("the printf: |% #+-3.6u|% #+-3.6u|% #+-3.6u||% -#+3.6u|% -+#3.6u|% +-#3.6u|\n", 42, 424, -42, 42, 424, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag # -: pusitive and negative, w > p, flag - \033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% -#6.3u|%% -#6.3u|%% -#6.3u|\033[0m arg: \033[36m 42, 4242, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |% -#6.3u|% -#6.3u|% -#6.3u|% -#6.3u|\n", 42, 424, 424536, -42);
+	//     y =        printf("the printf: |% -#6.3u|% -#6.3u|% -#6.3u|% -#6.3u|\n", 42, 424, 424536, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag + # - : pusitive and negative, w > p, flag - \033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% +-#6.3u|%% +-#6.3u|%% +-#6.3u|%% +-#6.3u|\033[0m arg: \033[36m 42, 424, 424536, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |%+ -#6.3u|%+- #6.3u|% +-#6.3u|% +-#6.3u|\n", 42, 424, 424536, -42);
+	//     y =        printf("the printf: |%+ -#6.3u|%+- #6.3u|% +-#6.3u|% +-#6.3u|\n", 42, 424, 424536, -42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag # - : pusitive and negative, w > p && l > p \033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%%-# 15.10u|\033[0m arg: \033[36m 42, 424, 424536, -42 \033[0m \n");
+	// 	x =     ft_printf("my  printf: |% -#15.10u|\n", 42, 42, 42, 42);
+	//     y =        printf("the printf: |% -#15.10u|\n", 42, 42, 42, 42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	ft_putchar('\n');
+	//
+	// 	printf("===============  \033[33mTEST %d | Flag # - : pusitive and negative, w > p && l > p \033[0m  ===============\n\n", i++);
+	//     printf("test: \033[36m |%% -#5u|\033[0m arg: \033[36m 42, 42, \033[0m \n");
+	// 	x =     ft_printf("my  printf: |% -#5lu|\n", (unsigned long)-42);
+	//     y =        printf("the printf: |% -#5lu|\n", (unsigned long)-42);
+	// 	printf("my  printf return = %d\n", x);
+	// 	printf("the printf return = %d\n", y);
+	// 	y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// 	i = 1;
+	//
+	// printf("===============  \033[33mTEST %d | HEXADECIMAL \033[0m  ===============\n\n", i++);
+    // printf("test: \033[36m |%%llx|%%lX|%%llx|%%hx|%%x|\033[0m arg: \033[36m 18446744073709551615, (uns long)-42, (uns long long)-42, (uns short)-42 \033[0m \n");
+	// x =     ft_printf("my  printf: \n-%#20llx|\n-%#lx|\n-%#llx|\n-%#hx|\n-%#x\n", 18446744073709551615, (unsigned long int)45, (unsigned long long int)-42, (unsigned short int)-42, -42);
+    // y =        printf("the printf: \n-%#20llx|\n-%#lx|\n-%#llx|\n-%#hx|\n-%#x\n", 18446744073709551615, (unsigned long int)45, (unsigned long long int)-42, (unsigned short int)-42, -42);
+	// printf("my  printf return = %d\n", x);
+	// printf("the printf return = %d\n", y);
+	// y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// ft_putchar('\n');
+	//
+	// printf("===============  \033[33mTEST %d | UNSIGNED INT \033[0m  ===============\n\n", i++);
+    // printf("test: \033[36m |%%u|%%llu|%%hhu|%%lu|\033[0m arg: \033[36m (unsigned int)42, (unsigned long long int)42, (unsigned char)42 \033[0m \n");
+	// x =     ft_printf("my  printf: |%-15u|%-30llu|%hhu|%lu|\n", (unsigned int)-42, (unsigned long long int)-42, (unsigned char)-42, 123456789101112);
+    // y =        printf("the printf: |%-15u|%-30llu|%hhu|%lu|\n", (unsigned int)-42, (unsigned long long int)-42, (unsigned char)-42, 123456789101112);
+	// printf("my  printf return = %d\n", x);
+	// printf("the printf return = %d\n", y);
+	// y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// ft_putchar('\n');
+	//
+	// printf("===============  \033[33mTEST %d | OCTAL \033[0m  ===============\n\n", i++);
+    // printf("test: \033[36m |%%o|%%llo|%%hho|\033[0m arg: \033[36m 42, 42, \033[0m \n");
+	// x =     ft_printf("my  printf: |%o|%30llo|%hho|\n", (unsigned int)-42, (unsigned long long int)-42, (unsigned char)-42);
+    // y =        printf("the printf: |%o|%30llo|%hho|\n", (unsigned int)-42, (unsigned long long int)-42, (unsigned char)-42);
+	// printf("my  printf return = %d\n", x);
+	// printf("the printf return = %d\n", y);
+	// y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	// printf("===============  \033[33mTEST %d | OCTAL \033[0m  ===============\n\n", i++);
+    // printf("test: \033[36m |%%d|%%lld|%%hhd|\033[0m arg: \033[36m 42, 42, \033[0m \n");
+	// x =     ft_printf("my  printf: |%d|%lld|%hhd|\n", (signed int)-42, (signed long long int)-42, (signed char)-42);
+    // y =        printf("the printf: |%d|%lld|%hhd|\n", (signed int)-42, (signed long long int)-42, (signed char)-42);
+	// printf("my  printf return = %d\n", x);
+	// printf("the printf return = %d\n", y);
+	// y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	//
+	// printf("===============  \033[33mTEST %d | OCTAL \033[0m  ===============\n\n", i++);
+    // printf("test: \033[36m |%%d|%%lld|%%hhd|\033[0m arg: \033[36m 42, 42, \033[0m \n");
+	// x =     ft_printf("my  printf: |%x|%#-30.20llx|%hhx|\n", (unsigned int)-42, (unsigned long long int)-42, (unsigned char)-42);
+    // y =        printf("the printf: |%x|%#-30.20llx|%hhx|\n", (unsigned int)-42, (unsigned long long int)-42, (unsigned char)-42);
+	// printf("my  printf return = %d\n", x);
+	// printf("the printf return = %d\n", y);
+	// y == x ? printf(">>>>>>>>>>>>>>>>  \033[32mOK\033[0m  <<<<<<<<<<<<<<<<\n\n") : printf(">>>>>>>>>>>>>>>>  \033[31mFAIL\033[0m  <<<<<<<<<<<<<<<<\n");
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 
 
