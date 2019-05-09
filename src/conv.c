@@ -6,6 +6,16 @@ long long	ft_absll(long long c)
 	return (c);
 }
 
+char	*ft_spacetozero(char *res)
+{
+	int i;
+
+	i = 0;
+	while (res[i] == ' ')
+		res[i++] = '0';
+	return (res);
+}
+
 char		*ft_hashzero(char *res)
 {
 	char	*tmp;
@@ -13,6 +23,7 @@ char		*ft_hashzero(char *res)
 
 	if (!(tmp = (char *)malloc(sizeof(char) * ft_strlen(res) + 2)))
 		exit(0);
+	ft_bzero(tmp, ft_strlen(res) + 2);
 	while (res[i] == ' ' || res[i] == '0')
 		i++;
 	if (i > 0)
@@ -28,8 +39,8 @@ char		*ft_hashzero(char *res)
 		if (res[ft_strlen(res) - 1] == ' ')
 			i--;
 		tmp[i] = '\0';
-		ft_memdel((void **)&tmp);
 		res = tmp;
+		ft_memdel((void **)&tmp);
 	}
 	return (res);
 }
@@ -216,7 +227,7 @@ char		*ft_find_conv(t_s *s, int i)
 	}
 	else if (s->str[i] == 'c' || s->str[i] == '%')
 	{
-		if (!(str = (char *)malloc(sizeof(char) * 1 + 1)))
+		if (!(str = (char *)malloc(sizeof(char) * (1 + 1))))
 			exit(0);
 		if (s->str[i] == '%')
 			chr = '%';
@@ -226,6 +237,8 @@ char		*ft_find_conv(t_s *s, int i)
 			s->f->pctc = TRUE;
 		res = ft_pf_s(s, str);
 		ft_memdel((void **)&str);
+		if (s->f->zero == TRUE)
+			res = ft_spacetozero(res);
 	}
 	else if (s->str[i] == 's')
 		res = ft_pf_s(s, str);

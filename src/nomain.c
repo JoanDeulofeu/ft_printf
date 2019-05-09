@@ -192,11 +192,14 @@ int		ft_loop(t_s *s)
 			// 	s->str[i] = 'd';
 			// ft_putchar(s->str[i]);
 			// ft_putstr("   <-str[i]-\n");
+			if (s->str[i] == '\0')
+				break;
 			str = ft_find_conv(s, i);
 			tmp = ft_strlen(str);
 			if (!(tmp) && s->str[i] != '\0' && s->f->pctc == FALSE && (s->str[i]
 			!= 'x' || s->c->ulglg != 0) && s->str[i] != 's' && s->str[i] != 'o'
-			&& (s->str[i] != 'd' && s->str[i] != 'i'))
+			&& (s->str[i] != 'd' && s->str[i] != 'i' && s->str[i] != 'u'
+			&& s->str[i] != 'X'))
 			{
 				buff[bf++] = s->str[i];
 				if (bf == 64)
