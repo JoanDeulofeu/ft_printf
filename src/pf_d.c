@@ -40,8 +40,10 @@ char		*ft_part4(t_s *s, char *res, int lgnb, long long nb)
 		* (s->champ > lgnb ? s->champ : lgnb) + 2)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 2);
-	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-		res[i++] = s->f->neg == TRUE ? '-' : (s->f->plus == TRUE ? '+' : ' ');
+	if (s->f->neg == TRUE || s->f->plus == TRUE)
+		res[i++] = s->f->neg == TRUE ? '-' : '+');
+	if ((s->f->neg != TRUE && s->f->plus != TRUE) && s->f->space == TRUE)
+		res[i++] = ' ';
 	if (s->pres > 0)
 		while (u++ < s->pres - lgnb)
 			res[i++] = '0';
@@ -69,9 +71,10 @@ char		*ft_part3(t_s *s, char *res, int lgnb, long long nb)
 		* (s->champ > lgnb ? s->champ : lgnb) + 2)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 2);
-	if ((s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-	&& (s->f->point != TRUE || s->pres != 0))
-		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+	if (s->f->neg == TRUE || s->f->plus == TRUE)
+		res[i++] = s->f->neg == TRUE ? '-' : '+');
+	if ((s->f->neg != TRUE && s->f->plus != TRUE) && s->f->space == TRUE)
+		res[i++] = ' ';
 	u = (s->f->neg == TRUE || s->f->space == TRUE
 		|| s->f->plus == TRUE) ? u + 1 : u;
 	while (u++ < s->champ - lgnb)
@@ -101,8 +104,10 @@ char		*ft_part2(t_s *s, char *res, int lgnb, long long nb)
 		|| s->f->plus == TRUE) ? u + 1 : u;
 	while (u++ < (s->champ - lgnb))
 		res[i++] = ' ';
-	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+	if (s->f->neg == TRUE || s->f->plus == TRUE)
+		res[i++] = s->f->neg == TRUE ? '-' : '+');
+	if ((s->f->neg != TRUE && s->f->plus != TRUE) && s->f->space == TRUE)
+		res[i++] = ' ';
 	u = 0;
 	if (s->pres > 0)
 		while (u++ < s->pres - lgnb)
@@ -123,8 +128,10 @@ char		*ft_part1(t_s *s, char *res, int lgnb, long long nb)
 		* (s->pres > lgnb ? s->pres : lgnb) + 2)))
 		exit(0);
 	ft_bzero(res, (s->pres > lgnb ? s->pres : lgnb) + 2);
-	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+	if (s->f->neg == TRUE || s->f->plus == TRUE)
+		res[i++] = s->f->neg == TRUE ? '-' : '+');
+	if ((s->f->neg != TRUE && s->f->plus != TRUE) && s->f->space == TRUE)
+		res[i++] = ' ';
 	if (s->pres > lgnb)
 		while (u++ < s->pres - lgnb)
 			res[i++] = '0';

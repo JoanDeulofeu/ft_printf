@@ -61,12 +61,14 @@ char		*ft_part3u(t_s *s, char *res, int lgnb, unsigned long long nb)
 
 	i = 0;
 	u = 0;
-	if (!(res = (char *)malloc(sizeof(char) * (s->champ > lgnb ? s->champ : lgnb) + 3)))
+	if (!(res = (char *)malloc(sizeof(char)
+		* (s->champ > lgnb ? s->champ : lgnb) + 3)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 3);
 	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
 		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
-	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
+	u = (s->f->neg == TRUE || s->f->space == TRUE
+		|| s->f->plus == TRUE) ? u + 1 : u;
 	while (u++ < s->champ - lgnb)
 		res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)

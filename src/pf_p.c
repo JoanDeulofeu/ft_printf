@@ -19,7 +19,8 @@ char	*ft_part1p(t_s *s, char *res, int lgp, unsigned long long unb)
 
 	i = 0;
 	u = 0;
-	if (!(res = (char *)malloc(sizeof(char) * (s->pres > lgp ? s->pres : lgp) + 3)))
+	if (!(res = (char *)malloc(sizeof(char)
+		* (s->pres > lgp ? s->pres : lgp) + 3)))
 		exit(0);
 	ft_bzero(res, (s->pres > lgp ? s->pres : lgp) + 3);
 	res[i++] = '0';
@@ -66,10 +67,12 @@ char	*ft_part3p(t_s *s, char *res, int lgp, unsigned long long unb)
 
 	i = 0;
 	u = 0;
-	if (!(res = (char *)malloc(sizeof(char) * (s->champ > lgp ? s->champ : lgp) + 3)))
+	if (!(res = (char *)malloc(sizeof(char)
+		* (s->champ > lgp ? s->champ : lgp) + 3)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgp ? s->champ : lgp) + 3);
-	while ((u++ < s->champ - lgp - 1) && (s->f->point == TRUE && s->pres == 0 && unb == 0))
+	while ((u++ < s->champ - lgp - 1) && (s->f->point == TRUE
+		&& s->pres == 0 && unb == 0))
 		res[i++] = ' ';
 	res[i++] = '0';
 	res[i++] = 'x';

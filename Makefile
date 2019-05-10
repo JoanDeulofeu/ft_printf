@@ -2,7 +2,7 @@ NAME = libftprintf.a
 
 SRC_PATH = src
 
-SRC_NAME =  nomain.c conv.c pf_d.c pf_u.c pf_p.c pf_f.c pf_f2.c pf_x.c pf_s.c buffer.c
+SRC_NAME =  nomain2.c conv.c pf_d.c pf_u.c pf_p.c pf_f.c pf_f2.c pf_x.c pf_s.c find_conv_norm.c math.c math2.c buffer.c
 
 CPPFLAGS = -I libft/includes/ -MMD
 

@@ -14,6 +14,14 @@
 ****	Structure Flags & Convertisseur
 */
 
+typedef struct			s_q_int
+{
+	int					i;
+	int					res;
+	int					tmp;
+	int					bf;
+}						t_q_int;
+
 typedef struct			s_flags
 {
 	char				hash;
