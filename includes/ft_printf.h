@@ -36,16 +36,12 @@ typedef struct			s_flags
 typedef struct			s_conv
 {
 	char				chr;
-	short				shrt;
-	int					nti;
-	long int			lgint;
-	long long int		lglgint;
-	unsigned char		uchar;
-	unsigned short		ushrt;
-	unsigned int 		uint;
-	unsigned long		ulg;
 	unsigned long long	ulglg;
 	char				*str;
+	long double			ldb;
+	double				db;
+	long long			nb;
+	unsigned long long	unb;
 }						t_conv;
 
 /*
@@ -74,6 +70,7 @@ int						ft_printf(char *str, ...);
 int						ft_nbrlen(long long nb);
 int						ft_unbrlen(unsigned long long nb);
 int						ft_ldblen(long double db);
+int						ft_plen(t_s *s, unsigned long long unb);
 char					*ft_pf_d(t_s *s, long long nb);
 char					*ft_pf_u(t_s *s, unsigned long long nb);
 char					*ft_pf_p(t_s *s, unsigned long long unb);
@@ -92,5 +89,17 @@ int						ft_buffering(t_s *s, char *buff, int bf, char *str);
 int						ft_emptybuff(t_s *s, char *buff);
 char					*pf_ftoa(char *res, int i, long double db, t_s *s); //pas neccesaire
 int						ft_truelg(t_s *s, int lgdb);
+char					*ft_hashzero(char *res);
+char					*ft_spacetozero(char *res);
+
+/*
+****	Fonction de norme
+*/
+
+char					*ft_norm_u(char *res, t_s *s);
+char					*ft_norm_x(char *res, t_s *s, int i);
+char					*ft_norm_dio(char *res, t_s *s, int i);
+char					*ft_norm_c(char *res, t_s *s, int i);
+char					*ft_norm_f(char *res, t_s *s);
 
 #endif

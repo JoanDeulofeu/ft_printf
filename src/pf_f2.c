@@ -21,12 +21,10 @@ int		ft_dblen(double db)
 		return (1);
 	while (db >= 1)
 	{
-		// printf("ENTREE db = %f\n", db);
 		db /= 10;
 		res++;
 		if (res > 4935)
 			return (4935);
-		// printf("SORTIE db = %f\n", db);
 	}
 	return (res);
 }
@@ -37,20 +35,15 @@ char	*ft_round_db(t_s *s, double db, char *res, int i)
 	int decal;
 
 	decal = 0;
-	// printf("db = %Lf\n", db);
 	round = db * 10;
-	// printf("round = %d\n", round);
 	if (round > 4)
 	{
-		// printf("res[%d] = %c\n", i, res[i]);
 		res[i] += res[i] == 57 ? -9 : 1;
 		while (res[i] == '0')
 		{
-			// printf("res[%d] = %c\n", i, res[i]);
 			i--;
 			if (res[i] == '.')
 				i--;
-			// printf("--res[%d] = %c\n", i, res[i]);
 			if (i >= 0 && (res[i] >= '0' && res[i] <= '9'))
 				res[i] += (res[i] == 57) ? -9 : 1;
 			else if (res[i] != ' ')
@@ -58,16 +51,11 @@ char	*ft_round_db(t_s *s, double db, char *res, int i)
 				if (i < 1)
 				{
 					decal = 1;
-					// printf("else res[%d] =%s\n", i, &res[i+1]);
-					// printf("i     = %d\ndecal = %d \n", i, decal);
-					// printf("else res[%d] = %c\n", 1, res[1]);
 					ft_memmove(&res[i + decal + 2], &res[i + decal + 1], ft_strlen(&res[i + decal]));
 					res[i + decal] = '1';
-					// printf("else res[%d] =%s\n", i, &res[i+1]);
 				}
 				else
 				{
-					// printf("else res[%d] =%c\n", i, res[i]);
 					res[i - 1] = res[i];
 					res[i] = '1';
 				}
@@ -80,7 +68,6 @@ char	*ft_round_db(t_s *s, double db, char *res, int i)
 			}
 		}
 	}
-	// printf("TEST = %s\n", res);
 	return (res);
 }
 
@@ -100,33 +87,26 @@ char		*pf_ftoa2(char *res, int i, double db, t_s *s)
 		if (db != save || tmp != 0)
 			res[i++] = tmp + 48;
 		db -= tmp * ((lgdb - u - 2) > -1 ? ft_fpow2(10, lgdb - u - 2) : 1);
-		// printf("\nTEST(%d) \ntmp= %lld   res[i]= %d   db= %f\nres = %s\n", u, tmp, res[i - 1], db, res);
 	}
 	tmp = db / ((lgdb - u - 2) > -1 ? ft_fpow2(10, lgdb - u - 2) : 1);
 	res[i++] = db + 48;
 	db -= tmp;
-	// printf("test ------->   %f\n", db);
 	if (s->f->point == TRUE && s->pres == 0)
 	{
-		// printf("TEEEEEEEESSSSSST\n");
 		if (s->f->hash == TRUE)
 			res[i] = '.';
-			// printf("res = %s|\n", res);
 		return (ft_round_db(s, db, res, i - 1));
 	}
 	res[i++] = '.';
 	tmp = db;
 	db -= tmp;
-	// printf("test ------->   %f\n", db);
 	db *= ft_fpow2(10, pres - 1);
-	// printf("test ------->   %f\n", db);
 	u = -1;
 	while (++u < pres)
 	{
 		tmp = db / ((pres - u - 2) > -1 ? ft_fpow2(10, pres - u - 2) : 1);
 		res[i++] = tmp + 48;
 		db -= tmp * ((pres - u - 2) > -1 ? ft_fpow2(10, pres - u - 2) : 1);
-		// printf("\nTEST(%d) \ntmp= %lld   res[i]= %d   db= %f\nres = %s\n", u, tmp, res[i - 1], db, res);
 	}
 	res = ft_round_db(s, db, res, i - 1);
 	return (res);
@@ -134,7 +114,6 @@ char		*pf_ftoa2(char *res, int i, double db, t_s *s)
 
 char	*ft_part1f2(t_s *s, char *res, int lgdb, double db)
 {
-	// printf("PART1\n");
 	int i;
 	int u;
 	int truelg;
@@ -145,7 +124,6 @@ char	*ft_part1f2(t_s *s, char *res, int lgdb, double db)
 	if (!(res = (char *)malloc(sizeof(char) * (s->champ > truelg ? s->champ : truelg) + 6 + 3)))
 		exit(0);
 	ft_bzero(res, (s->champ > truelg ? s->champ : truelg) + 6 + 3);
-	// ft_printf("CHAMP=%d\nPRES=%d\nLGDB=%d\nTRUELG=%d\n", s->champ, s->pres, lgdb, truelg);
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
 	u = (s->f->hash == TRUE) ? u + 1 : u;
 	while (u++ < (s->champ - truelg))

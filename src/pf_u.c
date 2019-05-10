@@ -17,28 +17,21 @@ char		*pf_itoau(char *res, int i, unsigned long long nb, int lgnb)
 	int u;
 
 	u = -1;
-	// ft_putstr("lgnb = ");
-	// ft_putnbr(lgnb);
-	// ft_putstr("\n");
 	while (++u < lgnb - 1)
-	{
-		// ft_putnbr((nb / ft_pow(10, lgnb - u - 2) % 10));
-		// ft_putstr("  pow\n");
 		res[i++] = (nb / ft_powu(10, lgnb - u - 2) % 10) + 48;
-	}
 	res[i++] = (nb % 10) + 48;
 	return (res);
 }
 
 char		*ft_part4u(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
-	// printf("PART4\n");
 	int i;
 	int u;
 
 	i = 0;
 	u = 0;
-	if (!(res = (char *)malloc(sizeof(char) * (s->champ > lgnb ? s->champ : lgnb) + 3)))
+	if (!(res = (char *)malloc(sizeof(char)
+		* (s->champ > lgnb ? s->champ : lgnb) + 3)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 3);
 	u += s->pres - lgnb;
@@ -54,7 +47,8 @@ char		*ft_part4u(t_s *s, char *res, int lgnb, unsigned long long nb)
 		i--;
 	i += lgnb;
 	u = 0;
-	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
+	u = (s->f->neg == TRUE || s->f->space == TRUE
+		|| s->f->plus == TRUE) ? u + 1 : u;
 	while (u++ < s->champ - (s->pres > lgnb ? s->pres : lgnb))
 		res[i++] = ' ';
 	return(res);
@@ -62,7 +56,6 @@ char		*ft_part4u(t_s *s, char *res, int lgnb, unsigned long long nb)
 
 char		*ft_part3u(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
-	// printf("PART3\n");
 	int i;
 	int u;
 
@@ -83,18 +76,19 @@ char		*ft_part3u(t_s *s, char *res, int lgnb, unsigned long long nb)
 
 char		*ft_part2u(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
-	// printf("PART2\n");
 	int i;
 	int u;
 
 	i = 0;
 	u = 0;
-	if (!(res = (char *)malloc(sizeof(char) * (s->champ > lgnb ? s->champ : lgnb) + 3)))
+	if (!(res = (char *)malloc(sizeof(char)
+		* (s->champ > lgnb ? s->champ : lgnb) + 3)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 3);
 	if (s->pres != 0 && s->pres > lgnb)
 		u += s->pres - lgnb;
-	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
+	u = (s->f->neg == TRUE || s->f->space == TRUE
+		|| s->f->plus == TRUE) ? u + 1 : u;
 	while (u++ < (s->champ - lgnb))
 		res[i++] = ' ';
 	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
@@ -110,13 +104,13 @@ char		*ft_part2u(t_s *s, char *res, int lgnb, unsigned long long nb)
 
 char		*ft_part1u(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
-	// printf("PART1\n");
 	int i;
 	int u;
 
 	i = 0;
 	u = 0;
-	if (!(res = (char *)malloc(sizeof(char) * (s->pres > lgnb ? s->pres : lgnb) + 3)))
+	if (!(res = (char *)malloc(sizeof(char)
+		* (s->pres > lgnb ? s->pres : lgnb) + 3)))
 		exit(0);
 	ft_bzero(res, (s->pres > lgnb ? s->pres : lgnb) + 3);
 	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
@@ -152,8 +146,5 @@ char		*ft_pf_u(t_s *s, unsigned long long nb)
 		else
 			res = ft_part4u(s, res, lgnb, nb);
 	}
-	// write(1, "res = ", 6);
-	// write(1, res, (s->champ > lgnb ? s->champ : lgnb) + 3);
-	// write(1, "|\n", 2);
 	return (res);
 }

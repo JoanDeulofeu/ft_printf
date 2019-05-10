@@ -12,55 +12,41 @@ long double	ft_fpow(long double db, int power)
 	return (db);
 }
 
-char	*ft_round_ldb(t_s *s, long double db, char *res, int i)
+char	*ft_round_ldb(t_s *s, long double db, char *rs, int i)
 {
 	int round;
-	int decal;
 
-	decal = 0;
-	// printf("db = %Lf\n", db);
 	round = db * 10;
-	// printf("round = %d\n", round);
 	if (round > 4)
 	{
-		// printf("res[%d] = %c\n", i, res[i]);
-		res[i] += res[i] == 57 ? -9 : 1;
-		while (res[i] == '0')
+		rs[i] += rs[i] == 57 ? -9 : 1;
+		while (rs[i] == '0')
 		{
-			// printf("res[%d] = %c\n", i, res[i]);
-			i--;
-			if (res[i] == '.')
-				i--;
-			// printf("--res[%d] = %c\n", i, res[i]);
-			if (i >= 0 && (res[i] >= '0' && res[i] <= '9'))
-				res[i] += (res[i] == 57) ? -9 : 1;
-			else if (res[i] != ' ')
+			i = (rs[i - 1] == '.') ? i - 2 : i - 1;
+			if (i >= 0 && (rs[i] >= '0' && rs[i] <= '9'))
+				rs[i] += (rs[i] == 57) ? -9 : 1;
+			else if (rs[i] != ' ')
 			{
 				if (i < 1)
 				{
-					decal = 1;
-					// printf("else res[%d] =%s\n", i, &res[i]);
-					// printf("i     = %d\ndecal = %d \n", i, decal);
-					// printf("else res[%d] = %c\n", 1, res[1]);
-					ft_memmove(&res[i + decal + 2], &res[i + decal + 1], ft_strlen(&res[i + decal]));
-					res[i + decal] = '1';
+					ft_memmove(&rs[i + 3], &rs[i + 2], ft_strlen(&rs[i + 1]));
+					rs[i + 1] = '1';
 				}
 				else
 				{
-					// printf("else res[%d] =%c\n", i, res[i]);
-					res[i - 1] = res[i];
-					res[i] = '1';
+					rs[i - 1] = rs[i];
+					rs[i] = '1';
 				}
 				s->f->round++;
 			}
 			else
 			{
 				s->f->round++;
-				res[i] = '1';
+				rs[i] = '1';
 			}
 		}
 	}
-	return (res);
+	return (rs);
 }
 
 char		*pf_ftoa(char *res, int i, long double db, t_s *s)

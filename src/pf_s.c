@@ -15,7 +15,8 @@ char	*ft_part1s(t_s *s, char *res, int lgstr, char *str)
 	o = 0;
 	if ((s->pres > lgstr || s->pres == 0) && s->champ < lgstr)
 		return (str);
-	if (!(res = (char *)malloc(sizeof(char) * (s->pres < lgstr ? s->pres : lgstr) + 1)))
+	if (!(res = (char *)malloc(sizeof(char)
+		* (s->pres < lgstr ? s->pres : lgstr) + 1)))
 		exit(0);
 	ft_bzero(res, (s->pres < lgstr ? s->pres : lgstr) + 1);
 	while (u++ < szof - lgmot)
@@ -27,7 +28,6 @@ char	*ft_part1s(t_s *s, char *res, int lgstr, char *str)
 
 char	*ft_part2s(t_s *s, char *res, int lgstr, char *str)
 {
-	// printf("part2\n");
 	int u;
 	int i;
 	int o;
@@ -41,7 +41,6 @@ char	*ft_part2s(t_s *s, char *res, int lgstr, char *str)
 	if (!(res = (char *)malloc(sizeof(char) * szof + 1)))
 		exit(0);
 	ft_bzero(res, szof + 1);
-	// printf("chp = %d | prs = %d | szof = %d\n", s->champ, s->pres, szof);
 	while (++u < szof - ((s->pres > 0 && s->pres < lgstr) ? s->pres : lgstr))
 		res[i++] = s->f->zero == TRUE ? '0' : ' ';
 	while (u++ < szof)

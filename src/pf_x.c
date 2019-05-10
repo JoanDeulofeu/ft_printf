@@ -20,14 +20,11 @@ char		*ft_part4x(t_s *s, char *res, int lgnb, unsigned long long nb)
 
 	i = 0;
 	u = 0;
-	// printf("champ = %d\npres = %d\n", s->champ, s->pres);
 	if (!(res = (char *)malloc(sizeof(char) * (s->champ > lgnb ? s->champ : lgnb) + 4)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 4);
-	u += s->pres - lgnb;
 	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
 		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
-	u = 0;
 	if (s->f->hash == TRUE)
 	{
 		res[i++] = '0';
@@ -46,7 +43,6 @@ char		*ft_part4x(t_s *s, char *res, int lgnb, unsigned long long nb)
 		u--;
 	u = (s->f->neg == TRUE || s->f->space == TRUE || s->f->plus == TRUE) ? u + 1 : u;
 	u = s->f->hash == TRUE ? u + 2 : u;
-	// printf("champ = %d\nu = %d\n", s->champ, u);
 	while (u++ < s->champ - (s->pres > lgnb ? s->pres : lgnb))
 		res[i++] = ' ';
 	return (res);
