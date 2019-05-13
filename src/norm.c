@@ -1,6 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   norm.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/13 17:55:46 by jgehin            #+#    #+#             */
+/*   Updated: 2019/05/13 17:55:49 by jgehin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
-char	*ft_normround(t_s *s, char *rs, int i)
+char		*ft_add_hex(char *res, int i, t_s *s)
+{
+	int u;
+
+	u = 0;
+	while (s->hex[u] == '\0')
+		u++;
+	while (u < 16)
+		res[i++] = s->hex[u++];
+	return (res);
+}
+
+char		*ft_normround(t_s *s, char *rs, int i)
 {
 	while (rs[i] == '0')
 	{
@@ -64,5 +88,18 @@ char		ft_normsign(t_s *s)
 		res = s->f->neg == TRUE ? '-' : '+';
 	else if (s->f->space == TRUE)
 		res = ' ';
+	return (res);
+}
+
+char		*ft_strvide(t_s *s, char *res)
+{
+	int u;
+
+	u = -1;
+	if (!(res = (char *)malloc(sizeof(char) * s->champ + 1)))
+		exit(0);
+	ft_bzero(res, s->champ + 1);
+	while (++u < s->champ)
+		res[u] = ' ';
 	return (res);
 }

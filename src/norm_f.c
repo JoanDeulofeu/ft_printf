@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   norm_f.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/13 17:56:33 by jgehin            #+#    #+#             */
+/*   Updated: 2019/05/13 17:56:34 by jgehin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 long double	ft_fpow(long double db, int power)
@@ -12,7 +24,7 @@ long double	ft_fpow(long double db, int power)
 	return (db);
 }
 
-char	*ft_round_ldb(t_s *s, long double db, char *rs, int i)
+char		*ft_round_ldb(t_s *s, long double db, char *rs, int i)
 {
 	int round;
 

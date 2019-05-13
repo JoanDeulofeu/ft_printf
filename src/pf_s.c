@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pf_s.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/13 17:56:54 by jgehin            #+#    #+#             */
+/*   Updated: 2019/05/13 17:57:00 by jgehin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 char	*ft_part1s(t_s *s, char *res, int lgstr, char *str)
@@ -23,7 +35,7 @@ char	*ft_part1s(t_s *s, char *res, int lgstr, char *str)
 		res[i++] = s->f->zero == TRUE ? '0' : ' ';
 	while (u++ <= szof)
 		res[i++] = str[o++];
-	return(res);
+	return (res);
 }
 
 char	*ft_part2s(t_s *s, char *res, int lgstr, char *str)
@@ -45,7 +57,7 @@ char	*ft_part2s(t_s *s, char *res, int lgstr, char *str)
 		res[i++] = s->f->zero == TRUE ? '0' : ' ';
 	while (u++ < szof)
 		res[i++] = str[o++];
-	return(res);
+	return (res);
 }
 
 char	*ft_part3s(t_s *s, char *res, int lgstr, char *str)
@@ -68,19 +80,6 @@ char	*ft_part3s(t_s *s, char *res, int lgstr, char *str)
 		res[i++] = str[o++];
 	while (u++ < szof)
 		res[i++] = ' ';
-	return(res);
-}
-
-char	*ft_strvide(t_s *s, char *res)
-{
-	int u;
-
-	u = -1;
-	if (!(res = (char *)malloc(sizeof(char) * s->champ + 1)))
-		exit(0);
-	ft_bzero(res, s->champ + 1);
-	while (++u < s->champ)
-		res[u] = ' ';
 	return (res);
 }
 
@@ -99,8 +98,8 @@ char	*ft_part5s(t_s *s, char *res)
 
 char	*ft_pf_s(t_s *s, char *str)
 {
-	int lgstr;
-	char *res;
+	int		lgstr;
+	char	*res;
 
 	res = NULL;
 	if (s->f->point == TRUE && s->pres == 0)

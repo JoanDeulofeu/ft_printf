@@ -1,4 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   math3.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/13 17:56:24 by jgehin            #+#    #+#             */
+/*   Updated: 2019/05/13 17:56:25 by jgehin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
+
+int					ft_dblen(double db)
+{
+	int res;
+
+	res = 0;
+	if (db == 0)
+		return (1);
+	while (db >= 1)
+	{
+		db /= 10;
+		res++;
+		if (res > 4935)
+			return (4935);
+	}
+	return (res);
+}
 
 unsigned long long	ft_powu(unsigned long long nb, unsigned long long power)
 {

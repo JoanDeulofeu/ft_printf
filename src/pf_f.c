@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pf_f.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/13 17:56:43 by jgehin            #+#    #+#             */
+/*   Updated: 2019/05/13 17:56:45 by jgehin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 int		ft_truelg(t_s *s, int lgdb)
@@ -81,7 +93,7 @@ char	*ft_part3f(t_s *s, char *res, int lgdb, long double db)
 	return (res);
 }
 
-char		*ft_pf_f(t_s *s, long double db)
+char	*ft_pf_f(t_s *s, long double db)
 {
 	int		lgdb;
 	char	*res;

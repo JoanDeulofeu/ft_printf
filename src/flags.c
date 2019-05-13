@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   flags.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/13 17:56:12 by jgehin            #+#    #+#             */
+/*   Updated: 2019/05/13 17:56:15 by jgehin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 int		ft_precision(t_s *s, int i)
@@ -37,7 +49,7 @@ int		ft_reset_flags(t_s *s)
 	return (0);
 }
 
-int	ft_which_flags2(t_s *s, int i)
+int		ft_which_flags2(t_s *s, int i)
 {
 	if (s->str[i] == 'l')
 	{
@@ -62,7 +74,7 @@ int	ft_which_flags2(t_s *s, int i)
 	return (i);
 }
 
-int	ft_which_flags(t_s *s, int i)
+int		ft_which_flags(t_s *s, int i)
 {
 	if (s->str[i] == '#')
 		s->f->hash = TRUE;

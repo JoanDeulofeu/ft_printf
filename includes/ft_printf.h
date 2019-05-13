@@ -90,6 +90,7 @@ int						ft_printf(char *str, ...);
 int						ft_nbrlen(long long nb);
 int						ft_unbrlen(unsigned long long nb);
 int						ft_ldblen(long double db);
+int						ft_dblen(double db);
 int						ft_plen(t_s *s, unsigned long long unb);
 char					*ft_pf_d(t_s *s, long long nb);
 char					*ft_pf_u(t_s *s, unsigned long long nb);
@@ -109,6 +110,7 @@ int						ft_buffering(t_s *s, char *buff, int bf, char *str);
 int						ft_emptybuff(t_s *s, char *buff);
 char					*pf_ftoa(char *res, int i, long double db, t_s *s);
 char					*pf_itoa(char *res, int i, long long nb, int lgnb);
+char					*pf_itoax(char *res, int i, t_s *s, int lgnb);
 int						ft_truelg(t_s *s, int lgdb);
 char					*ft_hashzero(char *res);
 char					*ft_spacetozero(char *res);
@@ -117,6 +119,8 @@ int						ft_which_flags(t_s *s, int i);
 int						ft_reset_flags(t_s *s);
 int						ft_champ_size(t_s *s, int i);
 int						ft_precision(t_s *s, int i);
+char					*ft_add_hex(char *res, int i, t_s *s);
+char					*ft_strvide(t_s *s, char *res);
 
 /*
 ****	Fonction de norme
@@ -131,5 +135,7 @@ char					ft_normsign(t_s *s);
 char					ft_normpart3(t_s *s, int mode);
 char					*ft_normround(t_s *s, char *rs, int i);
 char					*ft_normround(t_s *s, char *rs, int i);
+char					*ft_normpart4x(char *res, int i, t_s *s, int nb);
+int						ft_norm_u_more(t_s *s, int lgnb, unsigned long long nb, int u);
 
 #endif

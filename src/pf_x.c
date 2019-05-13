@@ -1,17 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pf_x.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/13 17:56:58 by jgehin            #+#    #+#             */
+/*   Updated: 2019/05/13 17:57:00 by jgehin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
-
-char	 	*pf_itoax(char *res, int i, t_s *s, int lgnb)
-{
-	int u;
-
-	u = 0;
-	lgnb = 0;
-	while (s->hex[u] == '\0')
-		u++;
-	while (u < 16)
-		res[i++] = s->hex[u++];
-	return (res);
-}
 
 char		*ft_part4x(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
@@ -24,8 +23,8 @@ char		*ft_part4x(t_s *s, char *res, int lgnb, unsigned long long nb)
 	* (s->champ > lgnb ? s->champ : lgnb) + 4)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 4);
-	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+	if ((res[i] = ft_normsign(s)) != '\0')
+		i++;
 	if (s->f->hash == TRUE)
 	{
 		res[i++] = '0';
@@ -34,19 +33,7 @@ char		*ft_part4x(t_s *s, char *res, int lgnb, unsigned long long nb)
 	if (s->pres > 0)
 		while (u++ < s->pres - lgnb)
 			res[i++] = '0';
-	u = 0;
-	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
-	{
-		res = pf_itoax(res, i, s, lgnb);
-		i += lgnb;
-	}
-	else
-		u--;
-	u = (s->f->neg == TRUE || s->f->space == TRUE
-		|| s->f->plus == TRUE) ? u + 1 : u;
-	u = s->f->hash == TRUE ? u + 2 : u;
-	while (u++ < s->champ - (s->pres > lgnb ? s->pres : lgnb))
-		res[i++] = ' ';
+	ft_normpart4x(res, i, s, nb);
 	return (res);
 }
 
@@ -61,8 +48,8 @@ char		*ft_part3x(t_s *s, char *res, int lgnb, unsigned long long nb)
 	* (s->champ > lgnb ? s->champ : lgnb) + 4)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 4);
-	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+	if ((res[i] = ft_normsign(s)) != '\0')
+		i++;
 	u = (s->f->neg == TRUE || s->f->space == TRUE
 		|| s->f->plus == TRUE) ? u + 1 : u;
 	if (s->f->hash == TRUE)
@@ -89,22 +76,16 @@ char		*ft_part2x(t_s *s, char *res, int lgnb, unsigned long long nb)
 	* (s->champ > lgnb ? s->champ : lgnb) + 4)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 4);
-	if (s->pres != 0 && s->pres > lgnb)
-		u += (nb == 0) ? s->pres : s->pres - lgnb;
-	u = (s->f->neg == TRUE || s->f->space == TRUE
-		|| s->f->plus == TRUE) ? u + 1 : u;
-	u = s->f->hash == TRUE ? u + 2 : u;
-	u = (s->pres == 1 && nb == 0) ? u + 1 : u;
+	u = ft_norm_u_more(s, lgnb, nb, u);
 	while (u++ < (nb != 0 ? s->champ - lgnb : s->champ))
 		res[i++] = ' ';
-	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+	if ((res[i] = ft_normsign(s)) != '\0')
+		i++;
 	u = 0;
 	if (s->f->hash == TRUE)
-	{
 		res[i++] = '0';
+	if (s->f->hash == TRUE)
 		res[i++] = 'x';
-	}
 	if (s->pres > 0)
 		while (u++ < s->pres - lgnb)
 			res[i++] = '0';
@@ -124,8 +105,8 @@ char		*ft_part1x(t_s *s, char *res, int lgnb, unsigned long long nb)
 		* (s->pres > lgnb ? s->pres : lgnb) + 4)))
 		exit(0);
 	ft_bzero(res, (s->pres > lgnb ? s->pres : lgnb) + 4);
-	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+	if ((res[i] = ft_normsign(s)) != '\0')
+		i++;
 	if (s->f->hash == TRUE)
 	{
 		res[i++] = '0';
