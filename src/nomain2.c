@@ -1,83 +1,5 @@
 #include "../includes/ft_printf.h"
 
-void	ft_print_param(t_s *s)
-{
-	printf("STR -- %s\n", s->str);
-	printf("neg %d\nhash %d\nzero %d\npoint %d\nmoins %d\nplus %d\nel %d\nl_l %d\nach %d\nh_h %d\nbig_l %d\nspace %d\npctc %d\n", s->f->neg, s->f->hash, s->f->zero, s->f->point, s->f->moins, s->f->plus, s->f->el, s->f->l_l, s->f->ach, s->f->h_h, s->f->big_l, s->f->space, s->f->pctc);
-	printf("pres %d\nchamp %d\n", s->pres, s->champ);
-}
-
-int		ft_reset_flags(t_s *s)
-{
-	s->f->hash = FALSE;
-	s->f->xmaj = FALSE;
-	s->f->zero = FALSE;
-	s->f->moins = FALSE;
-	s->f->plus = FALSE;
-	s->f->point = FALSE;
-	s->f->el = FALSE;
-	s->f->big_l = FALSE;
-	s->f->l_l = FALSE;
-	s->f->ach = FALSE;
-	s->f->h_h = FALSE;
-	s->f->space = FALSE;
-	s->f->neg = FALSE;
-	s->f->pctc = FALSE;
-	s->f->round = 0;
-	s->pres = 0;
-	s->champ = 0;
-	ft_bzero(s->hex, 16);
-	return (0);
-}
-
-int	ft_which_flags2(t_s *s, int i)
-{
-	if (s->str[i] == 'l')
-	{
-		if (s->str[i + 1] == 'l')
-		{
-			i++;
-			s->f->l_l = TRUE;
-		}
-		else
-			s->f->el = TRUE;
-	}
-	else if (s->str[i] == 'h')
-	{
-		if (s->str[i + 1] == 'h')
-		{
-			i++;
-			s->f->h_h = TRUE;
-		}
-		else
-			s->f->ach = TRUE;
-	}
-	return (i);
-}
-
-int	ft_which_flags(t_s *s, int i)
-{
-	if (s->str[i] == '#')
-		s->f->hash = TRUE;
-	else if (s->str[i] == '0')
-		s->f->zero = TRUE;
-	else if (s->str[i] == 'L')
-		s->f->big_l = TRUE;
-	else if (s->str[i] == '-')
-		s->f->moins = TRUE;
-	else if (s->str[i] == '+')
-		s->f->plus = TRUE;
-	else if (s->str[i] == ' ')
-		s->f->space = TRUE;
-	else if (s->str[i] == 'z')
-		s->f->el = TRUE;
-	else if (s->str[i] == 'j')
-		s->f->l_l = TRUE;
-	else if (s->str[i] == 'l' || s->str[i] == 'h')
-		i = ft_which_flags2(s, i);
-	return (i);
-}
-
 int		ft_precision(t_s *s, int i)
 {
 	s->pres = ft_atoi(&s->str[i + 1]);
@@ -144,10 +66,11 @@ t_q_int	ft_loop1(t_s *s, t_q_int q, char *buff, char *str)
 
 int		ft_loop(t_s *s)
 {
-	t_q_int q;
+	t_q_int	q;
 	char	buff[64];
-	char	*str = NULL;
+	char	*str;
 
+	str = NULL;
 	q.i = -1;
 	q.res = 0;
 	q.tmp = 0;
@@ -167,12 +90,12 @@ int		ft_loop(t_s *s)
 	return (q.res);
 }
 
-int	ft_printf(char *str, ...)
+int		ft_printf(char *str, ...)
 {
 	t_s		s;
 	t_flags	f;
 	t_conv	c;
-	int	i;
+	int		i;
 
 	i = 0;
 	va_start(s.params, str);
@@ -184,6 +107,5 @@ int	ft_printf(char *str, ...)
 	s.pres = 0;
 	s.champ = 0;
 	i = ft_loop(&s);
-	// ft_print_param(&s);
 	return (i);
 }

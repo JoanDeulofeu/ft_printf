@@ -99,6 +99,9 @@ char					*pf_ftoa(char *res, int i, long double db, t_s *s); //pas neccesaire
 int						ft_truelg(t_s *s, int lgdb);
 char					*ft_hashzero(char *res);
 char					*ft_spacetozero(char *res);
+char					*pf_itoau(char *res, int i, unsigned long long nb, int lgnb);
+int						ft_which_flags(t_s *s, int i);
+int						ft_reset_flags(t_s *s);
 
 /*
 ****	Fonction de norme
@@ -109,5 +112,6 @@ char					*ft_norm_x(char *res, t_s *s, int i);
 char					*ft_norm_dio(char *res, t_s *s, int i);
 char					*ft_norm_c(char *res, t_s *s, int i);
 char					*ft_norm_f(char *res, t_s *s);
+char					ft_normsign(t_s *s);
 
 #endif

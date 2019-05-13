@@ -1,28 +1,5 @@
 #include "../includes/ft_printf.h"
 
-unsigned long long	ft_powu(unsigned long long nb, unsigned long long power)
-{
-	unsigned long long i;
-	unsigned long long tmp;
-
-	i = 0;
-	tmp = nb;
-	while (i++ < power)
-		nb *= tmp;
-	return (nb);
-}
-
-char		*pf_itoau(char *res, int i, unsigned long long nb, int lgnb)
-{
-	int u;
-
-	u = -1;
-	while (++u < lgnb - 1)
-		res[i++] = (nb / ft_powu(10, lgnb - u - 2) % 10) + 48;
-	res[i++] = (nb % 10) + 48;
-	return (res);
-}
-
 char		*ft_part4u(t_s *s, char *res, int lgnb, unsigned long long nb)
 {
 	int i;
@@ -34,10 +11,8 @@ char		*ft_part4u(t_s *s, char *res, int lgnb, unsigned long long nb)
 		* (s->champ > lgnb ? s->champ : lgnb) + 3)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 3);
-	u += s->pres - lgnb;
-	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
-	u = 0;
+	if ((res[i] = ft_normsign(s)) != '\0')
+		i++;
 	if (s->pres > 0)
 		while (u++ < s->pres - lgnb)
 			res[i++] = '0';
@@ -51,7 +26,7 @@ char		*ft_part4u(t_s *s, char *res, int lgnb, unsigned long long nb)
 		|| s->f->plus == TRUE) ? u + 1 : u;
 	while (u++ < s->champ - (s->pres > lgnb ? s->pres : lgnb))
 		res[i++] = ' ';
-	return(res);
+	return (res);
 }
 
 char		*ft_part3u(t_s *s, char *res, int lgnb, unsigned long long nb)
@@ -65,15 +40,15 @@ char		*ft_part3u(t_s *s, char *res, int lgnb, unsigned long long nb)
 		* (s->champ > lgnb ? s->champ : lgnb) + 3)))
 		exit(0);
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 3);
-	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+	if ((res[i] = ft_normsign(s)) != '\0')
+		i++;
 	u = (s->f->neg == TRUE || s->f->space == TRUE
 		|| s->f->plus == TRUE) ? u + 1 : u;
 	while (u++ < s->champ - lgnb)
 		res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
 		res = pf_itoau(res, i, nb, lgnb);
-	return(res);
+	return (res);
 }
 
 char		*ft_part2u(t_s *s, char *res, int lgnb, unsigned long long nb)
@@ -89,19 +64,17 @@ char		*ft_part2u(t_s *s, char *res, int lgnb, unsigned long long nb)
 	ft_bzero(res, (s->champ > lgnb ? s->champ : lgnb) + 3);
 	if (s->pres != 0 && s->pres > lgnb)
 		u += s->pres - lgnb;
-	u = (s->f->neg == TRUE || s->f->space == TRUE
-		|| s->f->plus == TRUE) ? u + 1 : u;
 	while (u++ < (s->champ - lgnb))
 		res[i++] = ' ';
-	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+	if ((res[i] = ft_normsign(s)) != '\0')
+		i++;
 	u = 0;
 	if (s->pres > 0)
 		while (u++ < s->pres - lgnb)
 			res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
 		res = pf_itoau(res, i, nb, lgnb);
-	return(res);
+	return (res);
 }
 
 char		*ft_part1u(t_s *s, char *res, int lgnb, unsigned long long nb)
@@ -115,14 +88,14 @@ char		*ft_part1u(t_s *s, char *res, int lgnb, unsigned long long nb)
 		* (s->pres > lgnb ? s->pres : lgnb) + 3)))
 		exit(0);
 	ft_bzero(res, (s->pres > lgnb ? s->pres : lgnb) + 3);
-	if (s->f->neg == TRUE || s->f->plus == TRUE || s->f->space == TRUE)
-		res[i++] = s->f->neg == TRUE ? '-' : s->f->plus == TRUE ? '+' : ' ';
+	if ((res[i] = ft_normsign(s)) != '\0')
+		i++;
 	if (s->pres > lgnb)
 		while (u++ < s->pres - lgnb)
 			res[i++] = '0';
 	if (s->f->point != TRUE || s->pres != 0 || nb != 0)
 		res = pf_itoau(res, i, nb, lgnb);
-	return(res);
+	return (res);
 }
 
 char		*ft_pf_u(t_s *s, unsigned long long nb)

@@ -21,7 +21,7 @@ long long	ft_dec_to_oct(long long nb)
 	return (res);
 }
 
-int		ft_nbrlen(long long nb)
+int			ft_nbrlen(long long nb)
 {
 	int res;
 
@@ -38,7 +38,7 @@ int		ft_nbrlen(long long nb)
 	return (res);
 }
 
-int		ft_unbrlen(unsigned long long nb)
+int			ft_unbrlen(unsigned long long nb)
 {
 	int res;
 
@@ -53,7 +53,7 @@ int		ft_unbrlen(unsigned long long nb)
 	return (res);
 }
 
-int		ft_ldblen(long double db)
+int			ft_ldblen(long double db)
 {
 	int res;
 
@@ -70,11 +70,13 @@ int		ft_ldblen(long double db)
 	return (res);
 }
 
-int		ft_plen(t_s *s, unsigned long long unb)
+int			ft_plen(t_s *s, unsigned long long unb)
 {
-	int len = 0;
-	int i = 0;
+	int len;
+	int i;
 
+	len = 0;
+	i = 0;
 	ft_dec_to_hex(s, unb);
 	while (s->hex[i] == '\0')
 		i++;

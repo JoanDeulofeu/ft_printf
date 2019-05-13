@@ -86,6 +86,5 @@ char				*ft_find_conv(t_s *s, int i)
 			exit(0);
 		res[0] = '\0';
 	}
-	// printf("test = %s\n", res);
 	return (res);
 }
