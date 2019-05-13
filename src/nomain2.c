@@ -1,19 +1,5 @@
 #include "../includes/ft_printf.h"
 
-int		ft_precision(t_s *s, int i)
-{
-	s->pres = ft_atoi(&s->str[i + 1]);
-	i += ft_nbrlen(s->pres);
-	return (i);
-}
-
-int		ft_champ_size(t_s *s, int i)
-{
-	s->champ = ft_atoi(&s->str[i]);
-	i += ft_nbrlen(s->champ);
-	return (i - 1);
-}
-
 int		ft_loop2(t_s *s, int i)
 {
 	while (s->str[i] == '#' || s->str[i] == 'j' || s->str[i] == 'z'

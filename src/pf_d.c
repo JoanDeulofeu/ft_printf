@@ -1,46 +1,5 @@
 #include "../includes/ft_printf.h"
 
-long long	ft_pow(long long nb, int power)
-{
-	long long i;
-	long long tmp;
-
-	i = 0;
-	tmp = nb;
-	while (i++ < power)
-		nb *= tmp;
-	return (nb);
-}
-
-char		*pf_itoa(char *res, int i, long long nb, int lgnb)
-{
-	int u;
-
-	u = -1;
-	if (nb < -9223372036854775807)
-	{
-		res[i++] = '9';
-		nb = 223372036854775808;
-		lgnb = ft_nbrlen(nb);
-	}
-	while (++u < lgnb - 1)
-		res[i++] = (nb / ft_pow(10, lgnb - u - 2) % 10) + 48;
-	res[i++] = (nb % 10) + 48;
-	return (res);
-}
-
-char		ft_normsign(t_s *s)
-{
-	char res;
-
-	res = '\0';
-	if (s->f->neg == TRUE || s->f->plus == TRUE)
-		res = s->f->neg == TRUE ? '-' : '+';
-	else if (s->f->space == TRUE)
-		res = ' ';
-	return (res);
-}
-
 char		*ft_part4(t_s *s, char *res, int lgnb, long long nb)
 {
 	int i;
@@ -66,32 +25,6 @@ char		*ft_part4(t_s *s, char *res, int lgnb, long long nb)
 	u = (s->f->neg == 1 || s->f->space == 1 || s->f->plus == 1) ? u + 1 : u;
 	while (u++ < s->champ - (s->pres > lgnb ? s->pres : lgnb))
 		res[i++] = ' ';
-	return (res);
-}
-
-char		ft_normpart3(t_s *s, int mode)
-{
-	char	res;
-
-	res = '\0';
-	if (mode == 1)
-	{
-		if ((s->f->neg == TRUE || s->f->plus == TRUE)
-		&& (s->f->point != TRUE || s->pres != 0))
-			res = s->f->neg == TRUE ? '-' : '+';
-		else if ((s->f->neg != TRUE && s->f->plus != TRUE) && s->f->space == 1
-		&& (s->f->point != TRUE || s->pres != 0))
-			res = ' ';
-	}
-	else
-	{
-		if ((s->f->neg == TRUE || s->f->plus == TRUE)
-		&& (s->f->point == TRUE && s->pres == 0))
-			res = s->f->neg == TRUE ? '-' : '+';
-		else if ((s->f->neg != TRUE && s->f->plus != TRUE) && s->f->space == 1
-		&& (s->f->point == TRUE && s->pres == 0))
-			res = ' ';
-	}
 	return (res);
 }
 

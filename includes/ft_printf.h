@@ -22,6 +22,18 @@ typedef struct			s_q_int
 	int					bf;
 }						t_q_int;
 
+typedef struct			s_norm
+{
+	int					u;
+	int					lgdb;
+	long long			tmp;
+	long double			save;
+	int					ps;
+	char 				*res;
+	int 				i;
+	long double 		db;
+}						t_norm;
+
 typedef struct			s_flags
 {
 	char				hash;
@@ -95,13 +107,16 @@ long long				ft_absll(long long c);
 void					ft_display(t_s *s, char *buff, int bf);
 int						ft_buffering(t_s *s, char *buff, int bf, char *str);
 int						ft_emptybuff(t_s *s, char *buff);
-char					*pf_ftoa(char *res, int i, long double db, t_s *s); //pas neccesaire
+char					*pf_ftoa(char *res, int i, long double db, t_s *s);
+char					*pf_itoa(char *res, int i, long long nb, int lgnb);
 int						ft_truelg(t_s *s, int lgdb);
 char					*ft_hashzero(char *res);
 char					*ft_spacetozero(char *res);
 char					*pf_itoau(char *res, int i, unsigned long long nb, int lgnb);
 int						ft_which_flags(t_s *s, int i);
 int						ft_reset_flags(t_s *s);
+int						ft_champ_size(t_s *s, int i);
+int						ft_precision(t_s *s, int i);
 
 /*
 ****	Fonction de norme
@@ -113,5 +128,8 @@ char					*ft_norm_dio(char *res, t_s *s, int i);
 char					*ft_norm_c(char *res, t_s *s, int i);
 char					*ft_norm_f(char *res, t_s *s);
 char					ft_normsign(t_s *s);
+char					ft_normpart3(t_s *s, int mode);
+char					*ft_normround(t_s *s, char *rs, int i);
+char					*ft_normround(t_s *s, char *rs, int i);
 
 #endif
