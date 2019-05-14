@@ -6,7 +6,7 @@
 /*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:56:08 by jgehin            #+#    #+#             */
-/*   Updated: 2019/05/13 17:56:09 by jgehin           ###   ########.fr       */
+/*   Updated: 2019/05/14 16:17:25 by jgehin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,14 @@ char	*ft_norm_dio(char *res, t_s *s, int i)
 	: ft_pf_u(s, s->c->unb);
 	if (s->f->hash == TRUE && ((s->f->point == TRUE && s->pres == 0
 		&& s->c->unb == 0) || s->c->unb != 0))
-		res = ft_hashzero(res);
+		res = ft_hashzero(res, NULL);
 	return (res);
 }
 
 char	*ft_norm_c(char *res, t_s *s, int i)
 {
+	if (s->c->str)
+		ft_memdel((void **)&s->c->str);
 	if (!(s->c->str = (char *)malloc(sizeof(char) * (1 + 1))))
 		exit(0);
 	if (s->str[i] == '%')
@@ -80,7 +82,6 @@ char	*ft_norm_c(char *res, t_s *s, int i)
 	if (s->c->str[0] == '\0')
 		s->f->pctc = TRUE;
 	res = ft_pf_s(s, s->c->str);
-	ft_memdel((void **)&s->c->str);
 	if (s->f->zero == TRUE)
 		res = ft_spacetozero(res);
 	return (res);

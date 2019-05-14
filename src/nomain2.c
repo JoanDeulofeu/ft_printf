@@ -6,7 +6,7 @@
 /*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:56:28 by jgehin            #+#    #+#             */
-/*   Updated: 2019/05/13 17:56:30 by jgehin           ###   ########.fr       */
+/*   Updated: 2019/05/14 16:11:23 by jgehin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ int		ft_loop2(t_s *s, int i)
 	return (i);
 }
 
-t_q_int	ft_loop1(t_s *s, t_q_int q, char *buff, char *str)
+t_q_int	ft_loop1(t_s *s, t_q_int q, char *buff, char *res)
 {
 	q.tmp = ft_reset_flags(s);
 	q.i = ft_loop2(s, ++q.i);
 	if (s->str[q.i] == '\0')
 		return (q);
-	str = ft_find_conv(s, q.i);
-	if (!(q.tmp = ft_strlen(str)))
+	res = ft_find_conv(s, q.i);
+	if (!(q.tmp = ft_strlen(res)))
 	{
 		if (s->str[q.i] != '\0' && s->f->pctc == FALSE && (s->str[q.i]
 		!= 'x' || s->c->ulglg != 0) && s->str[q.i] != 's' && s->str[q.i] != 'o'
@@ -54,9 +54,10 @@ t_q_int	ft_loop1(t_s *s, t_q_int q, char *buff, char *str)
 			q.bf = (q.bf == 64) ? ft_emptybuff(s, buff) : q.bf;
 			q.res++;
 		}
+		ft_memdel((void **)&res);
 	}
 	else
-		q.bf = ft_buffering(s, buff, q.bf, str);
+		q.bf = ft_buffering(s, buff, q.bf, res);
 	q.res = (s->f->pctc == TRUE && !q.tmp) ? q.res + 1 : q.res;
 	q.res += q.tmp;
 	return (q);
@@ -100,6 +101,7 @@ int		ft_printf(char *str, ...)
 	s.str = str;
 	s.f = &f;
 	s.c = &c;
+	s.c->str = NULL;
 	s.res = NULL;
 	s.mllc = 1;
 	s.pres = 0;

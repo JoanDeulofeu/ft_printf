@@ -6,7 +6,7 @@
 /*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:56:54 by jgehin            #+#    #+#             */
-/*   Updated: 2019/05/13 17:57:00 by jgehin           ###   ########.fr       */
+/*   Updated: 2019/05/14 16:26:51 by jgehin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char	*ft_part1s(t_s *s, char *res, int lgstr, char *str)
 		res[i++] = s->f->zero == TRUE ? '0' : ' ';
 	while (u++ <= szof)
 		res[i++] = str[o++];
+	ft_memdel((void **)&str);
 	return (res);
 }
 
@@ -57,6 +58,7 @@ char	*ft_part2s(t_s *s, char *res, int lgstr, char *str)
 		res[i++] = s->f->zero == TRUE ? '0' : ' ';
 	while (u++ < szof)
 		res[i++] = str[o++];
+	ft_memdel((void **)&str);
 	return (res);
 }
 
@@ -80,6 +82,7 @@ char	*ft_part3s(t_s *s, char *res, int lgstr, char *str)
 		res[i++] = str[o++];
 	while (u++ < szof)
 		res[i++] = ' ';
+	ft_memdel((void **)&str);
 	return (res);
 }
 
@@ -105,6 +108,7 @@ char	*ft_pf_s(t_s *s, char *str)
 	if (s->f->point == TRUE && s->pres == 0)
 	{
 		res = ft_part5s(s, res);
+		// ft_memdel((void **)&str);
 		return (res);
 	}
 	if (str == NULL)

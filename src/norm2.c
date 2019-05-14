@@ -6,7 +6,7 @@
 /*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:56:37 by jgehin            #+#    #+#             */
-/*   Updated: 2019/05/13 17:56:39 by jgehin           ###   ########.fr       */
+/*   Updated: 2019/05/14 15:30:11 by jgehin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char		*pf_itoax(char *res, int i, t_s *s, int lgnb)
 	return (res);
 }
 
-char		*ft_normpart4x(char *res, int i, t_s *s, int nb)
+char		*ft_normpart4x(char *res, int i, t_s *s, unsigned long long nb)
 {
 	int u;
 	int lgnb;

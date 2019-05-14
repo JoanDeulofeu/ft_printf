@@ -6,7 +6,7 @@
 /*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:56:00 by jgehin            #+#    #+#             */
-/*   Updated: 2019/05/13 17:56:02 by jgehin           ###   ########.fr       */
+/*   Updated: 2019/05/14 16:13:38 by jgehin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int		ft_buffering(t_s *s, char *buff, int bf, char *str)
 			bf = (bf == 64) ? ft_emptybuff(s, buff) : bf;
 		}
 	}
+	ft_memdel((void **)&str);
 	return (bf);
 }
 
@@ -75,4 +76,7 @@ void	ft_display(t_s *s, char *buff, int bf)
 		write(1, s->res, 64 * (s->mllc - 1));
 	if (bf != 0)
 		write(1, buff, bf);
+	ft_memdel((void **)&s->res);
+	// if (s->c->str != NULL)
+	// 	ft_memdel((void **)&s->c->str);
 }
