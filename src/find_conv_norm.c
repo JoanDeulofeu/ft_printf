@@ -6,7 +6,7 @@
 /*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:56:08 by jgehin            #+#    #+#             */
-/*   Updated: 2019/05/14 16:17:25 by jgehin           ###   ########.fr       */
+/*   Updated: 2019/05/15 14:43:54 by jgehin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ char	*ft_norm_dio(char *res, t_s *s, int i)
 
 char	*ft_norm_c(char *res, t_s *s, int i)
 {
+	s->f->chr = TRUE;
 	if (s->c->str)
 		ft_memdel((void **)&s->c->str);
 	if (!(s->c->str = (char *)malloc(sizeof(char) * (1 + 1))))

@@ -4,7 +4,8 @@ SRC_PATH = src
 
 SRC_NAME =  nomain2.c conv.c find_conv_norm.c flags.c buffer.c \
 			pf_d.c pf_u.c pf_p.c pf_f.c pf_f2.c pf_x.c pf_s.c \
-			math.c math2.c math3.c
+			math.c math2.c math3.c \
+			norm_f.c norm.c norm2.c
 
 CPPFLAGS = -I libft/includes/ -MMD
 

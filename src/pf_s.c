@@ -6,7 +6,7 @@
 /*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:56:54 by jgehin            #+#    #+#             */
-/*   Updated: 2019/05/14 16:26:51 by jgehin           ###   ########.fr       */
+/*   Updated: 2019/05/15 15:36:55 by jgehin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,17 @@ char	*ft_part1s(t_s *s, char *res, int lgstr, char *str)
 	szof = s->champ > lgmot ? s->champ : lgmot;
 	u = 0;
 	i = 0;
-	o = 0;
+	o = -1;
 	if ((s->pres > lgstr || s->pres == 0) && s->champ < lgstr)
-		return (str);
+		return (ft_strdup(str));
 	if (!(res = (char *)malloc(sizeof(char)
-		* (s->pres < lgstr ? s->pres : lgstr) + 1)))
+		* (s->pres < lgstr ? s->pres : lgstr) + 20)))
 		exit(0);
-	ft_bzero(res, (s->pres < lgstr ? s->pres : lgstr) + 1);
+	ft_bzero(res, (s->pres < lgstr ? s->pres : lgstr) + 20);
 	while (u++ < szof - lgmot)
 		res[i++] = s->f->zero == TRUE ? '0' : ' ';
 	while (u++ <= szof)
-		res[i++] = str[o++];
-	ft_memdel((void **)&str);
+		res[i++] = str[o += o < lgstr ? 1 : 0];
 	return (res);
 }
 
@@ -58,7 +57,6 @@ char	*ft_part2s(t_s *s, char *res, int lgstr, char *str)
 		res[i++] = s->f->zero == TRUE ? '0' : ' ';
 	while (u++ < szof)
 		res[i++] = str[o++];
-	ft_memdel((void **)&str);
 	return (res);
 }
 
@@ -82,7 +80,6 @@ char	*ft_part3s(t_s *s, char *res, int lgstr, char *str)
 		res[i++] = str[o++];
 	while (u++ < szof)
 		res[i++] = ' ';
-	ft_memdel((void **)&str);
 	return (res);
 }
 
@@ -91,7 +88,7 @@ char	*ft_part5s(t_s *s, char *res)
 	int i;
 
 	i = 0;
-	if (!(res = (char *)malloc(sizeof(char) * 1 + s->champ)))
+	if (!(res = (char *)malloc(sizeof(char) * (1 + s->champ))))
 		exit(0);
 	ft_bzero(res, 1 + s->champ);
 	while (s->champ > i)
@@ -108,7 +105,6 @@ char	*ft_pf_s(t_s *s, char *str)
 	if (s->f->point == TRUE && s->pres == 0)
 	{
 		res = ft_part5s(s, res);
-		// ft_memdel((void **)&str);
 		return (res);
 	}
 	if (str == NULL)
@@ -122,5 +118,7 @@ char	*ft_pf_s(t_s *s, char *str)
 		res = ft_part2s(s, res, lgstr, str);
 	else
 		res = ft_part3s(s, res, lgstr, str);
+	if (s->f->chr == TRUE)
+		ft_memdel((void **)&str);
 	return (res);
 }

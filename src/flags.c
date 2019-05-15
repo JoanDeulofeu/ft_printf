@@ -6,7 +6,7 @@
 /*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:56:12 by jgehin            #+#    #+#             */
-/*   Updated: 2019/05/13 17:56:15 by jgehin           ###   ########.fr       */
+/*   Updated: 2019/05/15 14:41:52 by jgehin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int		ft_reset_flags(t_s *s)
 	s->f->space = FALSE;
 	s->f->neg = FALSE;
 	s->f->pctc = FALSE;
+	s->f->chr = FALSE;
 	s->f->round = 0;
 	s->pres = 0;
 	s->champ = 0;

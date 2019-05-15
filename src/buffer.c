@@ -6,7 +6,7 @@
 /*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:56:00 by jgehin            #+#    #+#             */
-/*   Updated: 2019/05/14 16:13:38 by jgehin           ###   ########.fr       */
+/*   Updated: 2019/05/15 15:40:57 by jgehin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,16 @@ int		ft_emptybuff(t_s *s, char *buff)
 int		ft_buffering(t_s *s, char *buff, int bf, char *str)
 {
 	int		i;
-	int		verif;
 
 	i = 0;
-	verif = 0;
 	if (s->f->pctc == TRUE)
 	{
 		while (str[i] != '\0')
 		{
 			buff[bf++] = str[i++];
-			bf = (bf == 64 && ++verif > -1) ? ft_emptybuff(s, buff) : bf;
+			bf = (bf == 64) ? ft_emptybuff(s, buff) : bf;
 		}
-		bf = (verif != 0 && bf != 0) ? bf - 1 : bf;
+		bf = (i != 0 && bf != 0) ? bf - 1 : bf;
 		buff[bf++] = '\0';
 		bf = (bf == 64) ? ft_emptybuff(s, buff) : bf;
 	}
@@ -77,6 +75,4 @@ void	ft_display(t_s *s, char *buff, int bf)
 	if (bf != 0)
 		write(1, buff, bf);
 	ft_memdel((void **)&s->res);
-	// if (s->c->str != NULL)
-	// 	ft_memdel((void **)&s->c->str);
 }

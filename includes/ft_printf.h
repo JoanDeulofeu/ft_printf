@@ -51,6 +51,7 @@ typedef struct			s_flags
 	char				neg;
 	char				pctc;
 	int					round;
+	char				chr;
 }						t_flags;
 
 typedef struct			s_conv
