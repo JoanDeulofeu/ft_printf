@@ -6,7 +6,7 @@
 /*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:56:08 by jgehin            #+#    #+#             */
-/*   Updated: 2019/05/15 14:43:54 by jgehin           ###   ########.fr       */
+/*   Updated: 2019/05/15 17:41:00 by jgehin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ char	*ft_norm_c(char *res, t_s *s, int i)
 	res = ft_pf_s(s, s->c->str);
 	if (s->f->zero == TRUE)
 		res = ft_spacetozero(res);
+	if (s->c->chr == 0)
+		ft_memdel((void **)&s->c->str);
 	return (res);
 }
 

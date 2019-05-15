@@ -6,7 +6,7 @@
 /*   By: jgehin <jgehin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:56:54 by jgehin            #+#    #+#             */
-/*   Updated: 2019/05/15 15:36:55 by jgehin           ###   ########.fr       */
+/*   Updated: 2019/05/15 17:43:26 by jgehin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ char	*ft_pf_s(t_s *s, char *str)
 		res = ft_part2s(s, res, lgstr, str);
 	else
 		res = ft_part3s(s, res, lgstr, str);
-	if (s->f->chr == TRUE)
+	if (s->f->chr == TRUE && s->c->chr != 0)
 		ft_memdel((void **)&str);
 	return (res);
 }

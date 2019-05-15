@@ -454,7 +454,6 @@ int		main(int ac, char **av)
    		printf("printf    %d\n\n", pf);
 
 //
-
 //
 //
    	fpf = ft_printf("ft_printf19=%9.8X|\n", 0);
@@ -471,7 +470,7 @@ int		main(int ac, char **av)
 	printf("=-=-=-=-=-=  TEST DU #C =-=-=-=-=-=\n\n");
 	ft_printf("ft_printf1=%c\n", chr);
 	   printf("printf1   =%c\n\n", chr);
-// return 0;
+
 	ft_printf("ft_printf2=%c %c %c %c\n", 'q', 'w', 'r', 47);
 	   printf("printf2   =%c %c %c %c\n\n", 'q', 'w', 'r', 47);
 
@@ -569,7 +568,7 @@ int		main(int ac, char **av)
 
 	fpf = ft_printf("ft_printf16=%-s\n", strvide);
 		pf = printf("printf16   =%-s\n\n", strvide);
-
+// return 0;
 	fpf = ft_printf("ft_printf17=%-10.2s\n", strvide);
 		pf = printf("printf17   =%-10.2s\n\n", strvide);
 
@@ -602,13 +601,14 @@ int		main(int ac, char **av)
 
 	fpf = ft_printf("ft_printf27=%.0s|\n", str);
 		pf = printf("printf27   =%.0s|\n\n", str);
-
-	fpf = ft_printf("ft_printf27=%.c|\n", NULL);
-		pf = printf("printf27   =%.c|\n\n", NULL);
+// return 0;
+	fpf = ft_printf("ft_printf28=%.c|\n", NULL);
+		pf = printf("printf28   =%.c|\n\n", NULL);
 //
 //
 //
 //
+// return(0);
 	ft_printf("ft_printf=%c\n", NULL);
 	   printf("printf   =%c\n", NULL);
 
